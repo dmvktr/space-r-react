@@ -13,41 +13,40 @@ import Background4 from "../../src/static/img/bg4.jpg";
 const Home = () => {
   return (
     <>
-    <MainContentContainer>
-      <VideoContainer>
-        <video autoPlay muted>
-          <source src={video} type="video/mp4"></source>
-        </video>
-      </VideoContainer>
-      <SlideMainContainer>
-        <Content />
-      </SlideMainContainer>
-      <SlideMainContainer>
-        <PictureElement image={Background1} />
-      </SlideMainContainer>
-      <SlideMainContainer>
-        <Content />
-      </SlideMainContainer>
-      <SlideMainContainer>
-        <PictureElement image={Background2} />
-      </SlideMainContainer>
-      <SlideMainContainer>
-        <Content />
-      </SlideMainContainer>
-      <SlideMainContainer>
-        <PictureElement image={Background3} />
-      </SlideMainContainer>
-      <SlideMainContainer>
-        <Content />
-      </SlideMainContainer>
-      <SlideMainContainer>
-        <PictureElement image={Background4} />
-      </SlideMainContainer>
-      <SlideMainContainer>
-        <Content />
-      </SlideMainContainer>
-    <About />
-    </MainContentContainer>
+      <MainContentContainer>
+        <VideoContainer>
+          <video autoPlay muted>
+            <source src={video} type="video/mp4"></source>
+          </video>
+        </VideoContainer>
+        <SlideMainContainer>
+          <Content />
+        </SlideMainContainer>
+        <SlideMainContainer>
+          <PictureElement image={Background1} />
+        </SlideMainContainer>
+        <SlideMainContainer>
+          <Content />
+        </SlideMainContainer>
+        <SlideMainContainer>
+          <PictureElement image={Background2} />
+        </SlideMainContainer>
+        <SlideMainContainer>
+          <Content />
+        </SlideMainContainer>
+        <SlideMainContainer>
+          <PictureElement image={Background3} />
+        </SlideMainContainer>
+        <SlideMainContainer>
+          <Content />
+        </SlideMainContainer>
+        <SlideMainContainer>
+          <PictureElement image={Background4} />
+        </SlideMainContainer>
+        <SlideMainContainer>
+          <Content />
+        </SlideMainContainer>
+      </MainContentContainer>
     </>
   );
 };
