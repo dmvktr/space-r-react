@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
 
 const About = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return <Footer></Footer>;
+};
 
-export default About
+const Footer = styled.div`
+  grid-area: footer;
+`;
+
+export default About;
