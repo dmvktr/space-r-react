@@ -1,11 +1,15 @@
 import React from "react";
 import { NavContainer } from "./layout/NavBarElements";
 import styled from "styled-components";
-import { NavbarOption } from "./layout/NavBarElements";
+import { NavbarOption, Logo } from "./layout/NavBarElements";
+
+
 function NavBar() {
   return (
     <NavContainer>
-      <Logo />
+      <NavbarOption to="/" title="Home" theme={""}>
+          <Logo />
+      </NavbarOption>
       <Links>
         <NavbarOption to="/" title="Home" theme={""}>
           Home
@@ -31,7 +35,7 @@ function NavBar() {
   );
 }
 
-const Logo = styled.div``;
+
 const Links = styled.div`
   display: flex;
   gap: 4rem;
