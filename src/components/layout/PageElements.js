@@ -27,9 +27,3 @@ export const NewsContainer = styled.div`
 export const VideoContainer = styled.div`
   width: 100vw;
 `;
-
-export const SlideContainer = styled.div`
-  width: 100vw;
-  display: flex;
-  background-color: white;
-`;
