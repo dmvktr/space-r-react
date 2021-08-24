@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
 
 const Content = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return <PageContent></PageContent>;
+};
 
-export default Content
+const PageContent = styled.div`
+  grid-area: content;
+`;
+export default Content;
