@@ -46,8 +46,8 @@ const Home = () => {
       <SlideMainContainer>
         <Content />
       </SlideMainContainer>
-    </MainContentContainer>
     <About />
+    </MainContentContainer>
     </>
   );
 };
