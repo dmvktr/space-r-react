@@ -25,4 +25,5 @@ export const NavbarOption = styled(Link)`
   font-weight: 370;
   color: #100D80;
   -webkit-text-stroke: 1px #100D80;
+  letter-spacing: 1px;
 `;
