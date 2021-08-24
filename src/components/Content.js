@@ -29,5 +29,6 @@ const Content = () => {
 const PageContent = styled.div`
   grid-area: content;
   margin: 1vh 0;
+  width: 100vw;
 `;
 export default Content;
