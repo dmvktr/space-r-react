@@ -1,12 +1,17 @@
 import React from "react";
-import styled from "styled-components";
+import { Footer,
+    AboutTextContainer,
+    FooterParagraph } from './layout/FooterElements';
 
 const About = () => {
-  return <Footer></Footer>;
+  return (
+  <Footer>
+    <AboutTextContainer>
+      <FooterParagraph>A project designed by : Team Space-R</FooterParagraph>
+      <FooterParagraph>Contributors: </FooterParagraph>
+      <FooterParagraph>| Norbert Ruff | Viktor Döme | Ferenc Kárpáti | </FooterParagraph>
+    </AboutTextContainer>
+  </Footer>);
 };
-
-const Footer = styled.div`
-  grid-area: footer;
-`;
 
 export default About;
