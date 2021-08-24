@@ -4,3 +4,11 @@
   box-sizing: border-box;
   text-decoration: none;
 }
+
+video {
+  right: 0;
+  bottom: 0;
+  min-width: 100vw;
+  width: 100vw;
+  z-index: -100;
+}
