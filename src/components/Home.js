@@ -2,7 +2,6 @@ import React from "react";
 import { VideoContainer, MainContentContainer } from "./layout/PageElements";
 import video from "../../src/static/Artemis-logo-reveal-1080p.mp4";
 import Content from "./Content";
-import About from "./About";
 import { SlideMainContainer } from "./layout/SlidePageElements";
 import styled from "styled-components";
 import Background1 from "../../src/static/img/bg1.jpg";
