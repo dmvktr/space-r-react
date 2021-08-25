@@ -1,21 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useRef, useEffect } from 'react';
 import { Card,
     CardTop,
     CardImageContainer,
     CardPersonalDetail,
-    CardBio } from './layout/AstronautElements';
+    CardBio, AstronautName } from './layout/AstronautElements';
 
 const Astronaut = (props) => {
+    const ref = useRef(null);
+
+    useEffect(() => {
+        console.log('width', ref.current ? ref.current.offsetWidth : 0);
+      }, []);
+
     return (
-        <Card>
+        <Card id="astronautCard">
             <CardTop />
             <CardImageContainer>
                 <AstronautImage picture={props.picture} />
             </CardImageContainer>
-            <CardPersonalDetail id="astronautName">
+            <AstronautName ref={ref} id="astronautName">
                 {props.name}
-            </CardPersonalDetail>
+            </AstronautName>
             <CardPersonalDetail>
                 {props.dob}
             </CardPersonalDetail>
