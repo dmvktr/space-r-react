@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import Modal from "react-modal";
+import LoadingAnim from "../static/img/loading.gif";
 
 Modal.setAppElement("#root");
 
@@ -10,7 +11,13 @@ const customStyles = {
     left: "50%",
     right: "auto",
     bottom: "auto",
+    margin: "0",
     transform: "translate(-50%, -50%)",
+    backgroundColor: "black",
+    backgroundImage: `url(${LoadingAnim})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "50%",
+    backgroundPosition: "center",
   },
 };
 const GalleryCard = (props) => {
@@ -38,6 +45,7 @@ const GalleryCard = (props) => {
         contentLabel="Modal"
         onClick={closeModal}
       >
+        <CloseButton onClick={closeModal}>X</CloseButton>
         <HdImg picture={props.picture.hdurl} onClick={closeModal} />
         <Title>{props.picture.title}</Title>
         <Date date={props.picture.date} />
@@ -65,7 +73,17 @@ const Thumbnail = styled.div`
   width: 100%;
   height: 100%;
 `;
-
+const CloseButton = styled.button`
+  float: right;
+  color: white;
+  font-size: 2rem;
+  font-weight: 800;
+  background-color: black;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid cornflowerblue;
+`;
 const Title = styled.h4`
   opacity: 0;
   text-align: center;
@@ -86,6 +104,10 @@ const Card = styled.div`
     animation: ${FocusAnim} 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   }
   cursor: pointer;
+  background-image: url(${LoadingAnim});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 const HdImg = styled.div`
   background-image: url(${(props) => props.picture});
