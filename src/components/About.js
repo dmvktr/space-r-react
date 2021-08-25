@@ -8,8 +8,7 @@ const About = () => {
   <Footer>
     <AboutTextContainer>
       <FooterParagraph>A project designed by : Team Space-R</FooterParagraph>
-      <FooterParagraph>Contributors: </FooterParagraph>
-      <FooterParagraph>| Norbert Ruff | Viktor Döme | Ferenc Kárpáti | </FooterParagraph>
+      <FooterParagraph>Norbert Ruff | Viktor Döme | Ferenc Kárpáti </FooterParagraph>
     </AboutTextContainer>
   </Footer>);
 };
