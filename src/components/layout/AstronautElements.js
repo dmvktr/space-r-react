@@ -49,10 +49,12 @@ export const CardImageContainer = styled.div`
     align-self: center;
     position: relative;
     top: -7vh;
+    -webkit-filter: drop-shadow(1px 6px 17px rgba(153,172,199,0.7));
+    filter: drop-shadow(1px 6px 17px rgba(153,172,199,0.7));
 `;
 
 export const CardPersonalDetail = styled.div`
-    color:white;
+    color: white;
     font-size: 20px;
     font-weight: 450;
     text-align: center;

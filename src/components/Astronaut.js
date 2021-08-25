@@ -36,7 +36,6 @@ const AstronautImage = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter:drop-shadow(0 -6mm 4mm rgb(160, 0, 210));
     content:url(${(props) => props.picture});
 `;
 
