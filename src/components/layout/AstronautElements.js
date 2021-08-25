@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import profilePicture from '../../static/img/dummy_astronaut_dog.png';
 
 export const AstronautsPageText = styled.div`
     min-width: 90vw;
@@ -42,38 +41,33 @@ export const CardTop = styled.div`
     border-radius: 11px 11px 0 0;
 `;
 export const CardImageContainer = styled.div`
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     background: white;
     overflow: hidden;
     align-self: center;
-    margin: -10%;
-`;
-
-export const AstronautImage = styled.img`
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter:drop-shadow(0 -6mm 4mm rgb(160, 0, 210));
-    content:url(${profilePicture});
+    position: relative;
+    top: -7vh;
 `;
 
 export const CardPersonalDetail = styled.div`
     color:white;
-    align-self: center;
     font-size: 20px;
     font-weight: 450;
     text-align: center;
     letter-spacing: 2px;
+    margin: 0.5vh
 `;
+
 export const Card = styled.div`
     display: flex;
-    border-radius: 11px 11px 0 0;
+    border-radius: 11px;
     flex-direction: column;
     background-color: #0f101ae0;
     border: 2px solid white;
-    min-height: 60vh;
+    min-height: 70vh;
+    max-height: 70vh;
 `;
 
 export const CardBio = styled.div`
@@ -83,5 +77,15 @@ export const CardBio = styled.div`
     margin-bottom: 2px;
     min-height: 10vh;
     padding: 5px;
-    margin: 9vh 2vw;
+    margin: 7vh 3vh 3vh 3vh;
+    max-width: fit-content;
+    padding: 15px;
+    font-weight: 450;
+    letter-spacing: 1px;
 `;
+
+export const Error = styled.div`
+    font-size: 30px;
+    font-weight: 450;
+    color: red;
+`
