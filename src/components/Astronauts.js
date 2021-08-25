@@ -6,7 +6,11 @@ import { AstronautMainContainer,
     AstronautCardContainer,
     AstronautCardsMainContainer,
     AstronautsPageText,
-    Error } from "./layout/AstronautElements";
+    Error,
+    PaginationRight,
+    PaginationLeft } from "./layout/AstronautElements";
+import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
+
 
 const Astronauts = (props) => {
   const baseEndpoint = "https://ll.thespacedevs.com/2.2.0/astronaut/";
@@ -51,6 +55,9 @@ const Astronauts = (props) => {
               An error occured, while fetching the astronauts information. Please try again later!
             </Error>
         ) : (
+        <>
+        <PaginationLeft icon={faAngleDoubleLeft} />
+        <PaginationRight icon={faAngleDoubleRight} />
         <AstronautCardsMainContainer>
           {astronauts.results.map((astronaut) => (
           <AstronautCardContainer>
@@ -67,6 +74,7 @@ const Astronauts = (props) => {
         </AstronautCardContainer>
       ))}
       </AstronautCardsMainContainer>
+      </>
       )}
       </AstronautMainContainer>
   );
