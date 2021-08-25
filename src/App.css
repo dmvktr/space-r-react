@@ -13,3 +13,7 @@ video {
   width: 100vw;
   z-index: -100;
 }
+
+#astronautName {
+  font-size: 25px;
+}

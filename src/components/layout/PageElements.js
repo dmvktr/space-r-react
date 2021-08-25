@@ -6,7 +6,7 @@ export const MainContainer = styled.div`
   max-width: 100%;
   height: 100vh;
   grid-template-columns: 5% 90% 5%;
-  grid-template-rows: 73px auto 150px;
+  grid-template-rows: 73px auto 75px;
   grid-template-areas:
     "header header header"
     "content content content"
@@ -33,10 +33,4 @@ export const NewsContainer = styled.div`
 
 export const VideoContainer = styled.div`
   width: 100vw;
-`;
-
-export const SlideContainer = styled.div`
-  width: 100vw;
-  display: flex;
-  background-color: white;
 `;
