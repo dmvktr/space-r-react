@@ -25,14 +25,18 @@ export const AstronautCardsMainContainer = styled.div`
     background-color: #0c0f1a;
     min-width: 65vw;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1.2vw;
+    grid-column-gap: 1.8vw;
     min-height: 60vh;
 `;
 
 export const AstronautCardContainer = styled.div`
     min-height: fit-content;
     background-color: #0c0f1a;
-    
+    box-shadow: rgb(233 219 219 / 0%) -18px 20px 13px, rgb(167 68 68 / 0%) -14px 13px 6px 0px;
+    transition: box-shadow 0.8s ease-in-out;
+    :hover{
+        box-shadow: rgb(233 219 219 / 31%) -18px 20px 13px, rgb(167 68 68 / 11%) -14px 13px 6px 0px;
+    }
 `;
 
 export const CardTop = styled.div`
@@ -66,7 +70,7 @@ export const Card = styled.div`
     display: flex;
     border-radius: 11px;
     flex-direction: column;
-    background-color: #0f101ae0;
+    background: linear-gradient(152deg,#6b7b83bf,#101115e0 30%,#1d1f307a);
     border: 2px solid white;
     min-height: 70vh;
     max-height: 70vh;
@@ -90,4 +94,31 @@ export const Error = styled.div`
     font-size: 30px;
     font-weight: 450;
     color: red;
+`
+
+export const AstronautName = styled.div`
+    --elem-width: 173px;
+    font-size: 25px;
+    position: relative;
+    color:white;
+    width: 100%;
+    text-align: center;
+    align-self: center;
+    ::after{
+        transform: scaleX(0);
+        content: "";
+        height: 3px;
+        background: var(--grey-card-top-primary);
+        width: calc(var(--elem-width) + var(--elem-width));
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform-origin: left;
+
+        transition: transform 800ms ease;
+    }
+    ::after
+    ${Card}:hover{
+        transform: scaleX(1);
+    }
 `
