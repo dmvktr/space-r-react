@@ -21,6 +21,7 @@ const Gallery = (props) => {
         );
       });
   }, [url]);
+
   return (
     <CardContainer>
       {gallery.map((picture) => (
