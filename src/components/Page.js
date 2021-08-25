@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import { MainContainer } from "./layout/PageElements";
 import About from "./About";
-import News from "./News";
+import AllNews from "./AllNews";
 import Astronauts from "./Astronauts";
 import Locations from "./Locations";
 import Gallery from "./Gallery";
@@ -23,7 +23,7 @@ function Page() {
           />
           <Route
             path="/news"
-            render={(props) => <News {...props} theme={"dark"} />}
+            render={(props) => <AllNews {...props} theme={"dark"} />}
             exact
           />
           <Route
