@@ -21,7 +21,7 @@ export const FooterParagraph = styled.p`
 
 export const Footer = styled.footer`
   display: flex;
-  padding: 25px 0px;
+  padding: 20px 0px;
   grid-area: footer;
   background-color: black;
   width: 100vw;
