@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const AstronautsPageText = styled.div`
     min-width: 90vw;
@@ -30,6 +31,7 @@ export const AstronautCardsMainContainer = styled.div`
 `;
 
 export const AstronautCardContainer = styled.div`
+    position:relative;
     min-height: fit-content;
     background-color: #0c0f1a;
     box-shadow: rgb(233 219 219 / 0%) -18px 20px 13px, rgb(167 68 68 / 0%) -14px 13px 6px 0px;
@@ -121,4 +123,20 @@ export const AstronautName = styled.div`
     ${Card}:hover{
         transform: scaleX(1);
     }
-`
+`;
+
+export const PaginationRight = styled(FontAwesomeIcon)`
+    width: 200px !important;
+    color: white;
+    height: 50px;
+    position: absolute;
+    right: 0;
+`;
+
+export const PaginationLeft = styled(FontAwesomeIcon)`
+    width: 200px !important;
+    color: white;
+    height: 50px;
+    position: absolute;
+    left: 0;
+`;
