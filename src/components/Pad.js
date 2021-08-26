@@ -2,6 +2,8 @@ import React from 'react';
 import { PadContainer, PadsContainer } from './layout/LocationElements';
 
 export const Pad = (props) => {
+  const { name, wiki_url, map_url, latitude, longitude, total_launch_count } =
+    props.pad;
 
     const { name, wiki_url, latitude, longitude, total_launch_count } = props.pad;
     

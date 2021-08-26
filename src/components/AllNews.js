@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { NewsContainer } from "./layout/PageElements";
+import { NewsContainer, NewsPageContainer } from "./layout/PageElements";
 import Articles from "./Articles";
 import axios from "axios";
+import { AstronautsPageText, Error } from "./layout/AstronautElements";
 
 const AllNews = (props) => {
   const url = "https://api.spaceflightnewsapi.net/v3/articles?_limit=15";
 
   const [news, setNews] = useState([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     axios
@@ -16,6 +18,7 @@ const AllNews = (props) => {
         setNews(res.data);
       })
       .catch((error) => {
+        setError(error.message);
         console.error(
           `The request was made and the server responded
         with a status code that falls out of the range of 2xx ` + error.message
@@ -24,15 +27,25 @@ const AllNews = (props) => {
   }, [url]);
 
   return (
-    <NewsContainer>
-      {news.map((article) => (
-        <Articles
-          key={article.id}
-          article={article}
-          theme={props.theme}
-        ></Articles>
-      ))}
-    </NewsContainer>
+    <NewsPageContainer>
+      <AstronautsPageText>News</AstronautsPageText>
+      {error ? (
+        <Error>
+          An error occured, while fetching the astronauts information. Please
+          try again later!
+        </Error>
+      ) : (
+        <NewsContainer>
+          {news.map((article) => (
+            <Articles
+              key={article.id}
+              article={article}
+              theme={props.theme}
+            ></Articles>
+          ))}
+        </NewsContainer>
+      )}
+    </NewsPageContainer>
   );
 };
 

@@ -1,3 +1,8 @@
+:root {
+  --green-primary: rgb(7, 112, 89);
+  --grey-card-top-primary: #d2d2d2;
+}
+
 * {
   max-width: 100%;
   margin: 0;
@@ -14,6 +19,6 @@ video {
   z-index: -100;
 }
 
-#astronautName {
-  font-size: 25px;
+#astronautCard:hover #astronautName::after {
+  transform: scaleX(1);
 }

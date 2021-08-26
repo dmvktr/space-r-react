@@ -18,24 +18,30 @@ export const MainContentContainer = styled.div`
   flex-direction: column;
 `;
 
+export const NewsPageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+`;
+
 export const NewsContainer = styled.div`
-  grid-area: content;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   flex-direction: column;
-  border: 3px solid black;
   color: black;
   background-color: #0c0f1a;
-  padding: 2vw;
-  gap: 1vw;
+  padding: 0 2vw;
+  gap: 2vh 2vw;
 `;
 
 export const VideoContainer = styled.div`
-    width: 100vw;
+  width: 100vw;
 `;
 
 export const SlideContainer = styled.div`
-    width: 100vw;
-    display: flex;
+  width: 100vw;
+  display: flex;
 `;
