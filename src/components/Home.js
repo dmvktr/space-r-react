@@ -9,6 +9,12 @@ import Background2 from "../../src/static/img/bg2.jpg";
 import Background3 from "../../src/static/img/bg3.jpg";
 import Background4 from "../../src/static/img/bg4.jpg";
 import logo from "../../src/static/img/logo/Spacer-Logo.png";
+import meetTheTeam from "../../src/static/slides/team.png";
+import about from "../../src/static/slides/about.png";
+import stats from "../../src/static/slides/stats.png";
+import code from "../../src/static/slides/code.png";
+import reaction from "../../src/static/slides/reaction.png";
+
 
 const Home = () => {
   return (
@@ -21,7 +27,7 @@ const Home = () => {
           </video>
         </VideoContainer>
         <SlideMainContainer>
-          <Content />
+          <Content image={meetTheTeam} />
         </SlideMainContainer>
         <SlideMainContainer>
           <PictureElement image={Background1} />
