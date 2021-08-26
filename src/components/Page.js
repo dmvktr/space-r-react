@@ -7,6 +7,7 @@ import AllNews from "./AllNews";
 import Astronauts from "./Astronauts";
 import Locations from "./Locations";
 import Gallery from "./Gallery";
+import Events from "./Events";
 import Home from "./Home";
 import { LocationDetails } from "./LocationDetails";
 
@@ -29,6 +30,12 @@ function Page() {
           <Route
             path="/astronauts"
             render={(props) => <Astronauts {...props} theme={"dark"} />}
+            exact
+          />
+
+          <Route
+            path="/events"
+            render={(props) => <Events {...props} theme={"dark"} />}
             exact
           />
 
