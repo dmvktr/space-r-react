@@ -1,21 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import { Pad } from './Pad';
+import { Pad } from './Pad';
 
 export const LocationDetails = ({match}) => {
 
-    const [details, setDetails] = useState([
-        {
-            id: null,
-            url: null,
-            name: null,
-            country_code: null,
-            map_image: null,
-            total_launch_count: null,
-            total_landing_count: null,
-            pads: []
-        }
-    ]);
+    const [pads, setPads] = useState([]);
     //     {
     //         id: 151,
     //         url: "https://ll.thespacedevs.com/2.2.0/location/151/?format=json",
@@ -43,28 +32,14 @@ export const LocationDetails = ({match}) => {
 
     useEffect(() => {
         axios.get(`https://ll.thespacedevs.com/2.2.0/location/${match.params.id}/?format=json`)
-        .then(res => setDetails({
-            id: res.data.id,
-            name: res.data.name,
-            url: res.data.url,
-            country_code: res.data.country_code,
-            map_image: res.data.map_image,
-            total_launch_count: res.data.total_launch_count,
-            total_landing_count: res.data.total_landing_count,
-            pads: res.data.pads,
-        }));
-    }, [match.params.id])
-    
+        .then(res => setPads(res.data.pads));
+    }, [match.params.id]);
+        
     return (
         <div>
-            {/* <img src={details.map_image} alt="location-on-google-maps"/> */}
-            <h1>{details.name}</h1>
-            <h2>{details.country_code}</h2>
-            <p>Launches: {details.total_launch_count}  |  Landings: {details.total_landing_count}</p>
-            <br />
-            {/* {details.pads.map(pad => (
+            {pads.map(pad => (
                 <Pad key={pad.id} pad={pad}/>
-            ))} */}
+            ))}
         </div>
     )
 }
