@@ -8,7 +8,7 @@ import Background1 from "../../src/static/img/bg1.jpg";
 import Background2 from "../../src/static/img/bg2.jpg";
 import Background3 from "../../src/static/img/bg3.jpg";
 import Background4 from "../../src/static/img/bg4.jpg";
-import logo from "../../src/static/img/logo/spacer_logo.png";
+import logo from "../../src/static/img/logo/Spacer-Logo.png";
 
 const Home = () => {
   return (
@@ -64,10 +64,15 @@ const FocusAnim = keyframes`
 `;
 const Logo = styled.img`
   position: absolute;
-  top: 40vh;
-  left: 20vw;
+  top: 50%;
+  left: 50%;
+  width: 50vw;
+  height: auto;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
   animation: ${FocusAnim} 3s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-  filter: drop-shadow(0 0 4rem red);
+  -webkit-filter: drop-shadow(5px 5px 5px white);
+  filter: drop-shadow(5px 5px 5px white);
 `;
 
 const PictureElement = styled.div`
