@@ -3,12 +3,11 @@ import { NavContainer } from "./layout/NavBarElements";
 import styled from "styled-components";
 import { NavbarOption, Logo } from "./layout/NavBarElements";
 
-
 function NavBar() {
   return (
     <NavContainer>
       <NavbarOption to="/" title="Home" theme={""}>
-          <Logo />
+        <Logo />
       </NavbarOption>
       <Links>
         <NavbarOption to="/" title="Home" theme={""}>
@@ -23,8 +22,15 @@ function NavBar() {
           Gallery
         </NavbarOption>
 
+        <NavbarOption to="/spacecrafts" title="Spacecrafts" theme={""}>
+          Spacecrafts
+        </NavbarOption>
+
         <NavbarOption to="/astronauts" title="Astronauts" theme={""}>
           Astronauts
+        </NavbarOption>
+        <NavbarOption to="/events" title="Events" theme={""}>
+          Events
         </NavbarOption>
 
         <NavbarOption to="/locations" title="Locations" theme={""}>
@@ -34,7 +40,6 @@ function NavBar() {
     </NavContainer>
   );
 }
-
 
 const Links = styled.div`
   display: flex;

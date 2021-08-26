@@ -2,33 +2,34 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Astronaut from "./Astronaut";
+import Pagination from "./Pagination";
 import { AstronautMainContainer,
     AstronautCardContainer,
     AstronautCardsMainContainer,
     AstronautsPageText,
     Error } from "./layout/AstronautElements";
+import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
+
 
 const Astronauts = (props) => {
-  const baseEndpoint = "https://ll.thespacedevs.com/2.2.0/astronaut/";
-  const fetchLimit = 2;
-  const offset = 0;
-
+  const [url, setUrl] = useState("https://lldev.thespacedevs.com/2.2.0/astronaut/?limit=2");
   const [astronauts, setAstronauts] = useState({
     next: null,
     previous: null,
     results: [],
   });
   const [error, setError] = useState('');
-  
 
 
-  const assembleTargetURL = () => {
-    return `${baseEndpoint}?format=json&limit=${fetchLimit}&offset=${offset}`;
-  };
+  const handleClick = (url) => {
+      if(url !== null){
+        setUrl(url);
+      } 
+  }
 
   useEffect(() => {
     axios
-        .get(assembleTargetURL())
+        .get(url)
         .then((res) => {
           setAstronauts({
             next: res.data.next,
@@ -39,36 +40,36 @@ const Astronauts = (props) => {
         .catch((err) => {
           setError(err.message)
         })
-    }, []);
+    }, [url]);
 
   return (
-      <AstronautMainContainer>
-      <AstronautsPageText>
-        Astronauts
-      </AstronautsPageText>
+    <AstronautMainContainer>
+      <AstronautsPageText>Astronauts</AstronautsPageText>
       {error ? (
-            <Error>
-              An error occured, while fetching the astronauts information. Please try again later!
-            </Error>
-        ) : (
+        <Error>
+          An error occured while fetching the astronauts information. Please try
+          again later!
+        </Error>
+      ) : (
         <AstronautCardsMainContainer>
           {astronauts.results.map((astronaut) => (
-          <AstronautCardContainer>
-            <Astronaut
-          key={astronaut.id}
-          name={astronaut.name}
-          picture={astronaut.profile_image_thumbnail}
-          theme={props.theme}
-          dob={astronaut.date_of_birth}
-          nationality={astronaut.nationality}
-          status={astronaut.status.name}
-          bio={astronaut.bio}
-          id="card"></Astronaut>
-        </AstronautCardContainer>
-      ))}
-      </AstronautCardsMainContainer>
+            <AstronautCardContainer key={astronaut.id}>
+              <Astronaut
+                key={astronaut.id}
+                name={astronaut.name}
+                picture={astronaut.profile_image_thumbnail}
+                theme={props.theme}
+                dob={astronaut.date_of_birth}
+                nationality={astronaut.nationality}
+                status={astronaut.status.name}
+                bio={astronaut.bio}
+                id="card"
+              ></Astronaut>
+            </AstronautCardContainer>
+          ))}
+        </AstronautCardsMainContainer>
       )}
-      </AstronautMainContainer>
+    </AstronautMainContainer>
   );
 };
 

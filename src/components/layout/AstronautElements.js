@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 
 export const AstronautsPageText = styled.div`
   min-width: 90vw;
@@ -29,7 +31,14 @@ export const AstronautCardsMainContainer = styled.div`
   min-height: 60vh;
 `;
 
-export const AstronautCardContainer = styled.div`
+export const CardTop = styled.div`
+  height: 80px;
+  background: #d2d2d2;
+  border-radius: 11px 11px 0 0;
+  position: relative;
+`;
+    
+export const AstronautCardContainer = styled.div`    
   min-height: fit-content;
   background-color: #0c0f1a;
   box-shadow: rgb(233 219 219 / 0%) -18px 20px 13px,
@@ -41,22 +50,30 @@ export const AstronautCardContainer = styled.div`
   }
 `;
 
-export const CardTop = styled.div`
-  height: 80px;
-  background: #d2d2d2;
-  border-radius: 11px 11px 0 0;
-`;
+
 export const CardImageContainer = styled.div`
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: white;
-  overflow: hidden;
-  align-self: center;
-  position: relative;
-  top: -7vh;
-  -webkit-filter: drop-shadow(1px 6px 17px rgba(153, 172, 199, 0.7));
-  filter: drop-shadow(1px 6px 17px rgba(153, 172, 199, 0.7));
+    --card-width: 173px;
+    --card-top-height: 80px;
+    --img-width-height: 120px;
+    position: absolute;
+    left: 50%;
+    top: calc(var(--card-top-height));
+    margin-top: calc(-1 * var(--img-width-height) / 2);
+    width: var(--img-width-height);
+    margin-left: calc(-1 * var(--img-width-height) / 2);
+    height: var(--img-width-height);
+    border-radius: 50%;
+    background: white;
+    overflow: hidden;
+    -webkit-filter: drop-shadow(1px 6px 17px rgba(153,172,199,0.7));
+    filter: drop-shadow(1px 6px 17px rgba(153,172,199,0.7));
+`;
+
+export const AstronautImage = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    content:url(${(props) => props.picture});
 `;
 
 export const CardPersonalDetail = styled.div`
@@ -80,23 +97,27 @@ export const Card = styled.div`
 `;
 
 export const CardBio = styled.div`
-  border-radius: 10px;
-  background-color: white;
-  color: black;
-  margin-bottom: 2px;
-  min-height: 10vh;
-  padding: 5px;
-  margin: 7vh 3vh 3vh 3vh;
-  max-width: fit-content;
-  padding: 15px;
-  font-weight: 450;
-  letter-spacing: 1px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    margin-bottom: 2px;
+    min-height: 20%;
+    max-height: 30%;
+    height: 100%;
+    padding: 5px;
+    margin: 7vh 3vh 3vh 3vh;
+    max-width: fit-content;
+    padding: 15px;
+    font-weight: 450;
+    letter-spacing: 1px;
+    overflow: hidden;
 `;
 
 export const Error = styled.div`
   font-size: 30px;
   font-weight: 450;
   color: red;
+
 `;
 
 export const AstronautName = styled.div`
@@ -119,8 +140,18 @@ export const AstronautName = styled.div`
     transform-origin: left;
 
     transition: transform 800ms ease;
-  }
-  ::after ${Card}:hover {
-    transform: scaleX(1);
-  }
+    }
+    ::after
+    ${Card}:hover{
+        transform: scaleX(1);
+    }
+`;
+
+export const PaginationIcon = styled(FontAwesomeIcon)`
+    width: 200px !important;
+    color: white;
+    height: 50px;
+    position: absolute;
+    right: ${(props)=> props.icon === faAngleDoubleRight ? 0: 'unset'};
+    left: ${(props)=> props.icon === faAngleDoubleLeft ? 0: 'unset'};
 `;

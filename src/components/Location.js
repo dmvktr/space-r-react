@@ -22,8 +22,8 @@ export const Location = (props) => {
 }
 
 const locationImage = {
-    margin: '5px',
-    maxWidth: '420px',
-    boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
-    borderRadius: '4%',
+  margin: "5px",
+  maxWidth: "420px",
+  boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
+  borderRadius: "4%",
 };

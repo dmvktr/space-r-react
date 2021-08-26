@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const MainContainer = styled.div`
   display: grid;
@@ -14,6 +15,7 @@ export const MainContainer = styled.div`
 `;
 
 export const MainContentContainer = styled.div`
+  grid-area: content;
   display: flex;
   flex-direction: column;
 `;
@@ -44,4 +46,14 @@ export const VideoContainer = styled.div`
 export const SlideContainer = styled.div`
   width: 100vw;
   display: flex;
+`;
+
+export const ScrollToTopButton = styled(FontAwesomeIcon)`
+  position: relative;
+  right: 40px;
+  top: -80px;
+  width: 200px !important;
+  color: white;
+  height: 70px;
+  cursor: pointer;
 `;
