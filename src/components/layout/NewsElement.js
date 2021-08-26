@@ -76,7 +76,7 @@ export const ArticleContainer = styled.div`
 export const ArticleUrl = styled.a`
   color: white;
   font-size: 1.2em;
-  background-color: #0c0f1a;
+  background-color: black;
   grid-area: url;
   src: ${(props) => props.src};
   padding: 2%;
