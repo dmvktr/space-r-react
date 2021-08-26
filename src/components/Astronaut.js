@@ -8,19 +8,13 @@ import { Card,
     CardBio, AstronautName } from './layout/AstronautElements';
 
 const Astronaut = (props) => {
-    const ref = useRef(null);
-
-    useEffect(() => {
-        console.log('width', ref.current ? ref.current.offsetWidth : 0);
-      }, []);
-
     return (
         <Card id="astronautCard">
             <CardTop />
             <CardImageContainer>
                 <AstronautImage picture={props.picture} />
             </CardImageContainer>
-            <AstronautName ref={ref} id="astronautName">
+            <AstronautName id="astronautName">
                 {props.name}
             </AstronautName>
             <CardPersonalDetail>
