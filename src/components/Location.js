@@ -1,63 +1,25 @@
-import React, { useState, useEffect } from "react";
-import {
-  LocationContainer,
-  LocationCard,
-  Error,
-} from "./layout/LocationElements";
-import axios from "axios";
-import { Pad } from "./Pad";
+import React from 'react';
+import { LocationContainer, LocationCard } from './layout/LocationElements';
 
 export const Location = (props) => {
-  const {
-    id,
-    name,
-    country_code,
-    map_image,
-    total_launch_count,
-    total_landing_count,
-  } = props.location;
+    
+    const { name, country_code, map_image, total_launch_count, total_landing_count, url } = props.location;
 
-  const [pads, setPads] = useState([]);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    axios
-      .get(`https://lldev.thespacedevs.com/2.2.0/location/${id}/`)
-      .then((res) => setPads(res.data.pads))
-      .catch((err) => setError.message);
-  }, [id]);
-
-  console.log(pads);
-
-  return (
-    <div>
-      {error ? (
-        <Error>An error occured</Error>
-      ) : (
+    return (
         <LocationContainer>
-          <img
-            style={locationImage}
-            src={map_image}
-            alt="location-on-google-maps"
-          />
-          <LocationCard>
-            <h3>{name}</h3>
-            <h4>{country_code}</h4>
-            <br />
-            <p>
-              Launches: {total_launch_count} Landings: {total_landing_count}
-            </p>
-          </LocationCard>
-          <div>
-            {pads.map((pad) => (
-              <Pad key={pad.id} pad={pad} />
-            ))}
-          </div>
+            <img style={locationImage} 
+            src={map_image} 
+            onClick={props.getPads.bind(this, url)}
+            alt="location-on-google-maps"/>
+            <LocationCard>
+                <h3>{name}</h3>
+                <h4>{country_code}</h4>
+                <br/>
+                <p>Launches: {total_launch_count} Landings: {total_landing_count}</p>
+            </LocationCard>
         </LocationContainer>
-      )}
-    </div>
-  );
-};
+    )
+}
 
 const locationImage = {
   margin: "5px",
