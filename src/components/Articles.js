@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import Moment from "react-moment";
 import {
   ArticleNewsSite,
   ArticleContainer,
@@ -40,7 +41,6 @@ const Articles = (props) => {
   function closeModal() {
     setIsOpen(false);
   }
-  console.log(props.article);
   return (
     <React.Fragment>
       <SingleNewsELement onClick={openModal}>
@@ -71,7 +71,7 @@ const Articles = (props) => {
           </ArticleUrl>
           <HdImg picture={props.article.imageUrl} onClick={closeModal} />
           <ArticleStats>
-            {props.article.publishedAt} <br />
+            <Moment>{props.article.publishedAt}</Moment> <br />
             {props.article.newsSite}
           </ArticleStats>
         </ModalContainer>

@@ -7,6 +7,7 @@ import AllNews from "./AllNews";
 import Astronauts from "./Astronauts";
 import Locations from "./Locations";
 import Gallery from "./Gallery";
+import Events from "./Events";
 import Home from "./Home";
 import Spacecrafts from "./Spacecrafts";
 import { LocationDetails } from "./LocationDetails";
@@ -40,14 +41,14 @@ function Page() {
           />
 
           <Route
-            path="/locations"
-            render={(props) => <Locations {...props} theme={"dark"} />}
+            path="/events"
+            render={(props) => <Events {...props} theme={"dark"} />}
             exact
           />
 
           <Route
-            path="/locations/location/:id"
-            render={(props) => <LocationDetails {...props} theme={"dark"} />}
+            path="/locations"
+            render={(props) => <Locations {...props} theme={"dark"} />}
             exact
           />
 

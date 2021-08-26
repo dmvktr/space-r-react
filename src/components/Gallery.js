@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import styled from "styled-components";
 import GalleryCard from "./GalleryCard";
+import { AstronautsPageText, Error } from "./layout/AstronautElements";
+import { GalleryPageContainer, CardContainer } from "./layout/GalleryElements";
 
 const Gallery = (props) => {
   const url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&count=25";
 
   const [gallery, setGallery] = useState([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     axios
@@ -15,6 +17,7 @@ const Gallery = (props) => {
         setGallery(res.data);
       })
       .catch((error) => {
+        setError(error.message);
         console.error(
           `The request was made and the server responded
         with a status code that falls out of the range of 2xx ` + error.message
@@ -23,25 +26,26 @@ const Gallery = (props) => {
   }, [url]);
 
   return (
-    <CardContainer>
-      {gallery.map((picture) => (
-        <GalleryCard
-          key={picture.title}
-          picture={picture}
-          theme={props.theme}
-        ></GalleryCard>
-      ))}
-    </CardContainer>
+    <GalleryPageContainer>
+      <AstronautsPageText>Gallery</AstronautsPageText>
+      {error ? (
+        <Error>
+          An error occured, while fetching the astronauts information. Please
+          try again later!
+        </Error>
+      ) : (
+        <CardContainer>
+          {gallery.map((picture) => (
+            <GalleryCard
+              key={picture.title}
+              picture={picture}
+              theme={props.theme}
+            ></GalleryCard>
+          ))}
+        </CardContainer>
+      )}
+    </GalleryPageContainer>
   );
 };
-
-const CardContainer = styled.div`
-  display: grid;
-  grid-area: content;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  justify-content: space-between;
-  align-items: center;
-`;
 
 export default Gallery;
