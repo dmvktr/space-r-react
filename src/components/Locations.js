@@ -8,14 +8,13 @@ import { LocationMainContainer,
   LocationPads,
   PadCard } from "./layout/LocationElements";
 import axios from "axios";
+import { AstronautsPageText } from "./layout/AstronautElements";
 
 const Locations = () => {
   const url = 'https://lldev.thespacedevs.com/2.0.0/location/?format=json&limit=3&';
 
   const [locations, setLocations] = useState([]);
   const [error, setError] = useState("");
-
-  const url = "https://lldev.thespacedevs.com/2.2.0/location/?limit=3";
 
   useEffect(() => {
     axios.get(url)
@@ -45,7 +44,7 @@ const Locations = () => {
 
   return (
     <LocationMainContainer>
-      <h3 style={textToTop}>Locations</h3>
+      <AstronautsPageText>Locations</AstronautsPageText>
       {error ? (
         <Error>
           An error occurred while tried to fetch
@@ -89,13 +88,5 @@ const padTextSmall = {
   marginTop: '10px',
   justifyContent: 'center',
 };
-
-const textToTop = {
-  position: 'absolute',
-  top: '8.5vh',
-  left: '45vw',
-  fontSize: 40,
-  color: 'whitesmoke'
-}
 
 export default Locations;

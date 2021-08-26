@@ -6,7 +6,6 @@ export const LocationMainContainer = styled.div`
     justify-content: top;
     align-items: space-around;
     min-width: 100vw;
-    margin-top: 10px;
 `;
 
 export const LocationsContainer = styled.div`
@@ -18,11 +17,12 @@ export const LocationsContainer = styled.div`
 `;
 
 export const LocationContainer = styled.div`
-    border: 2px solid;
+    border: 5px solid;
+    border-color: #96c6ff;
     text-align: center;
     height: 380px;
-    border-radius: 6px;
-    background-color: whitesmoke;
+    border-radius: 10px;
+    background-color: #d0d5db;
     color: #000b45;
 `;
 
