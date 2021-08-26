@@ -9,7 +9,6 @@ import Locations from "./Locations";
 import Gallery from "./Gallery";
 import Events from "./Events";
 import Home from "./Home";
-import { LocationDetails } from "./LocationDetails";
 
 function Page() {
   return (
@@ -42,12 +41,6 @@ function Page() {
           <Route
             path="/locations"
             render={(props) => <Locations {...props} theme={"dark"} />}
-            exact
-          />
-
-          <Route
-            path="/locations/location/:id"
-            render={(props) => <LocationDetails {...props} theme={"dark"} />}
             exact
           />
 

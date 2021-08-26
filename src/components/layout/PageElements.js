@@ -45,25 +45,3 @@ export const SlideContainer = styled.div`
   width: 100vw;
   display: flex;
 `;
-
-export const LocationsContainer = styled.div`
-  grid-area: content;
-  display: flex;
-  border: 1px solid;
-  justify-content: space-around;
-  margin-top: 50px;
-`;
-
-export const LocationContainer = styled.div`
-  border: 2px solid;
-  text-align: left;
-  box-shadow: "0 4px 8px 0 rgba(0,0,0,0.2)";
-  border-radius: 4%;
-`;
-
-export const PadsContainer = styled.div`
-  position: absolute;
-  margin: 20px;
-  padding: 20px;
-  text-align: right;
-`;
