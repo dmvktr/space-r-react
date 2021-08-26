@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const ArticleNewsSite = styled.p`
   color: lightblue;
@@ -34,9 +34,9 @@ export const ModalTitle = styled.h2`
   font-weight: 600;
   font-size: 2rem;
   padding: 15px;
-  background-color: black;
+  background: linear-gradient(180deg, #6b7b83bf, #101115e0 30%, #1d1f307a);
   color: white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4); ;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 `;
 
 export const ArticleStats = styled.div`
@@ -51,6 +51,7 @@ export const ModalContainer = styled.div`
   display: grid;
   grid-template-columns: 50% auto 5%;
   grid-template-rows: 12% 65% 15% 8%;
+
   width: 80vw;
   height: 95vh;
   justify-content: center;
@@ -82,10 +83,16 @@ export const ArticleUrl = styled.a`
   padding: 2%;
   width: 100%;
   height: 100%;
+  background: linear-gradient(152deg, #6b7b83bf, #101115e0 30%, #1d1f307a);
 `;
 
+const ScaleUp = keyframes`
+  0%{transform: scale(1)}
+  100% {transform: scale(1.02)}
+
+`;
 export const SingleNewsELement = styled.div`
-  border-radius: 11px 11px 0 0;
+  border-radius: 11px;
   background-image: url(${(props) => props.picture});
   background-size: cover;
   background-position: center;
@@ -98,6 +105,15 @@ export const SingleNewsELement = styled.div`
   display: grid;
   grid-template-rows: 20% 80%;
   flex: 1;
+  box-shadow: rgb(233 219 219 / 0%) -15px 20px 13px,
+    rgb(167 68 68 / 0%) -12px 13px 6px 0px;
+  transition: box-shadow 0.2s ease-in-out;
+
+  :hover {
+    box-shadow: rgba(0, 0, 0, 0.76) 0px 1px 8px,
+      rgb(150, 150, 150) 0px 0px 0px 8px;
+    animation: ${ScaleUp} 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  }
 `;
 
 export const CloseDiv = styled.div`
