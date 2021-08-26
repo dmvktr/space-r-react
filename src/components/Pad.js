@@ -1,28 +1,30 @@
-import React from "react";
-import { PadsContainer } from "./layout/PageElements";
-import styled from "styled-components";
+import React from 'react';
+import { PadContainer, PadsContainer } from './layout/LocationElements';
 
 export const Pad = (props) => {
-  const { name, wiki_url, map_url, latitude, longitude, total_launch_count } =
-    props.pad;
 
-  return (
-    <PadsContainer>
-      <ImageDiv src={map_url} alt="pad-location-on-google-maps" />
-      <p>
-        For more information about the pad, you can visit the wikipedia site:
-        <a href={wiki_url}>{name}</a>
-      </p>
-      <p>
-        Longitude: {longitude} | Latitude: {latitude}
-      </p>
-      <p>Total launch count: {total_launch_count}</p>
-    </PadsContainer>
-  );
-};
+    const { name, wiki_url, latitude, longitude, total_launch_count } = props.pad;
+    
+    return (
+        <PadsContainer>
+            <PadContainer>
+                <p>You can visit the wikipedia by click on the name:</p>
+                <br/>
+                <a style={anchorStyle} href={wiki_url}>
+                    {name}
+                </a>
+                <br/><br/>
+                <p>Longitude: {longitude}</p>
+                <p>Latitude: {latitude}</p>
+                <br/>
+                <p>Total launch count: {total_launch_count}</p>
+            </PadContainer>
+        </PadsContainer>
+    )
+}
 
-const ImageDiv = styled.div`
-  content: ${(props) => props.src};
-  width: 10vw;
-  height: 10vw;
-`;
+const anchorStyle = {
+    textDecoration: 'none',
+    color: 'white',
+    fontSize: '20px',
+}

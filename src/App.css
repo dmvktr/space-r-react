@@ -26,3 +26,16 @@ video {
 #astronautCard:hover #astronautName::after {
   transform: scaleX(1);
 }
+
+.left {
+  text-align: left !important;
+}
+
+.underline-padding {
+  border-bottom: 2px solid blanchedalmond;
+  padding: 10px;
+}
+
+h5 {
+  padding-bottom: 2vh;
+}

@@ -20,6 +20,7 @@ const Astronauts = (props) => {
   });
   const [error, setError] = useState('');
 
+
   const handleClick = (url) => {
       if(url !== null){
         setUrl(url);
@@ -42,37 +43,33 @@ const Astronauts = (props) => {
     }, [url]);
 
   return (
-      <AstronautMainContainer>
-      <AstronautsPageText>
-        Astronauts
-      </AstronautsPageText>
+    <AstronautMainContainer>
+      <AstronautsPageText>Astronauts</AstronautsPageText>
       {error ? (
-            <Error>
-              An error occured, while fetching the astronauts information. Please try again later!
-            </Error>
-        ) : (
-        <>
-        <Pagination icon={faAngleDoubleLeft} url={astronauts.previous} onClick={handleClick} />
-        <Pagination icon={faAngleDoubleRight} url={astronauts.next} onClick={handleClick} />
+        <Error>
+          An error occured while fetching the astronauts information. Please try
+          again later!
+        </Error>
+      ) : (
         <AstronautCardsMainContainer>
           {astronauts.results.map((astronaut) => (
-          <AstronautCardContainer>
-            <Astronaut
-          key={astronaut.id}
-          name={astronaut.name}
-          picture={astronaut.profile_image_thumbnail}
-          theme={props.theme}
-          dob={astronaut.date_of_birth}
-          nationality={astronaut.nationality}
-          status={astronaut.status.name}
-          bio={astronaut.bio}
-          id="card"></Astronaut>
-        </AstronautCardContainer>
-      ))}
-      </AstronautCardsMainContainer>
-      </>
+            <AstronautCardContainer key={astronaut.id}>
+              <Astronaut
+                key={astronaut.id}
+                name={astronaut.name}
+                picture={astronaut.profile_image_thumbnail}
+                theme={props.theme}
+                dob={astronaut.date_of_birth}
+                nationality={astronaut.nationality}
+                status={astronaut.status.name}
+                bio={astronaut.bio}
+                id="card"
+              ></Astronaut>
+            </AstronautCardContainer>
+          ))}
+        </AstronautCardsMainContainer>
       )}
-      </AstronautMainContainer>
+    </AstronautMainContainer>
   );
 };
 
