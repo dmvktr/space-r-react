@@ -5,8 +5,8 @@ import Astronaut from "./Astronaut";
 import { AstronautMainContainer,
     AstronautCardContainer,
     AstronautCardsMainContainer,
-    AstronautsPageText,
-    Error } from "./layout/AstronautElements";
+    AstronautsPageText } from "./layout/AstronautElements";
+import { Error } from "./layout/ErrorElements";
 
 const Astronauts = (props) => {
   const baseEndpoint = "https://ll.thespacedevs.com/2.2.0/astronaut/";
@@ -48,12 +48,12 @@ const Astronauts = (props) => {
       </AstronautsPageText>
       {error ? (
             <Error>
-              An error occured, while fetching the astronauts information. Please try again later!
+              An error occured while fetching the astronauts information. Please try again later!
             </Error>
         ) : (
         <AstronautCardsMainContainer>
           {astronauts.results.map((astronaut) => (
-          <AstronautCardContainer>
+          <AstronautCardContainer key={astronaut.id}>
             <Astronaut
           key={astronaut.id}
           name={astronaut.name}
