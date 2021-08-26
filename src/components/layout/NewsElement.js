@@ -91,6 +91,7 @@ const ScaleUp = keyframes`
   100% {transform: scale(1.02)}
 
 `;
+
 export const SingleNewsELement = styled.div`
   border-radius: 11px;
   background-image: url(${(props) => props.picture});
