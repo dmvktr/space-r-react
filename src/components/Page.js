@@ -8,6 +8,7 @@ import Astronauts from "./Astronauts";
 import Locations from "./Locations";
 import Gallery from "./Gallery";
 import Home from "./Home";
+import Spacecrafts from "./Spacecrafts";
 import { LocationDetails } from "./LocationDetails";
 
 function Page() {
@@ -27,6 +28,12 @@ function Page() {
             exact
           />
           <Route
+            path="/spacecrafts"
+            render={(props) => <Spacecrafts {...props} theme={"dark"} />}
+            exact
+          />
+
+            <Route
             path="/astronauts"
             render={(props) => <Astronauts {...props} theme={"dark"} />}
             exact
