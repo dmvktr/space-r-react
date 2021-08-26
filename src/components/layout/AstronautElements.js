@@ -90,12 +90,6 @@ export const CardBio = styled.div`
     letter-spacing: 1px;
 `;
 
-export const Error = styled.div`
-    font-size: 30px;
-    font-weight: 450;
-    color: red;
-`
-
 export const AstronautName = styled.div`
     --elem-width: 173px;
     font-size: 25px;
