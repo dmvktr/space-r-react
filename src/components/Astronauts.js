@@ -2,37 +2,33 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Astronaut from "./Astronaut";
+import Pagination from "./Pagination";
 import { AstronautMainContainer,
     AstronautCardContainer,
     AstronautCardsMainContainer,
     AstronautsPageText,
-    Error,
-    PaginationRight,
-    PaginationLeft } from "./layout/AstronautElements";
+    Error } from "./layout/AstronautElements";
 import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 
 
 const Astronauts = (props) => {
-  const baseEndpoint = "https://ll.thespacedevs.com/2.2.0/astronaut/";
-  const fetchLimit = 2;
-  const offset = 0;
-
+  const [url, setUrl] = useState("https://lldev.thespacedevs.com/2.2.0/astronaut/?limit=2");
   const [astronauts, setAstronauts] = useState({
     next: null,
     previous: null,
     results: [],
   });
   const [error, setError] = useState('');
-  
 
-
-  const assembleTargetURL = () => {
-    return `${baseEndpoint}?format=json&limit=${fetchLimit}&offset=${offset}`;
-  };
+  const handleClick = (url) => {
+      if(url !== null){
+        setUrl(url);
+      } 
+  }
 
   useEffect(() => {
     axios
-        .get(assembleTargetURL())
+        .get(url)
         .then((res) => {
           setAstronauts({
             next: res.data.next,
@@ -43,7 +39,7 @@ const Astronauts = (props) => {
         .catch((err) => {
           setError(err.message)
         })
-    }, []);
+    }, [url]);
 
   return (
       <AstronautMainContainer>
@@ -56,8 +52,8 @@ const Astronauts = (props) => {
             </Error>
         ) : (
         <>
-        <PaginationLeft icon={faAngleDoubleLeft} />
-        <PaginationRight icon={faAngleDoubleRight} />
+        <Pagination icon={faAngleDoubleLeft} url={astronauts.previous} onClick={handleClick} />
+        <Pagination icon={faAngleDoubleRight} url={astronauts.next} onClick={handleClick} />
         <AstronautCardsMainContainer>
           {astronauts.results.map((astronaut) => (
           <AstronautCardContainer>
