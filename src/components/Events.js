@@ -8,7 +8,7 @@ import {
 } from "./layout/EventsElements.js";
 
 const Events = (props) => {
-  const url = "https://ll.thespacedevs.com/2.0.0/event/?limit=25";
+  const url = "https://lldev.thespacedevs.com/2.2.0/event/?limit=25";
 
   const [events, setEvents] = useState({
     next: null,

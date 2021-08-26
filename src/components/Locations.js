@@ -1,33 +1,36 @@
 import React, { useState, useEffect } from "react";
 import { Location } from "./Location";
-import { LocationMainContainer, LocationsContainer, Error } from "./layout/LocationElements";
+import {
+  LocationMainContainer,
+  LocationsContainer,
+  Error,
+} from "./layout/LocationElements";
 import axios from "axios";
 
 const Locations = () => {
-
   const [locations, setLocations] = useState([]);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
+
+  const url = "https://lldev.thespacedevs.com/2.2.0/location/?limit=3";
 
   useEffect(() => {
-    axios.get('https://ll.thespacedevs.com/2.0.0/location/?format=json&limit=3&')
-      .then(response => setLocations(response.data.results))
-      .catch(err => setError(err.message));
-  }, [])
+    axios
+      .get(url)
+      .then((response) => setLocations(response.data.results))
+      .catch((err) => setError(err.message));
+  }, []);
 
   return (
     <LocationMainContainer>
       {error ? (
-        <Error>
-          An error occurred while trying to fetch
-        </Error>
-        ) : (
-          <LocationsContainer>
-            {locations.map(location => (
-              <Location key={location.id} location={location}/>
-            ))}
-          </LocationsContainer>
-        )
-      }
+        <Error>An error occurred while trying to fetch</Error>
+      ) : (
+        <LocationsContainer>
+          {locations.map((location) => (
+            <Location key={location.id} location={location} />
+          ))}
+        </LocationsContainer>
+      )}
     </LocationMainContainer>
   );
 };
