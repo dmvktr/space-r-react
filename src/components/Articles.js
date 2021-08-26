@@ -11,6 +11,7 @@ import {
   ModalContainer,
   SingleNewsELement,
   CloseButton,
+  CloseDiv,
   HdImg,
 } from "./layout/NewsElement";
 
@@ -22,11 +23,11 @@ const customStyles = {
     bottom: "auto",
     margin: "0",
     transform: "translate(-50%, -50%)",
-    background: "rgb(64,64,64)",
+    background: "#0c0f1a",
     backgroundRepeat: "no-repeat",
     backgroundSize: "50%",
     backgroundPosition: "center",
-    borderRadius: "30px",
+    borderRadius: "20px",
   },
 };
 const Articles = (props) => {
@@ -57,7 +58,10 @@ const Articles = (props) => {
       >
         <ModalContainer>
           <ModalTitle>{props.article.title}</ModalTitle>
-          <CloseButton onClick={closeModal}>X</CloseButton>
+          <CloseDiv>
+            <CloseButton onClick={closeModal}>X</CloseButton>
+          </CloseDiv>
+
           <ArticleSummary>{props.article.summary}</ArticleSummary>
           <ArticleUrl href={props.article.url}>
             Source:
