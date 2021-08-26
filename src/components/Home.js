@@ -62,9 +62,16 @@ const Home = () => {
         <SlideMainContainer>
           <Content image={code} />
         </SlideMainContainer>
+        <ButtonContainer>
+          <ScrollToTopButton
+            onClick={scrollToTop}
+            icon={faArrowAltCircleUp}
+          ></ScrollToTopButton>
+        </ButtonContainer>
         <SlideMainContainer>
           <PictureElement image={Background4} />
         </SlideMainContainer>
+
         <SlideMainContainer>
           <Content image={reaction} />
         </SlideMainContainer>
