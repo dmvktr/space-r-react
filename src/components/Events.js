@@ -21,7 +21,6 @@ const Events = (props) => {
     axios
       .get(url)
       .then((res) => {
-        console.log(res.data.results);
         setEvents({
           next: res.data.next,
           previous: res.data.previous,
