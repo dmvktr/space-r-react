@@ -59,6 +59,13 @@ export const CardImageContainer = styled.div`
   filter: drop-shadow(1px 6px 17px rgba(153, 172, 199, 0.7));
 `;
 
+export const AstronautImage = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    content:url(${(props) => props.picture});
+`;
+
 export const CardPersonalDetail = styled.div`
   color: white;
   color: ${(props) => props.color};

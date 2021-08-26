@@ -22,6 +22,10 @@ function NavBar() {
           Gallery
         </NavbarOption>
 
+        <NavbarOption to="/spacecrafts" title="Spacecrafts" theme={""}>
+          Spacecrafts
+        </NavbarOption>
+
         <NavbarOption to="/astronauts" title="Astronauts" theme={""}>
           Astronauts
         </NavbarOption>
