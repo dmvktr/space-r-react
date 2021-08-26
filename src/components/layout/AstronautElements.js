@@ -42,19 +42,28 @@ export const AstronautCardContainer = styled.div`
 `;
 
 export const CardTop = styled.div`
+    min-height: 80px;
     height: 80px;
     background: #d2d2d2;
     border-radius: 11px 11px 0 0;
+    position: relative;
 `;
+
+
 export const CardImageContainer = styled.div`
-    width: 150px;
-    height: 150px;
+    --card-width: 173px;
+    --card-top-height: 80px;
+    --img-width-height: 120px;
+    position: absolute;
+    left: 50%;
+    top: calc(var(--card-top-height));
+    margin-top: calc(-1 * var(--img-width-height) / 2);
+    width: var(--img-width-height);
+    margin-left: calc(-1 * var(--img-width-height) / 2);
+    height: var(--img-width-height);
     border-radius: 50%;
     background: white;
     overflow: hidden;
-    align-self: center;
-    position: relative;
-    top: -7vh;
     -webkit-filter: drop-shadow(1px 6px 17px rgba(153,172,199,0.7));
     filter: drop-shadow(1px 6px 17px rgba(153,172,199,0.7));
 `;
@@ -83,20 +92,23 @@ export const CardBio = styled.div`
     background-color: white;
     color: black;
     margin-bottom: 2px;
-    min-height: 10vh;
+    min-height: 20%;
+    max-height: 30%;
+    height: 100%;
     padding: 5px;
     margin: 7vh 3vh 3vh 3vh;
     max-width: fit-content;
     padding: 15px;
     font-weight: 450;
     letter-spacing: 1px;
+    overflow: hidden;
 `;
 
 export const Error = styled.div`
     font-size: 30px;
     font-weight: 450;
     color: red;
-`
+`;
 
 export const AstronautName = styled.div`
     --elem-width: 173px;
@@ -123,20 +135,4 @@ export const AstronautName = styled.div`
     ${Card}:hover{
         transform: scaleX(1);
     }
-`;
-
-export const PaginationRight = styled(FontAwesomeIcon)`
-    width: 200px !important;
-    color: white;
-    height: 50px;
-    position: absolute;
-    right: 0;
-`;
-
-export const PaginationLeft = styled(FontAwesomeIcon)`
-    width: 200px !important;
-    color: white;
-    height: 50px;
-    position: absolute;
-    left: 0;
 `;
