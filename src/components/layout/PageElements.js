@@ -28,7 +28,7 @@ export const NewsContainer = styled.div`
   color: black;
   background-color: #0c0f1a;
   padding: 2vw;
-  gap: 1vw;
+  gap: 2vh 2vw;
 `;
 
 export const VideoContainer = styled.div`
