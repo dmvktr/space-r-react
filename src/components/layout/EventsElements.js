@@ -23,6 +23,12 @@ const ScaleUp = keyframes`
 
 `;
 
+const ScaleDown = keyframes`
+  0%{transform: scale(1.02)}
+  100% {transform: scale(1)}
+
+`;
+
 export const SingleEventContainer = styled.div`
   display: grid;
   grid-template-columns: 1.4fr 0.6fr 1fr 1fr;
@@ -33,6 +39,8 @@ export const SingleEventContainer = styled.div`
   height: 100%;
   border-radius: 20px;
   color: black;
+  transition: ${ScaleDown} 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -webkit-transition: ${ScaleDown} 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   grid-template-areas:
     "picture date date id"
     "picture title title title"
@@ -40,6 +48,8 @@ export const SingleEventContainer = styled.div`
     "picture location url url";
 
   :hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
     animation: ${ScaleUp} 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   }
   cursor: pointer;
