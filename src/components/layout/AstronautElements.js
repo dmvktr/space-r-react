@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 
 export const AstronautsPageText = styled.div`
     min-width: 90vw;
@@ -135,4 +136,13 @@ export const AstronautName = styled.div`
     ${Card}:hover{
         transform: scaleX(1);
     }
+`;
+
+export const PaginationIcon = styled(FontAwesomeIcon)`
+    width: 200px !important;
+    color: white;
+    height: 50px;
+    position: absolute;
+    right: ${(props)=> props.icon === faAngleDoubleRight ? 0: 'unset'};
+    left: ${(props)=> props.icon === faAngleDoubleLeft ? 0: 'unset'};
 `;
