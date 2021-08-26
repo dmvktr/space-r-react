@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Moment from "react-moment";
 import Modal from "react-modal";
+import ReactPlayer from "react-player";
 
 import {
   DateContainer,
@@ -50,7 +51,9 @@ const Event = (props) => {
         <DateContainer>
           <Moment>{props.event.date}</Moment>
         </DateContainer>
-        <EventUrl href={props.event.url}>{props.event.url}</EventUrl>
+        <EventUrl href={props.event.video_url}>
+          {props.event.video_url}
+        </EventUrl>
       </SingleEventContainer>
       <Modal
         isOpen={modalIsOpen}
@@ -59,7 +62,7 @@ const Event = (props) => {
         contentLabel="Modal"
         onClick={closeModal}
       >
-        <p>{props.event.video_url}</p>
+        <ReactPlayer url={props.event.video_url} />
       </Modal>
     </React.Fragment>
   );
