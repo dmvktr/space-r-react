@@ -41,6 +41,7 @@ export const CardTop = styled.div`
 export const AstronautCardContainer = styled.div` 
   position: relative;  
   min-height: fit-content;
+  border-radius: 11px;
   background-color: #0c0f1a;
   box-shadow: rgb(233 219 219 / 0%) -18px 20px 13px,
     rgb(167 68 68 / 0%) -14px 13px 6px 0px;
@@ -112,7 +113,7 @@ export const CardBio = styled.div`
     padding: 15px;
     font-weight: 450;
     letter-spacing: 1px;
-    overflow: hidden;
+    overflow: auto;
 `;
 
 export const Error = styled.div`
