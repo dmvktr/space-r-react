@@ -104,9 +104,6 @@ export const CardBio = styled.div`
     background-color: white;
     color: black;
     margin-bottom: 2px;
-    min-height: 20%;
-    max-height: 30%;
-    height: 100%;
     padding: 5px;
     margin: 7vh 3vh 3vh 3vh;
     max-width: fit-content;
