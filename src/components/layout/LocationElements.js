@@ -17,36 +17,46 @@ export const LocationsContainer = styled.div`
 `;
 
 export const LocationContainer = styled.div`
-    border: 2px solid;
+    border: 5px solid;
+    border-color: #96c6ff;
     text-align: center;
-    color: white;
     height: 380px;
-    border-radius: 1px;
+    border-radius: 10px;
+    background-color: #d0d5db;
+    color: #000b45;
 `;
 
 export const LocationCard = styled.div`
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-    alignItems: 'center',
+    display: 'flex';
+    flexDirection: 'column';
+    justifyContent: 'space-around';
+    alignItems: 'center';
 `;
 
-export const PadsContainer = styled.div`
-position: absolute;
-margin: 20px;
-padding: 20px;
-text-align: right;
-color: white;
-`;
-
-export const PadContainer = styled.div`
-    max-width: 450px
+export const LocationPads = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: left;
-    align-items: space-around;
-    text-align: left;
-    color: white;
+    align-items: space-between;
+`;
+
+export const PadContainer = styled.div`
+    color: whitesmoke;
+`;
+
+export const PadsContainer = styled.div`
+    min-height: 30px;
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    margin: 20px;
+`;
+
+export const PadCard = styled.div`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 32vh;
 `;
 
 export const Error = styled.div`
@@ -57,4 +67,3 @@ export const Error = styled.div`
     font-weight: 450;
     color: red;
 `;
-
