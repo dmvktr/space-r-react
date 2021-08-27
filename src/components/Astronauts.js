@@ -51,9 +51,10 @@ const Astronauts = (props) => {
           again later!
         </Error>
       ) : (
+        <>
+        <Pagination icon={faAngleDoubleLeft} url={astronauts.previous} onClick={handleClick} />
+        <Pagination icon={faAngleDoubleRight} url={astronauts.next} onClick={handleClick} />
         <AstronautCardsMainContainer>
-          <Pagination icon={faAngleDoubleLeft} url={astronauts.previous} onClick={handleClick} />
-          <Pagination icon={faAngleDoubleRight} url={astronauts.next} onClick={handleClick} />
           {astronauts.results.map((astronaut) => (
             <AstronautCardContainer key={astronaut.id}>
               <Astronaut
@@ -70,6 +71,7 @@ const Astronauts = (props) => {
             </AstronautCardContainer>
           ))}
         </AstronautCardsMainContainer>
+      </>
       )}
     </AstronautMainContainer>
   );
