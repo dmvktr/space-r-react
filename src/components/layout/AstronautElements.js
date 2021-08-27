@@ -35,10 +35,10 @@ export const CardTop = styled.div`
   height: 80px;
   background: #d2d2d2;
   border-radius: 11px 11px 0 0;
-  position: relative;
 `;
     
-export const AstronautCardContainer = styled.div`    
+export const AstronautCardContainer = styled.div` 
+  position: relative;  
   min-height: fit-content;
   background-color: #0c0f1a;
   box-shadow: rgb(233 219 219 / 0%) -18px 20px 13px,
