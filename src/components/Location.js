@@ -14,7 +14,6 @@ export const Location = (props) => {
             <LocationCard>
                 <h3>{name}</h3>
                 <h4>{country_code}</h4>
-                <br/>
                 <p>Launches: {total_launch_count} Landings: {total_landing_count}</p>
             </LocationCard>
         </LocationContainer>
