@@ -52,12 +52,13 @@ export const Title = styled.h4`
   opacity: 0;
   text-align: center;
   position: relative;
-  height: 1em;
-  top: -30px;
+  height: 100%;
+  min-height: 1em;
+  max-height: 2em;
+  top: calc(-1 * 15vh / 2);
   z-index: 40;
   font-size: 20px;
   color: white;
-  overflow: hidden;
 `;
 
 export const Card = styled.div`
