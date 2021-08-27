@@ -33,10 +33,11 @@ export const AstronautCardsMainContainer = styled.div`
 
 export const CardTop = styled.div`
   height: 80px;
+  min-height: 80px;
   background: #d2d2d2;
   border-radius: 11px 11px 0 0;
 `;
-    
+
 export const AstronautCardContainer = styled.div` 
   position: relative;  
   min-height: fit-content;
@@ -56,6 +57,7 @@ export const CardImageContainer = styled.div`
     --card-top-height: 80px;
     --img-width-height: 120px;
     position: absolute;
+    border: 5px solid #d2d2d2;
     left: 50%;
     top: calc(var(--card-top-height));
     margin-top: calc(-1 * var(--img-width-height) / 2);
@@ -131,7 +133,7 @@ export const AstronautName = styled.div`
   ::after {
     transform: scaleX(0);
     content: "";
-    height: 3px;
+    height: 2px;
     background: var(--grey-card-top-primary);
     width: calc(var(--elem-width) + var(--elem-width));
     position: absolute;
@@ -152,6 +154,6 @@ export const PaginationIcon = styled(FontAwesomeIcon)`
     color: white;
     height: 50px;
     position: absolute;
-    right: ${(props)=> props.icon === faAngleDoubleRight ? 0: 'unset'};
-    left: ${(props)=> props.icon === faAngleDoubleLeft ? 0: 'unset'};
+    right: ${(props) => props.icon === faAngleDoubleRight ? 0 : 'unset'};
+    left: ${(props) => props.icon === faAngleDoubleLeft ? 0 : 'unset'};
 `;
