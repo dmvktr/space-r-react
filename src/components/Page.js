@@ -11,13 +11,13 @@ import Events from "./Events";
 import Home from "./Home";
 import Spacecrafts from "./Spacecrafts";
 import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme, GlobalStyles } from "./context/Theme.js";
+import { lightTheme, darkTheme, alien, GlobalStyles } from "./context/Theme.js";
 
 const Page = (props) => {
   const [currentTheme, setCurrentTheme] = useState("light");
 
   return (
-    <ThemeProvider theme={currentTheme === "light" ? lightTheme : darkTheme}>
+    <ThemeProvider theme={currentTheme === "light" ? lightTheme : currentTheme === "dark"? darkTheme : alien}>
       <GlobalStyles />
       <Router>
         <MainContainer>
