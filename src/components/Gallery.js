@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import GalleryCard from "./GalleryCard";
-import { AstronautsPageText, Error } from "./layout/AstronautElements";
+import {Error} from "./layout/ErrorElements"
+import {PageTitle} from "./layout/PageElements"
 import { GalleryPageContainer, CardContainer } from "./layout/GalleryElements";
 
 const Gallery = (props) => {
@@ -27,7 +28,7 @@ const Gallery = (props) => {
 
   return (
     <GalleryPageContainer>
-      <AstronautsPageText>Gallery</AstronautsPageText>
+      <PageTitle>Gallery</PageTitle>
       {error ? (
         <Error>
           An error occured, while fetching the astronauts information. Please
