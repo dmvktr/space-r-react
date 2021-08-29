@@ -16,14 +16,16 @@ export const Logo = styled.div`
   margin-left: 20px;
   height: 65px;
   background-image: url(${(props) => props.theme.logo});
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   text-align: center;
 `;
 
 export const NavbarOption = styled(Link)`
-  font-size: 20px;
-  font-weight: 370;
-  color: ${(props) => props.theme.textColor};
+  font-size: 22px;
+  font-weight: 470;
+  color: ${(props) => props.theme.headerFontColor};
   -webkit-text-stroke: ${(props) => props.theme.textStroke};
   letter-spacing: 1px;
 `;
