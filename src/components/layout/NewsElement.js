@@ -24,7 +24,7 @@ export const ArticleTitle = styled.h3`
   border-radius: 10 10 0 0;
   padding: 20px;
   text-align: center;
-  color: black;
+  color: ${(props) => props.theme.textColor};
 `;
 
 export const ModalTitle = styled.h2`
