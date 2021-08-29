@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Event from "./Event";
 import axios from "axios";
-import { AstronautsPageText, Error } from "./layout/AstronautElements";
+import {Error} from "./layout/ErrorElements"
+import {PageTitle} from "./layout/PageElements"
+
 import {
   EventsPageContainer,
   EventsContainer,
@@ -38,7 +40,7 @@ const Events = (props) => {
 
   return (
     <EventsPageContainer>
-      <AstronautsPageText>Events</AstronautsPageText>
+      <PageTitle>Events</PageTitle>
       {error ? (
         <Error>
           An error occured, while fetching the astronauts information. Please
