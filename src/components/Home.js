@@ -22,7 +22,6 @@ import stats from "../../src/static/slides/stats.png";
 import code from "../../src/static/slides/code.png";
 import reaction from "../../src/static/slides/reaction.png";
 import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Home = () => {
   const scrollToTop = () => {
