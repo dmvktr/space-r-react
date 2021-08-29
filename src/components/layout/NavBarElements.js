@@ -24,6 +24,6 @@ export const NavbarOption = styled(Link)`
   font-size: 20px;
   font-weight: 370;
   color: ${(props) => props.theme.textColor};
-  -webkit-text-stroke: 1px #100d80;
+  -webkit-text-stroke: ${(props) => props.theme.textStroke};
   letter-spacing: 1px;
 `;

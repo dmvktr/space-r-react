@@ -1,28 +1,92 @@
 import { createGlobalStyle } from "styled-components";
 import BlueLogo from "../../static/img/logo/logo_darkblue_transparent.png";
-import YellowLogo from "../../static/img/logo/logo_yellow_transparent.png";
+// import YellowLogo from "../../static/img/logo/logo_yellow_transparent.png";
+// import SpacerLogo from "../../static/img/logo/spacer_logo.png";
+import LightBlueLogo from "../../static/img/logo/logo_lightblue_transparent.png";
+
+
+// background-color: ${(props) => props.theme.bodyColor};
 
 export const lightTheme = {
   logo: BlueLogo,
   textColor: "black",
   headerBgColor: "white",
   headerFontColor: "black",
-  borderColor: "black"
+  bodyColor: "#0c0f1a;",
+  borderColor: "black",
+  textStroke: "1px #100d80",
+  pageTitleColor: "white",
+  article : {
+    articleBgColor: "#d2d2d2",
+    articleBorderColor: "white",
+    subTitleColor: "lightblue;",
+  },
+  modal : {
+    modalSummaryBg: "#d2d2d2",
+    modalTitleFontColor: "#d2d2d2",
+    modalSummaryFontColor: "black",
+    modalbackground: "linear-gradient(180deg, #6b7b83bf, #101115e0 30%, #1d1f307a)",
+    modalFontcolor: "white",
+    modalBorder : "1px solid rgba(0, 0, 0, 0.4)",
+
+  },
+
 
 };
 
 export const darkTheme = {
-  logo: YellowLogo,
+  logo: LightBlueLogo,
   textColor: "white",
   headerBgColor: "black",
   headerFontColor: "white",
-  borderColor: "white"
+  bodyColor: "linear-gradient(to bottom, rgb(10, 10, 30), rgb(11, 00, 30))",
+  borderColor: "white",
+  textStroke: "0.3px lightblue",
+  pageTitleColor: "white",
+  article : {
+    articleBgColor: "#1f4287",
+    articleBorderColor: "#002651",
+    subTitleColor: "#ff304f",
+  },
+  modal : {
+    modalSummaryBg: "black",
+    modalTitleFontColor: "#ff304f",
+    modalSummaryFontColor: "white",
+    modalbackground: "linear-gradient(180deg, #071e3d, #101115e0 50%, #1d1f307a)",
+    modalFontcolor: "#1f4287",
+    modalBorder : "3px solid rgba(100, 100, 100, 0.35)",
+
+  },
+
 };
+
+// headerBgImage: "url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0MCAyNDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0MCAyNDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxyZWN0IHg9IjEwNiIgeT0iOTAiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiLz48cmVjdCB4PSI3NCIgeT0iNjMiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIyMyIgeT0iNjYiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSI1MCIgeT0iMTEwIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iNjMiIHk9IjEyOCIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjQ1IiB5PSIxNDkiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSI5MiIgeT0iMTUxIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iNTgiIHk9IjgiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxNDciIHk9IjMzIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMiIgaGVpZ2h0PSIyIi8+PHJlY3QgeD0iOTEiIHk9IjQzIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iMTY5IiB5PSIyOSIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjE4MiIgeT0iMTkiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxNjEiIHk9IjU5IiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iMTM4IiB5PSI5NSIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjE5OSIgeT0iNzEiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIzIiBoZWlnaHQ9IjMiLz48cmVjdCB4PSIyMTMiIHk9IjE1MyIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjIiIGhlaWdodD0iMiIvPjxyZWN0IHg9IjEyOCIgeT0iMTYzIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iMjA1IiB5PSIxNzQiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxNTIiIHk9IjIwMCIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjUyIiB5PSIyMTEiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiLz48cmVjdCB5PSIxOTEiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxMTAiIHk9IjE4NCIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjwvc3ZnPg==)",
+
+
 
 export const GlobalStyles = createGlobalStyle`
 :root {
   --green-primary: rgb(7, 112, 89);
   --grey-card-top-primary: #d2d2d2;
+}
+body {
+  background: ${(props) => props.theme.bodyColor};
+  overflow-x: hidden;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 * {
