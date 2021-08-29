@@ -4,16 +4,16 @@ import Moment from "react-moment";
 import {
   ArticleNewsSite,
   ArticleContainer,
-  ArticleSummary,
+  ModalArticleSummary,
   ArticleTitle,
-  ArticleStats,
-  ArticleUrl,
+  ModalArticleStats,
+  ModalArticleUrl,
   ModalTitle,
   ModalContainer,
   SingleNewsELement,
-  CloseButton,
-  CloseDiv,
-  HdImg,
+  ModalCloseButton,
+  ModalCloseDiv,
+  ModalHdImg,
 } from "./layout/NewsElement";
 
 const customStyles = {
@@ -41,6 +41,8 @@ const Articles = (props) => {
   function closeModal() {
     setIsOpen(false);
   }
+
+
   return (
     <React.Fragment>
       <SingleNewsELement onClick={openModal}>
@@ -58,22 +60,22 @@ const Articles = (props) => {
       >
         <ModalContainer>
           <ModalTitle>{props.article.title}</ModalTitle>
-          <CloseDiv>
-            <CloseButton onClick={closeModal}>X</CloseButton>
-          </CloseDiv>
+          <ModalCloseDiv>
+            <ModalCloseButton onClick={closeModal}>X</ModalCloseButton>
+          </ModalCloseDiv>
 
-          <ArticleSummary>{props.article.summary}</ArticleSummary>
-          <ArticleUrl href={props.article.url}>
+          <ModalArticleSummary>{props.article.summary}</ModalArticleSummary>
+          <ModalArticleUrl href={props.article.url}>
             Source:
             <br />
             <br />
             {props.article.url}
-          </ArticleUrl>
-          <HdImg picture={props.article.imageUrl} onClick={closeModal} />
-          <ArticleStats>
+          </ModalArticleUrl>
+          <ModalHdImg picture={props.article.imageUrl} onClick={closeModal} />
+          <ModalArticleStats>
             <Moment>{props.article.publishedAt}</Moment> <br />
             {props.article.newsSite}
-          </ArticleStats>
+          </ModalArticleStats>
         </ModalContainer>
       </Modal>
     </React.Fragment>
