@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import { NavContainer } from "./layout/NavBarElements";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import { NavbarOption, Logo } from "./layout/NavBarElements";
-import {
-  faSun,
-  faMoon,
-  faUserAstronaut,
-  faCompressArrowsAlt,
-} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faAtom, faMoon, faSun, faUserSecret} from "@fortawesome/free-solid-svg-icons";
 const NavBar = (props) => {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -24,18 +19,21 @@ const NavBar = (props) => {
     switch (choosenTheme) {
       case "light":
         props.setTheme("light");
+        dropMenu()
         break;
       case "dark":
         props.setTheme("dark");
+        dropMenu()
         break;
       case "alien":
         props.setTheme("alien");
+        dropMenu()
         break;
       default:
         props.setTheme("light");
+        dropMenu()
     }
   };
-
   return (
     <NavContainer>
       <NavbarOption to="/" title="Home">
@@ -70,8 +68,7 @@ const NavBar = (props) => {
         </NavbarOption>
       </Links>
       <ThemeChangeDiv>
-        <ThemeChangeButton icon={faCompressArrowsAlt} onClick={dropMenu}>
-          Change Theme
+        <ThemeChangeButton icon={faUserSecret} onClick={dropMenu}>
         </ThemeChangeButton>
         {showMenu ? (
           <DropdownMenu>
@@ -84,7 +81,7 @@ const NavBar = (props) => {
               Dark{" "}
             </ThemeButton>
             <ThemeButton
-              icon={faUserAstronaut}
+              icon={faAtom}
               onClick={() => changeTheme("alien")}
             >
               {" "}
@@ -97,39 +94,49 @@ const NavBar = (props) => {
   );
 };
 
-const ThemeChangeButton = styled.div`
-  display: flex;
-  width: 60px;
-  height: 60px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: black;
+const ThemeChangeButton = styled(FontAwesomeIcon)`
+  font-size: 3rem;
+  width: 3rem;
+  height: 3rem;
   cursor: pointer;
-  border-radius: 20px;
-  border: 1px solid black;
+  color: ${(props) => props.theme.headerFontColor};
 `;
+
 const ThemeButton = styled(FontAwesomeIcon)`
   width: 30px !important;
   height: 50px;
-  color: white;
-  outline: red;
-  -webkit-text-stroke: 1px solid red;
+  color: ${(props) => props.theme.headerFontColor};;
   cursor: pointer;
 `;
+
+const dropAnim = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 const DropdownMenu = styled.div`
   position: absolute;
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
-  top: 50px;
-  width: 80px;
+  top: 4rem; 
+  z-index: 100;
+  padding:10px;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${(props) => props.theme.headerBgColor};
   border: 2px solid black;
   border-radius: 10px;
-  color: red;
+  animation: ${dropAnim} 300ms ease-in-out forwards ;
 `;
+
+
 const ThemeChangeDiv = styled.div`
   position: relative;
   display: flex;
