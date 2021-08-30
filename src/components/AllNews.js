@@ -37,10 +37,10 @@ const AllNews = (props) => {
         <NewsContainer>
           {news.map((article) => (
             <Articles
-              key={article.id}
-              article={article}
-              theme={props.theme}
-            ></Articles>
+    key={article.id}
+    article={article}
+    theme={props.theme}
+    />
           ))}
         </NewsContainer>
       )}
