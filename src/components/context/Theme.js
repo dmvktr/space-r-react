@@ -8,7 +8,6 @@ import {
   faMoon,
     faAtom
 } from "@fortawesome/free-solid-svg-icons";
-
 // background-color: ${(props) => props.theme.bodyColor};
 
 export const lightTheme = {
@@ -33,7 +32,17 @@ export const lightTheme = {
     modalbackground: "linear-gradient(180deg, #6b7b83bf, #101115e0 30%, #1d1f307a)",
     modalFontcolor: "white",
     modalBorder : "1px solid rgba(0, 0, 0, 0.4)",
-
+  },
+  event : {
+    singleEventContainer: "white",
+    singleEventContainerBorder: "2px solid black",
+    singleEventContainerTextColor: "black",
+    titleColor: "rgb(60 72 88)",
+    descriptionColor: "rgb(153 153 153)",
+    locationColor: "white",
+    locationBgColor: "rgb(33 150 243)",
+    eventIdColor: "cornflowerblue",
+    thumbnailImgBorder: "2px solid rgba(0, 0, 0, 0.3)",
   },
 
 
@@ -61,7 +70,17 @@ export const darkTheme = {
     modalbackground: "linear-gradient(180deg, #071e3d, #101115e0 50%, #1d1f307a)",
     modalFontcolor: "#1f4287",
     modalBorder : "3px solid rgba(100, 100, 100, 0.35)",
-
+  },
+  event : {
+    singleEventContainer: "black",
+    singleEventContainerBorder: "2px solid white",
+    singleEventContainerTextColor: "#ff304f",
+    titleColor: "#1f4287",
+    descriptionColor: "white",
+    locationColor: "#ff304f",
+    locationBgColor: "#002651",
+    eventIdColor: "cornflowerblue",
+    thumbnailImgBorder: "4px solid rgba(100, 0, 0, 0.5)",
   },
 
 };
@@ -88,9 +107,18 @@ export const alien = {
     modalbackground: "linear-gradient(180deg, #17b978, #83e85a 50%, #83e85a)",
     modalFontcolor: "#1f4287",
     modalBorder : "3px solid rgba(100, 100, 100, 0.35)",
-
   },
-
+  event : {
+    singleEventContainer: "#1f4287",
+    singleEventContainerBorder: "2px solid black",
+    singleEventContainerTextColor: "#17b978",
+    titleColor: "#a7ff83",
+    descriptionColor: "rgb(153 153 153)",
+    locationColor: "#ff304f",
+    locationBgColor: "rgb(33 150 243)",
+    eventIdColor: "#ff304f",
+    thumbnailImgBorder: "2px solid rgba(0, 0, 0, 0.3)",
+  },
 };
 
 
@@ -126,7 +154,12 @@ code {
   box-sizing: border-box;
   text-decoration: none;
 }
-
+a:active,
+a:link,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
 video {
   right: 0;
   bottom: 0;
