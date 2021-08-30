@@ -1,11 +1,30 @@
 import styled, { keyframes } from "styled-components";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const ScaleUp = keyframes`
   0%{transform: scale(1)}
   100% {transform: scale(1.02)}
 
 `;
 
+export const ModalCustomStyles = {
+    content: {
+        top: "50%",
+        left: "50%",
+        right: "auto",
+        bottom: "auto",
+        margin: "0",
+        transform: "translate(-50%, -50%)",
+        background: "#0c0f1a",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "50%",
+        backgroundPosition: "center",
+        borderRadius: "20px",
+        border: "3px solid white",
+        padding: "10px"
+    },
+};
 export const SingleNewsELement = styled.div`
   border-radius: 11px;
   background-image: url(${(props) => props.picture});
@@ -42,8 +61,9 @@ export const ArticleNewsSite = styled.p`
 export const ArticleTitle = styled.h3`
   height: 80px;
   background: ${(props) => props.theme.article.articleBgColor};
-  border-radius: 10 10 0 0;
-  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  padding: 0.3rem;
+  overflow: hidden;
   text-align: center;
   color: ${(props) => props.theme.textColor};
 `;
@@ -65,7 +85,7 @@ export const ModalArticleSummary = styled.div`
   background: ${(props) => props.theme.modal.modalSummaryBg};
   color: ${(props) => props.theme.modal.modalSummaryFontColor};
   font-weight: 600;
-  padding: 40px;
+  padding: 30px;
   font-size: 1.5rem;
 `;
 
@@ -73,9 +93,10 @@ export const ModalArticleSummary = styled.div`
 export const ModalTitle = styled.h2`
   border-radius: 11px 0 0 0;
   grid-area: title;
+  text-align: center;
   font-weight: 600;
   font-size: 2rem;
-  padding: 15px;
+  padding: 0.3em;
   background: ${(props) => props.theme.modal.modalbackground};
   color: ${(props) => props.theme.modal.modalTitleFontColor};
   border-bottom:${(props) => props.theme.modal.modalBorder};
@@ -83,8 +104,9 @@ export const ModalTitle = styled.h2`
 
 export const ModalArticleStats = styled.div`
   grid-area: stats;
+  text-align: center;
   background: ${(props) => props.theme.modal.modalFontcolor};
-  padding: 20px;
+  padding: 0.5em;
   border: ${(props) => props.theme.modal.modalBorder};
   color: ${(props) => props.theme.modal.modalTextColor};
   border-radius: 0 0 11px 11px;
@@ -94,18 +116,17 @@ export const ModalContainer = styled.div`
   display: grid;
   grid-template-columns: 50% auto 5%;
   grid-template-rows: 12% 65% 15% 8%;
-
   width: 80vw;
-  height: 95vh;
+  height: 80vh;
+  background: ${(props) => props.theme.modal.modalSummaryBg};
   justify-content: center;
   grid-template-areas:
     "title title close"
     "summary picture picture"
     "url url url"
     "stats stats stats";
-
   border-radius: 30px;
-  border: 5px solid black;
+  border: 1px solid black;
 `;
 
 
@@ -115,8 +136,7 @@ export const ModalArticleUrl = styled.a`
   font-size: 1.2em;
   background-color: black;
   grid-area: url;
-  src: ${(props) => props.src};
-  padding: 2%;
+  padding: 10px;
   width: 100%;
   height: 100%;
   background: ${(props) => props.theme.modal.modalbackground};
@@ -127,29 +147,27 @@ export const ModalCloseDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: black;
+  background: ${(props) => props.theme.modal.modalbackground};
   border-radius: 0 11px 0 0;
+  border-bottom:${(props) => props.theme.modal.modalBorder};
   grid-area: close;
 `;
 
-export const ModalCloseButton = styled.button`
-  color: white;
-  font-size: 2rem;
+export const ModalCloseButton = styled(FontAwesomeIcon)`
+  color: ${(props) => props.theme.modal.modalFontcolor};
+  font-size: 3rem;
   font-weight: 800;
-  background-color: black;
-  border-radius: 50%;
   width: 3rem;
   height: 3rem;
-  border: 2px solid rgba(0, 200, 200, 0.4);
+  cursor: pointer;
 `;
 
-export const ModalHdImg = styled.div`
+
+export const ModalHdImg = styled.img`
   display: flex;
   grid-area: picture;
-  content: url(${(props) => props.picture});
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: auto;
+  width: 100%;
+  height: 100%;
   border: 2px solid rgba(0, 0, 0, 0.3);
+
 `;
