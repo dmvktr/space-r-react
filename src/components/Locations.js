@@ -20,7 +20,6 @@ const Locations = () => {
   useEffect(() => {
     axios.get(url)
       .then(response => {
-        console.log(response.data.results);
         setLocations(response.data.results)
       })
       .catch(err => {
@@ -34,7 +33,6 @@ const Locations = () => {
   const getPads = (url) => {
     axios.get(url)
     .then(response => {
-      console.log(response.data);
       setPads(response.data.pads)
     });
   }
