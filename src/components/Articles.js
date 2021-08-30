@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import Moment from "react-moment";
 import {
+  faTimes
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  ModalCustomStyles,
   ArticleNewsSite,
   ArticleContainer,
   ModalArticleSummary,
@@ -16,21 +20,6 @@ import {
   ModalHdImg,
 } from "./layout/NewsElement";
 
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    margin: "0",
-    transform: "translate(-50%, -50%)",
-    background: "#0c0f1a",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "50%",
-    backgroundPosition: "center",
-    borderRadius: "20px",
-  },
-};
 const Articles = (props) => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -54,14 +43,14 @@ const Articles = (props) => {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        style={customStyles}
+        style={ModalCustomStyles}
         contentLabel="Modal"
         onClick={closeModal}
       >
         <ModalContainer>
           <ModalTitle>{props.article.title}</ModalTitle>
           <ModalCloseDiv>
-            <ModalCloseButton onClick={closeModal}>X</ModalCloseButton>
+            <ModalCloseButton icon={faTimes} onClick={closeModal}>X</ModalCloseButton>
           </ModalCloseDiv>
 
           <ModalArticleSummary>{props.article.summary}</ModalArticleSummary>
@@ -71,7 +60,7 @@ const Articles = (props) => {
             <br />
             {props.article.url}
           </ModalArticleUrl>
-          <ModalHdImg picture={props.article.imageUrl} onClick={closeModal} />
+          <ModalHdImg src={props.article.imageUrl} onClick={closeModal} />
           <ModalArticleStats>
             <Moment>{props.article.publishedAt}</Moment> <br />
             {props.article.newsSite}
