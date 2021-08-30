@@ -3,15 +3,13 @@ import Event from "./Event";
 import axios from "axios";
 import {Error} from "./layout/ErrorElements"
 import {PageTitle} from "./layout/PageElements"
-
 import {
   EventsPageContainer,
   EventsContainer,
 } from "./layout/EventsElements.js";
 
 const Events = (props) => {
-  const url = "https://lldev.thespacedevs.com/2.2.0/event/?limit=25";
-
+  const url = "https://lldev.thespacedevs.com/2.2.0/event/?limit=20";
   const [events, setEvents] = useState({
     next: null,
     previous: null,
@@ -37,7 +35,6 @@ const Events = (props) => {
         );
       });
   }, [url]);
-
   return (
     <EventsPageContainer>
       <PageTitle>Events</PageTitle>
@@ -48,12 +45,14 @@ const Events = (props) => {
         </Error>
       ) : (
         <EventsContainer>
+
           {events.results.map((event) => (
             <Event key={event.id} event={event} theme={props.theme}></Event>
           ))}
         </EventsContainer>
       )}
-    </EventsPageContainer>
+      </EventsPageContainer>
+
   );
 };
 
