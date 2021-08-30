@@ -3,12 +3,17 @@ import BlueLogo from "../../static/img/logo/logo_darkblue_transparent.png";
 // import YellowLogo from "../../static/img/logo/logo_yellow_transparent.png";
 import SpacerLogo from "../../static/img/logo/spacer_logo.png";
 import LightBlueLogo from "../../static/img/logo/logo_lightblue_transparent.png";
-
+import {
+  faSun,
+  faMoon,
+    faAtom
+} from "@fortawesome/free-solid-svg-icons";
 
 // background-color: ${(props) => props.theme.bodyColor};
 
 export const lightTheme = {
   logo: BlueLogo,
+  themeLogo: faSun,
   textColor: "black",
   headerBgColor: "white",
   headerFontColor: "black",
@@ -36,6 +41,7 @@ export const lightTheme = {
 
 export const darkTheme = {
   logo: LightBlueLogo,
+  themeLogo: faMoon,
   textColor: "white",
   headerBgColor: "black",
   headerFontColor: "white",
@@ -62,6 +68,7 @@ export const darkTheme = {
 
 export const alien = {
   logo: SpacerLogo,
+  themeLogo: faAtom,
   textColor: "black",
   headerBgColor: "#a7ff83",
   headerFontColor: "#071a52",
