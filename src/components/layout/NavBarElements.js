@@ -10,6 +10,7 @@ export const NavContainer = styled.div`
   border-radius: 0 0 10px 10px;
   background-color: ${(props) => props.theme.headerBgColor};
   margin: 0 0.5vw;
+  color: ${(props) => props.theme.headerFontColor};
 `;
 
 export const Logo = styled.div`
