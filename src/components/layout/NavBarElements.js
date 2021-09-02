@@ -10,6 +10,7 @@ export const NavContainer = styled.div`
   border-radius: 0 0 10px 10px;
   background-color: white;
   margin: 0 0.5vw;
+  z-index: 10;
 `;
 
 export const Logo = styled.img`

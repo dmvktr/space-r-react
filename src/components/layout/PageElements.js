@@ -41,6 +41,7 @@ export const NewsContainer = styled.div`
 
 export const VideoContainer = styled.div`
   width: 100vw;
+  height: 90vh;
 `;
 
 export const SlideContainer = styled.div`
