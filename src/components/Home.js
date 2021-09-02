@@ -110,6 +110,7 @@ const Logo = styled.img`
   left: 50%;
   width: 50vw;
   height: auto;
+  z-index: 10;
   transform: translate(-50%, -50%);
   animation: ${FocusAnim} 3s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   -webkit-filter: drop-shadow(5px 5px 5px white);

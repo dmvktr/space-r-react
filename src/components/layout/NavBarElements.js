@@ -11,6 +11,7 @@ export const NavContainer = styled.div`
   background-color: ${(props) => props.theme.headerBgColor};
   margin: 0 0.5vw;
   color: ${(props) => props.theme.headerFontColor};
+  z-index: 10;
 `;
 
 export const Logo = styled.div`

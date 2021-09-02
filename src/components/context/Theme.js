@@ -162,10 +162,9 @@ a:visited {
 }
 video {
   right: 0;
-  bottom: 0;
+  top: 0;
   min-width: 100vw;
-  width: 100vw;
-  z-index: -100;
+  position: absolute;
 }
 
 #astronautName {
