@@ -12,12 +12,25 @@ export const MainContainer = styled.div`
     "header header header"
     "content content content"
     "footer footer footer";
+  background: ${(props) => props.theme.bodyColor};
+`;
+
+export const PageTitle = styled.div`
+  min-width: 90vw;
+  min-height: 5vh;
+  color: ${(props) => props.theme.pageTitleColor};
+  text-align: center;
+  font-size: 30px;
+  font-weight: 370;
+  -webkit-text-stroke:${(props) => props.theme.textStroke};;
+  letter-spacing: 1px;
 `;
 
 export const MainContentContainer = styled.div`
   grid-area: content;
   display: flex;
   flex-direction: column;
+  background: ${(props) => props.theme.bodyColor};
 `;
 
 export const NewsPageContainer = styled.div`
@@ -26,6 +39,7 @@ export const NewsPageContainer = styled.div`
   justify-content: center;
   align-items: center;
   min-width: 100vw;
+  background: ${(props) => props.theme.bodyColor};
 `;
 
 export const NewsContainer = styled.div`
@@ -34,13 +48,14 @@ export const NewsContainer = styled.div`
   grid-template-rows: 1fr 1fr 1fr 1fr;
   flex-direction: column;
   color: black;
-  background-color: #0c0f1a;
+  background-color: ${(props) => props.theme.bodyColor};
   padding: 0 2vw;
   gap: 2vh 2vw;
 `;
 
 export const VideoContainer = styled.div`
   width: 100vw;
+  height: 100vh;
 `;
 
 export const SlideContainer = styled.div`

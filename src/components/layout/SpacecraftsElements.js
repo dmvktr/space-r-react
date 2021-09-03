@@ -18,6 +18,7 @@ export const SpacecraftsMainContainer = styled.div`
     justify-content: center;
     align-items: center;
     min-width: 100vw;
+    background: ${(props) => props.theme.bodyColor};
 `;
 
 export const SpacecraftsCardsMainContainer = styled.div`

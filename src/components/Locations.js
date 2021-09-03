@@ -3,12 +3,13 @@ import { Location } from "./Location";
 import { Pad } from './Pad';
 import { LocationMainContainer,
   LocationsContainer,
-  Error,
   PadsContainer,
   LocationPads,
   PadCard } from "./layout/LocationElements";
 import axios from "axios";
-import { AstronautsPageText } from "./layout/AstronautElements";
+import {Error} from "./layout/ErrorElements"
+import {PageTitle} from "./layout/PageElements"
+
 
 const Locations = () => {
   const url = 'https://lldev.thespacedevs.com/2.0.0/location/?format=json&limit=3&';
@@ -19,7 +20,6 @@ const Locations = () => {
   useEffect(() => {
     axios.get(url)
       .then(response => {
-        console.log(response.data.results);
         setLocations(response.data.results)
       })
       .catch(err => {
@@ -33,7 +33,6 @@ const Locations = () => {
   const getPads = (url) => {
     axios.get(url)
     .then(response => {
-      console.log(response.data);
       setPads(response.data.pads)
     });
   }
@@ -44,7 +43,7 @@ const Locations = () => {
 
   return (
     <LocationMainContainer>
-      <AstronautsPageText>Locations</AstronautsPageText>
+      <PageTitle>Locations</PageTitle>
       {error ? (
         <Error>
           An error occurred while tried to fetch

@@ -7,7 +7,9 @@ import {
   CloseButton,
   HdImg,
 } from "./layout/GalleryElements";
-
+import {
+  faTimes
+} from "@fortawesome/free-solid-svg-icons";
 import Modal from "react-modal";
 import LoadingAnim from "../static/img/loading.gif";
 
@@ -26,6 +28,7 @@ const customStyles = {
     backgroundRepeat: "no-repeat",
     backgroundSize: "50%",
     backgroundPosition: "center",
+    padding: "10px",
   },
 };
 const GalleryCard = (props) => {
@@ -41,8 +44,8 @@ const GalleryCard = (props) => {
 
   return (
     <React.Fragment>
-      <Card onClick={openModal}>
-        <Thumbnail picture={props.picture.url} />
+      <Card >
+        <Thumbnail onClick={openModal} picture={props.picture.url} />
         <Title>{props.picture.title}</Title>
         <Date date={props.picture.date} />
       </Card>
@@ -53,8 +56,8 @@ const GalleryCard = (props) => {
         contentLabel="Modal"
         onClick={closeModal}
       >
-        <CloseButton onClick={closeModal}>X</CloseButton>
-        <HdImg picture={props.picture.hdurl} onClick={closeModal} />
+        <CloseButton icon={faTimes} onClick={closeModal}>X</CloseButton>
+        <HdImg src={props.picture.hdurl} onClick={closeModal} />
         <Title>{props.picture.title}</Title>
         <Date date={props.picture.date} />
       </Modal>
