@@ -13,6 +13,10 @@ export const NavContainer = styled.div`
   margin: 0 0.5vw;
   color: ${(props) => props.theme.headerFontColor};
   z-index: 10;
+
+  @media (max-width: 64em){
+    grid-template-columns: 20% 50% 30%;
+  }
 `;
 
 export const Logo = styled.div`
@@ -63,8 +67,21 @@ export const ThemeChangeButton = styled(FontAwesomeIcon)`
 export const ThemeButton = styled(FontAwesomeIcon)`
   width: 30px !important;
   height: 50px;
-  color: ${(props) => props.theme.headerFontColor};;
+  color: ${(props) => props.theme.headerFontColor};
   cursor: pointer;
+`;
+
+export const HamburgerMenu = styled(FontAwesomeIcon)`
+  width: 2rem !important;
+  height: 2rem;
+  color: ${(props) => props.theme.headerFontColor};
+  cursor: pointer;
+  display: none;
+
+  @media (max-width: 64em){
+   display: inline-block;
+  }
+
 `;
 
 const dropAnim = keyframes`
@@ -99,14 +116,14 @@ export const DropdownMenu = styled.div`
 export const ThemeChangeDiv = styled.div`
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 `;
 
 export const Links = styled.div`
   display: flex;
   gap: 4rem;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 `;
 
