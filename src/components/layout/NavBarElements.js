@@ -5,6 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 export const NavContainer = styled.div`
   display: grid;
   grid-template-columns: 10% 80% 10%;
+  max-width: 150rem;
   grid-area: header;
   border-bottom: 3px solid ${(props) => props.theme.borderColor};
   border-radius: 0 0 10px 10px;
@@ -15,8 +16,8 @@ export const NavContainer = styled.div`
 `;
 
 export const Logo = styled.div`
-  width: 95px;
-  margin-left: 20px;
+  width: 5rem;
+  margin-left: .2rem;
   height: 65px;
   background-image: url(${(props) => props.theme.logo});
   background-size: cover;
@@ -25,12 +26,26 @@ export const Logo = styled.div`
   text-align: center;
 `;
 
+export const LogoContainer = styled(Link)`
+  font-size: 1.3rem;
+`;
+
 export const NavbarOption = styled(Link)`
-  font-size: 22px;
+  font-size: 1.3rem;
   font-weight: 470;
   color: ${(props) => props.theme.headerFontColor};
   -webkit-text-stroke: ${(props) => props.theme.textStroke};
   letter-spacing: 1px;
+  transition: font-size 1s ease;
+
+  @media (max-width: 80em){
+   font-size: 1.1rem;
+  }
+
+  @media (max-width: 64em){
+   display: none;
+  }
+
 `;
 
 export const ThemeChangeButton = styled(FontAwesomeIcon)`
@@ -39,6 +54,10 @@ export const ThemeChangeButton = styled(FontAwesomeIcon)`
   height: 3rem;
   cursor: pointer;
   color: ${(props) => props.theme.headerFontColor};
+
+  @media (max-width: 80em){
+    width: 1rem;
+  }
 `;
 
 export const ThemeButton = styled(FontAwesomeIcon)`
