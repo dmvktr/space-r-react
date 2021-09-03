@@ -5,10 +5,12 @@ import {
   NavContainer,
   ThemeButton,
   ThemeChangeButton,
-  ThemeChangeDiv
+  ThemeChangeDiv,
+  LogoContainer,
+  HamburgerMenu
 } from "./layout/NavBarElements";
 import { NavbarOption, Logo } from "./layout/NavBarElements";
-import {faAtom, faMoon, faSun, faUserSecret} from "@fortawesome/free-solid-svg-icons";
+import {faAtom, faMoon, faSun, faUserSecret, faBars} from "@fortawesome/free-solid-svg-icons";
 const NavBar = (props) => {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -41,9 +43,9 @@ const NavBar = (props) => {
   };
   return (
     <NavContainer>
-      <NavbarOption to="/" title="Home">
+      <LogoContainer to="/" title="Home">
         <Logo />
-      </NavbarOption>
+      </LogoContainer>
       <Links>
         <NavbarOption to="/" title="Home">
           Home
@@ -71,8 +73,12 @@ const NavBar = (props) => {
         <NavbarOption to="/locations" title="Locations">
           Locations
         </NavbarOption>
+
       </Links>
       <ThemeChangeDiv>
+        <HamburgerMenu icon={faBars}>
+          
+        </HamburgerMenu>
         <ThemeChangeButton icon={faUserSecret} onClick={dropMenu}>
         </ThemeChangeButton>
         {showMenu ? (
