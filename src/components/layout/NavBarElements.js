@@ -3,6 +3,7 @@ import { NavLink as Link } from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export const NavContainer = styled.div`
+  position: relative;
   display: grid;
   grid-template-columns: 10% 80% 10%;
   max-width: 150rem;
@@ -14,7 +15,7 @@ export const NavContainer = styled.div`
   color: ${(props) => props.theme.headerFontColor};
   z-index: 10;
 
-  @media (max-width: 64em){
+  @media (max-width: 65em){
     grid-template-columns: 20% 50% 30%;
   }
 `;
@@ -46,16 +47,19 @@ export const NavbarOption = styled(Link)`
    font-size: 1.1rem;
   }
 
-  @media (max-width: 64em){
-   display: none;
+  @media (max-width: 65em){
+    margin-bottom: .5rem;
   }
 
 `;
 
 export const ThemeChangeButton = styled(FontAwesomeIcon)`
   font-size: 2rem;
-  width: 3rem;
-  height: 3rem;
+  position: absolute;
+  top: 1rem;
+  right: 4rem;
+  width: 2rem;
+  height: 2rem;
   cursor: pointer;
   color: ${(props) => props.theme.headerFontColor};
 
@@ -72,14 +76,17 @@ export const ThemeButton = styled(FontAwesomeIcon)`
 `;
 
 export const HamburgerMenu = styled(FontAwesomeIcon)`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   width: 2rem !important;
   height: 2rem;
   color: ${(props) => props.theme.headerFontColor};
   cursor: pointer;
   display: none;
 
-  @media (max-width: 64em){
-   display: inline-block;
+  @media (max-width: 68em){
+   display: flex;
   }
 
 `;
@@ -102,7 +109,8 @@ export const DropdownMenu = styled.div`
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
-  top: 4rem; 
+  top: 4rem;
+  right: 3rem;
   z-index: 100;
   padding:10px;
   flex-direction: column;
@@ -114,7 +122,6 @@ export const DropdownMenu = styled.div`
 
 
 export const ThemeChangeDiv = styled.div`
-  position: relative;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -125,5 +132,24 @@ export const Links = styled.div`
   gap: 4rem;
   justify-content: space-around;
   align-items: center;
+`;
+
+export const ResponsiveLinks = styled.div`
+  --navbar-grid-height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  gap: unset;
+  top: var(--navbar-grid-height);
+  right: 0;
+  z-index: 100;
+  padding:10px;
+  background-color: ${(props) => props.theme.headerBgColor};
+  border: 2px solid black;
+  border-radius: 10px;
+  animation: ${dropAnim} 300ms ease-in-out forwards ;
+  display: ${(props) => props.display ? 'flex' : 'none'};
 `;
 
