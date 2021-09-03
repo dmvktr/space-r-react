@@ -17,8 +17,6 @@ import {faAtom, faMoon, faSun, faUserSecret, faBars} from "@fortawesome/free-sol
 const NavBar = (props) => {
   const [showMenu, setShowMenu] = useState(false);
   const [isToggled, setIsToggled] = useState(false);
-  
-
   const doesMatchScreenWidth = useMediaQuery('(max-width: 68em)');
 
   const toggleNavDropdown = (isToggled) => {

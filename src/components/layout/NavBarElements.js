@@ -21,9 +21,9 @@ export const NavContainer = styled.div`
 `;
 
 export const Logo = styled.div`
-  width: 5rem;
+  width: 100%;
   margin-left: .2rem;
-  height: 65px;
+  height: ${(props) => props.theme.logoHeight};
   background-image: url(${(props) => props.theme.logo});
   background-size: cover;
   background-repeat: no-repeat;
@@ -32,7 +32,8 @@ export const Logo = styled.div`
 `;
 
 export const LogoContainer = styled(Link)`
-  font-size: 1.3rem;
+  width: ${(props) => props.theme.logoWidth};
+  margin: ${(props) => props.theme.logoMargin};
 `;
 
 export const NavbarOption = styled(Link)`
