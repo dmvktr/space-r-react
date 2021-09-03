@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Event from "./Event";
 import axios from "axios";
-import { AstronautsPageText, Error } from "./layout/AstronautElements";
+import {Error} from "./layout/ErrorElements"
+import {PageTitle} from "./layout/PageElements"
 import {
   EventsPageContainer,
   EventsContainer,
 } from "./layout/EventsElements.js";
 
 const Events = (props) => {
-  const url = "https://lldev.thespacedevs.com/2.2.0/event/?limit=25";
-
+  const url = "https://lldev.thespacedevs.com/2.2.0/event/?limit=20";
   const [events, setEvents] = useState({
     next: null,
     previous: null,
@@ -35,10 +35,9 @@ const Events = (props) => {
         );
       });
   }, [url]);
-
   return (
     <EventsPageContainer>
-      <AstronautsPageText>Events</AstronautsPageText>
+      <PageTitle>Events</PageTitle>
       {error ? (
         <Error>
           An error occured, while fetching the astronauts information. Please
@@ -46,12 +45,14 @@ const Events = (props) => {
         </Error>
       ) : (
         <EventsContainer>
+
           {events.results.map((event) => (
             <Event key={event.id} event={event} theme={props.theme}></Event>
           ))}
         </EventsContainer>
       )}
-    </EventsPageContainer>
+      </EventsPageContainer>
+
   );
 };
 

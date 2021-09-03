@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Astronaut from "./Astronaut";
 import Pagination from "./Pagination";
+import {PageTitle} from "./layout/PageElements";
 import { AstronautMainContainer,
     AstronautCardContainer,
     AstronautCardsMainContainer,
-    AstronautsPageText,
     Error } from "./layout/AstronautElements";
 import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -44,7 +44,7 @@ const Astronauts = (props) => {
 
   return (
     <AstronautMainContainer>
-      <AstronautsPageText>Astronauts</AstronautsPageText>
+      <PageTitle>Astronauts</PageTitle>
       {error ? (
         <Error>
           An error occured while fetching the astronauts information. Please try

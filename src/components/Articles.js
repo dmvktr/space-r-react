@@ -2,35 +2,24 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import Moment from "react-moment";
 import {
+  faTimes
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  ModalCustomStyles,
   ArticleNewsSite,
   ArticleContainer,
-  ArticleSummary,
+  ModalArticleSummary,
   ArticleTitle,
-  ArticleStats,
-  ArticleUrl,
+  ModalArticleStats,
+  ModalArticleUrl,
   ModalTitle,
   ModalContainer,
   SingleNewsELement,
-  CloseButton,
-  CloseDiv,
-  HdImg,
+  ModalCloseButton,
+  ModalCloseDiv,
+  ModalHdImg,
 } from "./layout/NewsElement";
 
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    margin: "0",
-    transform: "translate(-50%, -50%)",
-    background: "#0c0f1a",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "50%",
-    backgroundPosition: "center",
-    borderRadius: "20px",
-  },
-};
 const Articles = (props) => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -41,6 +30,8 @@ const Articles = (props) => {
   function closeModal() {
     setIsOpen(false);
   }
+
+
   return (
     <React.Fragment>
       <SingleNewsELement onClick={openModal}>
@@ -52,28 +43,28 @@ const Articles = (props) => {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        style={customStyles}
+        style={ModalCustomStyles}
         contentLabel="Modal"
         onClick={closeModal}
       >
         <ModalContainer>
           <ModalTitle>{props.article.title}</ModalTitle>
-          <CloseDiv>
-            <CloseButton onClick={closeModal}>X</CloseButton>
-          </CloseDiv>
+          <ModalCloseDiv>
+            <ModalCloseButton icon={faTimes} onClick={closeModal}>X</ModalCloseButton>
+          </ModalCloseDiv>
 
-          <ArticleSummary>{props.article.summary}</ArticleSummary>
-          <ArticleUrl href={props.article.url}>
+          <ModalArticleSummary>{props.article.summary}</ModalArticleSummary>
+          <ModalArticleUrl href={props.article.url}>
             Source:
             <br />
             <br />
             {props.article.url}
-          </ArticleUrl>
-          <HdImg picture={props.article.imageUrl} onClick={closeModal} />
-          <ArticleStats>
+          </ModalArticleUrl>
+          <ModalHdImg src={props.article.imageUrl} onClick={closeModal} />
+          <ModalArticleStats>
             <Moment>{props.article.publishedAt}</Moment> <br />
             {props.article.newsSite}
-          </ArticleStats>
+          </ModalArticleStats>
         </ModalContainer>
       </Modal>
     </React.Fragment>

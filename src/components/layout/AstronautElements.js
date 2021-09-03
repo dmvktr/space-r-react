@@ -2,16 +2,6 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 
-export const AstronautsPageText = styled.div`
-  min-width: 90vw;
-  min-height: 5vh;
-  color: white;
-  text-align: center;
-  font-size: 25px;
-  font-weight: 370;
-  -webkit-text-stroke: 0.8px #100d80;
-  letter-spacing: 1px;
-`;
 
 export const AstronautMainContainer = styled.div`
   display: flex;
@@ -24,7 +14,7 @@ export const AstronautMainContainer = styled.div`
 export const AstronautCardsMainContainer = styled.div`
   display: grid;
   border-radius: 10px;
-  background-color: #0c0f1a;
+  background-color: ${(props) => props.theme.bodyColor};
   min-width: 65vw;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 1.8vw;
@@ -42,7 +32,7 @@ export const AstronautCardContainer = styled.div`
   position: relative;  
   min-height: fit-content;
   border-radius: 11px;
-  background-color: #0c0f1a;
+  background-color: ${(props) => props.theme.bodyColor};
   box-shadow: rgb(233 219 219 / 0%) -18px 20px 13px,
     rgb(167 68 68 / 0%) -14px 13px 6px 0px;
   transition: box-shadow 0.8s ease-in-out;
