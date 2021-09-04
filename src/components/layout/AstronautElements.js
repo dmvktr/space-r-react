@@ -21,13 +21,8 @@ export const AstronautCardsMainContainer = styled.div`
   min-height: 60vh;
   
 
-  @media (min-width: 320px) and (max-width: 800px){
-    min-width: 90vw;
-  }
-  
-  @media (min-width: 800px) and (max-width: 1050px){
+  @media (min-width: 320px) and (max-width: 1050px){
     min-width: 80vw;
-    transition: min-width 1s;
   }
   
   @media (max-width: 1050px){
@@ -146,7 +141,6 @@ export const AstronautName = styled.div`
   width: 100%;
   text-align: center;
   align-self: center;
-  transition: font-size 1s;
   ::after {
     transform: scaleX(0);
     content: "";
@@ -158,7 +152,7 @@ export const AstronautName = styled.div`
     bottom: 0;
     transform-origin: left;
 
-    transition: transform 800ms ease;
+    transition: transform 800ms ease, width 1s;
     }
     ::after
     ${Card}:hover{
@@ -166,12 +160,16 @@ export const AstronautName = styled.div`
     }
 
     @media (max-width: 400px){
-      --elem-width: 15rem;
+      --elem-width: 13rem;
       font-size: 1.4rem;
       
     }
 
-    @media (min-width: 400px) and (max-width: 600px){
+    @media (min-width: 400px) and (max-width: 500px){
+      --elem-width: 17rem;
+    }
+
+    @media (min-width: 500px) and (max-width: 600px){
       --elem-width: 21rem;
     }
 
@@ -201,4 +199,15 @@ export const PaginationIcon = styled(FontAwesomeIcon)`
     position: absolute;
     right: ${(props) => props.icon === faAngleDoubleRight ? 0 : 'unset'};
     left: ${(props) => props.icon === faAngleDoubleLeft ? 0 : 'unset'};
+    transition: width 1s, height 1s;
+
+    @media (max-width: 550px){
+      width: 50px !important;
+      height: 40px;
+    }
+`;
+
+export const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
