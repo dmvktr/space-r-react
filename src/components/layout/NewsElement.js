@@ -34,6 +34,7 @@ export const SingleNewsELement = styled.div`
   padding: 10px;
   width: 100%;
   height: 20vw;
+  min-width: 30rem;
   border: 3px solid ${(props) => props.theme.article.borderColor};
   color: white;
   display: grid;
