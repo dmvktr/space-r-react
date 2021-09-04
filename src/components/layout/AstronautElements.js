@@ -157,6 +157,32 @@ export const AstronautName = styled.div`
         transform: scaleX(1);
     }
 
+    @media (max-width: 400px){
+      --elem-width: 15rem;
+      font-size: 1.4rem;
+      
+    }
+
+    @media (min-width: 400px) and (max-width: 600px){
+      --elem-width: 21rem;
+    }
+
+    @media (min-width: 550px) and (max-width: 650px){
+      --elem-width: 23rem;
+    }
+
+    @media (min-width: 650px) and (max-width: 880px){
+      --elem-width: 27rem;
+    }
+
+    @media (min-width: 880px) and (max-width: 1070px){
+      --elem-width: 15rem;
+    }
+
+    @media (min-width: 1300px){
+      --elem-width: 20rem;
+    }
+
     
 `;
 
