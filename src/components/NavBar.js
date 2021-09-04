@@ -1,24 +1,44 @@
 import React, { useState } from "react";
 import {
+  Logo,
   DropdownMenu,
   Links,
   NavContainer,
   ThemeButton,
   ThemeChangeButton,
-  ThemeChangeDiv
+  ThemeChangeDiv,
+  LogoContainer,
+  ResponsiveLinks
 } from "./layout/NavBarElements";
-import { NavbarOption, Logo } from "./layout/NavBarElements";
-import {faAtom, faMoon, faSun, faUserSecret} from "@fortawesome/free-solid-svg-icons";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import DropdownRoutes from "./DropdownRoutes";
+import NavLinks from "./NavLinks";
+import {faAtom, faMoon, faSun, faUserSecret, faBars} from "@fortawesome/free-solid-svg-icons";
 const NavBar = (props) => {
   const [showMenu, setShowMenu] = useState(false);
+  const [isToggled, setIsToggled] = useState(false);
+  const doesMatchScreenWidth = useMediaQuery('(max-width: 68em)');
+
+  const toggleNavDropdown = (isToggled) => {
+    if(showMenu){
+      setShowMenu(false);
+    }
+    setIsToggled(!isToggled);
+  };
 
   const dropMenu = () => {
     if (showMenu) {
       setShowMenu(false);
-    } else {
+    } else if(isToggled){
+      setIsToggled(false);
+      setShowMenu(true);
+    } else{
       setShowMenu(true);
     }
+      
   };
+
+
 
   const changeTheme = (choosenTheme) => {
     switch (choosenTheme) {
@@ -39,40 +59,21 @@ const NavBar = (props) => {
         dropMenu()
     }
   };
+
   return (
     <NavContainer>
-      <NavbarOption to="/" title="Home">
+      <LogoContainer to="/" title="Home">
         <Logo />
-      </NavbarOption>
+      </LogoContainer>
+      {doesMatchScreenWidth ? (<ResponsiveLinks display={isToggled}>
+        <NavLinks />
+      </ResponsiveLinks>) :
       <Links>
-        <NavbarOption to="/" title="Home">
-          Home
-        </NavbarOption>
-
-        <NavbarOption to="/news" title="News">
-          News
-        </NavbarOption>
-
-        <NavbarOption to="/gallery" title="Gallery">
-          Gallery
-        </NavbarOption>
-
-        <NavbarOption to="/spacecrafts" title="Spacecrafts">
-          Spacecrafts
-        </NavbarOption>
-
-        <NavbarOption to="/astronauts" title="Astronauts">
-          Astronauts
-        </NavbarOption>
-        <NavbarOption to="/events" title="Events">
-          Events
-        </NavbarOption>
-
-        <NavbarOption to="/locations" title="Locations">
-          Locations
-        </NavbarOption>
+        <NavLinks />
       </Links>
+      }
       <ThemeChangeDiv>
+        <DropdownRoutes icon={faBars} onClick={toggleNavDropdown} display={isToggled} />
         <ThemeChangeButton icon={faUserSecret} onClick={dropMenu}>
         </ThemeChangeButton>
         {showMenu ? (
