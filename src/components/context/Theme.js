@@ -178,6 +178,10 @@ video {
 
 #astronautName {
   margin-top: 6rem;
+
+  @media (max-width: 360px){
+    margin-top: 5rem;
+  }
 }
 
 #astronautCard:hover #astronautName::after {
