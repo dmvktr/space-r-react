@@ -16,21 +16,21 @@ import NavLinks from "./NavLinks";
 import {faAtom, faMoon, faSun, faUserSecret, faBars} from "@fortawesome/free-solid-svg-icons";
 const NavBar = (props) => {
   const [showMenu, setShowMenu] = useState(false);
-  const [isToggled, setIsToggled] = useState(false);
+  const [isToggled, setIsToggled] = useState('none');
   const doesMatchScreenWidth = useMediaQuery('(max-width: 68em)');
 
   const toggleNavDropdown = (isToggled) => {
     if(showMenu){
       setShowMenu(false);
     }
-    setIsToggled(!isToggled);
+    setIsToggled(isToggled ==='flex'? 'none': 'flex');
   };
 
   const dropMenu = () => {
     if (showMenu) {
       setShowMenu(false);
     } else if(isToggled){
-      setIsToggled(false);
+      setIsToggled('none');
       setShowMenu(true);
     } else{
       setShowMenu(true);
