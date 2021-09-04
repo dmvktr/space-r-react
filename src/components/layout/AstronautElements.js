@@ -19,6 +19,7 @@ export const AstronautCardsMainContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 1.8vw;
   min-height: 60vh;
+  max-width: 80vw;
   
 
   @media (min-width: 320px) and (max-width: 1050px){
@@ -75,7 +76,7 @@ export const CardImageContainer = styled.div`
     }
 `;
 
-export const AstronautImage = styled.img`
+export const AstronautImage = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;

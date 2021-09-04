@@ -151,6 +151,6 @@ export const ResponsiveLinks = styled.div`
   border: 2px solid black;
   border-radius: 10px;
   animation: ${dropAnim} 300ms ease-in-out forwards ;
-  display: ${(props) => props.display ? 'flex' : 'none'};
+  display: ${(props) => props.display};
 `;
 

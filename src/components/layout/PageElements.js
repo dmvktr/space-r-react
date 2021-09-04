@@ -48,10 +48,9 @@ export const NewsPageContainer = styled.div`
 `;
 
 export const NewsContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   color: black;
   background-color: ${(props) => props.theme.bodyColor};
   padding: 0 2vw;
