@@ -12,6 +12,9 @@ import {
 
 export const lightTheme = {
   logo: BlueLogo,
+  logoWidth: '5rem',
+  logoHeight: "3.4rem",
+  logoMargin: "0",
   themeLogo: faSun,
   textColor: "black",
   headerBgColor: "white",
@@ -50,6 +53,9 @@ export const lightTheme = {
 
 export const darkTheme = {
   logo: LightBlueLogo,
+  logoWidth: "6rem",
+  logoHeight: "3.7rem",
+  logoMargin: ".1rem 0 0 0",
   themeLogo: faMoon,
   textColor: "white",
   headerBgColor: "black",
@@ -87,6 +93,9 @@ export const darkTheme = {
 
 export const alien = {
   logo: SpacerLogo,
+  logoWidth: "7rem",
+  logoHeight: "3.6rem",
+  logoMargin: ".3rem 0 0 0",
   themeLogo: faAtom,
   textColor: "black",
   headerBgColor: "#a7ff83",
