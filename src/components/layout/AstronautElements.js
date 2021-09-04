@@ -6,7 +6,7 @@ import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-s
 export const AstronautMainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   min-width: 100vw;
 `;
@@ -15,15 +15,29 @@ export const AstronautCardsMainContainer = styled.div`
   display: grid;
   border-radius: 10px;
   background-color: ${(props) => props.theme.bodyColor};
-  min-width: 65vw;
+  min-width: 70vw;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 1.8vw;
   min-height: 60vh;
+  
+
+  @media (min-width: 320px) and (max-width: 800px){
+    min-width: 90vw;
+  }
+  
+  @media (min-width: 800px) and (max-width: 1050px){
+    min-width: 80vw;
+    transition: min-width 1s;
+  }
+  
+  @media (max-width: 1050px){
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
 `;
 
 export const CardTop = styled.div`
-  height: 80px;
-  min-height: 80px;
+  min-height: 5rem;
   background: #d2d2d2;
   border-radius: 11px 11px 0 0;
 `;
@@ -77,6 +91,11 @@ export const CardPersonalDetail = styled.div`
   text-align: center;
   letter-spacing: 2px;
   margin: 0.5vh;
+  transition: font-size 1s;
+
+  @media (max-width: 400px){
+    font-size: 1.1rem;
+  }
 `;
 
 export const Card = styled.div`
@@ -101,6 +120,7 @@ export const CardBio = styled.div`
     font-weight: 450;
     letter-spacing: 1px;
     overflow: auto;
+    transition: margin 1s;
 `;
 
 export const Error = styled.div`
@@ -111,19 +131,20 @@ export const Error = styled.div`
 `;
 
 export const AstronautName = styled.div`
-  --elem-width: 173px;
-  font-size: 25px;
+  --elem-width: 17rem;
+  font-size: 1.7rem;
   position: relative;
   color: white;
   width: 100%;
   text-align: center;
   align-self: center;
+  transition: font-size 1s;
   ::after {
     transform: scaleX(0);
     content: "";
     height: 2px;
     background: var(--grey-card-top-primary);
-    width: calc(var(--elem-width) + var(--elem-width));
+    width: calc(var(--elem-width));
     position: absolute;
     left: 0;
     bottom: 0;
@@ -135,10 +156,12 @@ export const AstronautName = styled.div`
     ${Card}:hover{
         transform: scaleX(1);
     }
+
+    
 `;
 
 export const PaginationIcon = styled(FontAwesomeIcon)`
-    width: 200px !important;
+    width: 80px !important;
     color: white;
     height: 50px;
     position: absolute;
