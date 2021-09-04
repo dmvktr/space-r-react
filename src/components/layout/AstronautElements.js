@@ -183,8 +183,8 @@ export const AstronautName = styled.div`
       --elem-width: 27rem;
     }
 
-    @media (min-width: 880px) and (max-width: 1070px){
-      --elem-width: 15rem;
+    @media (min-width: 880px) and (max-width: 1050px){
+      --elem-width: 27rem;
     }
 
     @media (min-width: 1300px){
