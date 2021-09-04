@@ -13,6 +13,11 @@ export const MainContainer = styled.div`
     "content content content"
     "footer footer footer";
   background: ${(props) => props.theme.bodyColor};
+  
+  @media (max-width: 1050px){
+    height: unset;
+    grid-row-gap: 1rem;
+  }
 `;
 
 export const PageTitle = styled.div`

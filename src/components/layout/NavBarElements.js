@@ -16,7 +16,7 @@ export const NavContainer = styled.div`
   z-index: 10;
 
   @media (max-width: 65em){
-    grid-template-columns: 20% 50% 30%;
+    grid-template-columns: 35% 35% 30%;
   }
 `;
 
