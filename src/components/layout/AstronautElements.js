@@ -74,6 +74,10 @@ export const CardImageContainer = styled.div`
     overflow: hidden;
     -webkit-filter: drop-shadow(1px 6px 17px rgba(153,172,199,0.7));
     filter: drop-shadow(1px 6px 17px rgba(153,172,199,0.7));
+
+    @media (max-width: 400px){
+      min-height: 3rem;
+    }
 `;
 
 export const AstronautImage = styled.img`
@@ -121,6 +125,10 @@ export const CardBio = styled.div`
     letter-spacing: 1px;
     overflow: auto;
     transition: margin 1s;
+
+    @media (max-width: 400px){
+      margin: 1.7rem 1rem 2rem 1rem;
+    }
 `;
 
 export const Error = styled.div`
