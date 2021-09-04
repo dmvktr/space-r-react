@@ -178,6 +178,7 @@ video {
 
 #astronautName {
   margin-top: 6rem;
+  transition: margin-top 1s, font-size 1s;
 
   @media (max-width: 360px){
     margin-top: 5rem;
