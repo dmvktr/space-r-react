@@ -48,7 +48,7 @@ const Spacecrafts = (props) => {
 
   return (
     <SpacecraftsMainContainer>
-      <PageTitle>Spacecrafts</PageTitle>
+      <PageTitle data-testid="spacecraft-header">Spacecrafts</PageTitle>
       {error ? (
         <Error>
           An error occured while fetching spacecrafts information. Please try

@@ -43,7 +43,7 @@ const Locations = () => {
 
   return (
     <LocationMainContainer>
-      <PageTitle>Locations</PageTitle>
+      <PageTitle data-testid="locations-header">Locations</PageTitle>
       {error ? (
         <Error>
           An error occurred while tried to fetch

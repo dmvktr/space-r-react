@@ -37,7 +37,7 @@ const Events = (props) => {
   }, [url]);
   return (
     <EventsPageContainer>
-      <PageTitle>Events</PageTitle>
+      <PageTitle data-testid="events-header">Events</PageTitle>
       {error ? (
         <Error>
           An error occured, while fetching the astronauts information. Please
