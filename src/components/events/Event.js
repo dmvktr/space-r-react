@@ -12,7 +12,7 @@ import {
   SingleEventContainer,
   ThumbnailImg,
   Title,
-} from "./layout/EventsElements";
+} from "../layout/EventsElements";
 
 // Modal.setAppElement("#root");
 

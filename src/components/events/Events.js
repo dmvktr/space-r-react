@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Event from "./Event";
-import axios from "axios";
-import {Error} from "./layout/ErrorElements"
-import {PageTitle} from "./layout/PageElements"
+import {Error} from "../layout/ErrorElements"
+import {PageTitle} from "../layout/PageElements"
 import {
   EventsPageContainer,
   EventsContainer,
-} from "./layout/EventsElements.js";
+} from "../layout/EventsElements.js";
+import {dataHandler} from "../data_handler";
 
 const Events = (props) => {
   // const url = "https://lldev.thespacedevs.com/2.2.0/event/?limit=20";
@@ -19,22 +19,7 @@ const Events = (props) => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    axios
-      .get(url)
-      .then((res) => {
-        setEvents({
-          next: res.data.next,
-          previous: res.data.previous,
-          results: res.data.results,
-        });
-      })
-      .catch((error) => {
-        setError(error.message);
-        console.error(
-          `The request was made and the server responded
-        with a status code that falls out of the range of 2xx ` + error.message
-        );
-      });
+    dataHandler._api_get(url, setEvents, setError);
   }, [url]);
   return (
     <EventsPageContainer>
