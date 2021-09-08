@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { NewsContainer, NewsPageContainer } from "./layout/PageElements";
+import { NewsContainer, NewsPageContainer, PageTitle} from "./layout/PageElements";
 import Articles from "./Articles";
 import axios from "axios";
-import { AstronautsPageText, Error } from "./layout/AstronautElements";
+import {Error} from "./layout/ErrorElements"
 
 const AllNews = (props) => {
   const url = "https://api.spaceflightnewsapi.net/v3/articles?_limit=15";
@@ -14,7 +14,6 @@ const AllNews = (props) => {
     axios
       .get(url)
       .then((res) => {
-        console.log(res.data);
         setNews(res.data);
       })
       .catch((error) => {
@@ -28,7 +27,7 @@ const AllNews = (props) => {
 
   return (
     <NewsPageContainer>
-      <AstronautsPageText>News</AstronautsPageText>
+      <PageTitle data-testid="news-header">News</PageTitle>
       {error ? (
         <Error>
           An error occured, while fetching the astronauts information. Please
@@ -38,10 +37,10 @@ const AllNews = (props) => {
         <NewsContainer>
           {news.map((article) => (
             <Articles
-              key={article.id}
-              article={article}
-              theme={props.theme}
-            ></Articles>
+    key={article.id}
+    article={article}
+    theme={props.theme}
+    />
           ))}
         </NewsContainer>
       )}

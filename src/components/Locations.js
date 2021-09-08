@@ -3,11 +3,13 @@ import { Location } from "./Location";
 import { Pad } from './Pad';
 import { LocationMainContainer,
   LocationsContainer,
-  Error,
   PadsContainer,
   LocationPads,
   PadCard } from "./layout/LocationElements";
 import axios from "axios";
+import {Error} from "./layout/ErrorElements"
+import {PageTitle} from "./layout/PageElements"
+
 
 const Locations = () => {
   const locationUrl = 'http://localhost:8080/locations';
@@ -18,7 +20,6 @@ const Locations = () => {
   useEffect(() => {
     axios.get(locationUrl)
       .then(response => {
-        console.log(response.data.results);
         setLocations(response.data.results)
       })
       .catch(err => {
@@ -35,7 +36,7 @@ const Locations = () => {
 
   return (
     <LocationMainContainer>
-      <h3 style={textToTop}>Locations</h3>
+      <PageTitle data-testid="locations-header">Locations</PageTitle>
       {error ? (
         <Error>
           An error occurred while tried to fetch
@@ -79,13 +80,5 @@ const padTextSmall = {
   marginTop: '10px',
   justifyContent: 'center',
 };
-
-const textToTop = {
-  position: 'absolute',
-  top: '8.5vh',
-  left: '45vw',
-  fontSize: 40,
-  color: 'whitesmoke'
-}
 
 export default Locations;

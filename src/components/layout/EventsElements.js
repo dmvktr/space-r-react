@@ -34,11 +34,11 @@ export const SingleEventContainer = styled.div`
   display: grid;
   grid-template-columns: 1.4fr 0.6fr 1fr 1fr;
   grid-template-rows: 10% 15% auto 20%;
-  background: white;
-  border: 2px solid black;
+  background: ${(props) => props.theme.event.singleEventContainer};
+  border: ${(props) => props.theme.event.singleEventContainerBorder};
   gap: 0.5rem;
   border-radius: 20px;
-  color: black;
+  color: ${(props) => props.theme.event.singleEventContainerTextColor};
   transition: ${ScaleDown} 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   -webkit-transition: ${ScaleDown} 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   grid-template-areas:
@@ -64,13 +64,13 @@ export const DateContainer = styled.h3`
 `;
 export const Title = styled.h3`
   grid-area: title;
-  color: rgb(60 72 88);
+  color: ${(props) => props.theme.event.titleColor};
   padding: 1.4rem;
   font-size: 1.5rem;
 `;
 export const Description = styled.h3`
   grid-area: description;
-  color: rgb(153 153 153);
+  color: ${(props) => props.theme.event.descriptionColor};
   font-size: 1.2rem;
   font-weight: 700;
   font-family: "Roboto Slab", "Times New Roman", serif;
@@ -82,17 +82,17 @@ export const Location = styled.h3`
   grid-area: location;
   display: flex;
   align-items: center;
-  color: white;
+  color: ${(props) => props.theme.event.locationColor};
   padding: 4px;
   text-transform: uppercase;
   font-size: 10px;
-  background-color: rgb(33 150 243);
+  background-color: ${(props) => props.theme.event.locationBgColor};
 `;
 export const EventId = styled.h3`
   grid-area: id;
   display: flex;
   justify-content: flex-end;
-  color: cornflowerblue;
+  color: ${(props) => props.theme.event.eventIdColor};
   padding: 0.55rem 1rem;
 `;
 export const EventUrl = styled.a`
@@ -113,6 +113,6 @@ export const ThumbnailImg = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   padding: 0.4rem;
-  border: 2px solid rgba(0, 0, 0, 0.3);
+  border: ${(props) => props.theme.event.thumbnailImgBorder};
   border-radius: 20px;
 `;

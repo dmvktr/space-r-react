@@ -1,12 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useMediaQuery } from "@material-ui/core";
 import axios from "axios";
 import Astronaut from "./Astronaut";
 import Pagination from "./Pagination";
+import {PageTitle} from "./layout/PageElements";
 import { AstronautMainContainer,
     AstronautCardContainer,
     AstronautCardsMainContainer,
-    AstronautsPageText,
+    PaginationContainer,
     Error } from "./layout/AstronautElements";
 import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -19,6 +21,7 @@ const Astronauts = (props) => {
     results: [],
   });
   const [error, setError] = useState('');
+  const isMatchingLayoutChangeThreshold = useMediaQuery('(max-width: 1050px)');
 
 
   const handleClick = (url) => {
@@ -44,13 +47,24 @@ const Astronauts = (props) => {
 
   return (
     <AstronautMainContainer>
-      <AstronautsPageText>Astronauts</AstronautsPageText>
       {error ? (
         <Error>
           An error occured while fetching the astronauts information. Please try
           again later!
         </Error>
       ) : (
+        <>
+        {isMatchingLayoutChangeThreshold ? (
+          <PaginationContainer>
+            <PageTitle>Astronauts</PageTitle>
+            <Pagination icon={faAngleDoubleLeft} url={astronauts.previous} onClick={handleClick} />
+            <Pagination icon={faAngleDoubleRight} url={astronauts.next} onClick={handleClick} />
+          </PaginationContainer>
+        ): 
+        <React.Fragment>
+          <Pagination icon={faAngleDoubleLeft} url={astronauts.previous} onClick={handleClick} />
+          <Pagination icon={faAngleDoubleRight} url={astronauts.next} onClick={handleClick} />
+        </React.Fragment>}
         <AstronautCardsMainContainer>
           {astronauts.results.map((astronaut) => (
             <AstronautCardContainer key={astronaut.id}>
@@ -68,6 +82,7 @@ const Astronauts = (props) => {
             </AstronautCardContainer>
           ))}
         </AstronautCardsMainContainer>
+      </>
       )}
     </AstronautMainContainer>
   );

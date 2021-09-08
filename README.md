@@ -2,7 +2,7 @@
 
 <div align="center"> 
   
-  ![spacerlogo](https://github.com/dmvktr/space-r-react/blob/development/src/static/img/logo/logo1.png) 
+  ![spacerlogo](https://github.com/dmvktr/space-r-react/blob/development/src/static/img/logo/logo_lightblue_transparent.png) 
 
 </div>
 
@@ -10,7 +10,7 @@
 
 <div align="center">
 
-\*\*[PROJECT PHILOSOPHY](https://github.com/dmvktr/space-r-react/#-project-philosophy) •
+\*\*•[PROJECT PHILOSOPHY](https://github.com/dmvktr/space-r-react/#-project-philosophy) •
 [TECH STACK](https://github.com/dmvktr/space-r-react/#-tech-stack) •
 [CONTRIBUTING](https://github.com/dmvktr/space-r-react/#-contributing) •
 [SPREAD THE WORD](https://github.com/dmvktr/space-r-react/#-spread-the-word) •\*\*

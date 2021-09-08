@@ -5,10 +5,12 @@ import axios from "axios";
 import {
   SpacecraftsMainContainer,
   SpacecraftsCardsMainContainer,
-  SpacecraftsPageText,
   SpacecraftsCardContainer,
 } from "./layout/SpacecraftsElements";
 import { Error } from "./layout/ErrorElements";
+import {PageTitle} from "./layout/PageElements";
+
+
 
 const Spacecrafts = (props) => {
   const baseEndpoint =
@@ -46,7 +48,7 @@ const Spacecrafts = (props) => {
 
   return (
     <SpacecraftsMainContainer>
-      <SpacecraftsPageText>Spacecrafts</SpacecraftsPageText>
+      <PageTitle data-testid="spacecraft-header">Spacecrafts</PageTitle>
       {error ? (
         <Error>
           An error occured while fetching spacecrafts information. Please try

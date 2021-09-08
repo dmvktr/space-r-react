@@ -1,12 +1,8 @@
-import './App.css';
-import Page from './components/Page';
+import "./App.css";
+import Page from "./components/Page";
 
 function App() {
-  return (
-    <div>
-      <Page />
-    </div>
-  );
+  return <Page />;
 }
 
 export default App;
