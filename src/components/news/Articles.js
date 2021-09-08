@@ -18,7 +18,7 @@ import {
   ModalCloseButton,
   ModalCloseDiv,
   ModalHdImg,
-} from "./layout/NewsElement";
+} from "../layout/NewsElement";
 
 const Articles = (props) => {
   const [modalIsOpen, setIsOpen] = useState(false);
