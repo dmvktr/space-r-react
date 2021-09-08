@@ -1,8 +1,7 @@
 import React from "react";
-import AllNews from "../components/news/AllNews";
-import {getAllByTestId, render} from "@testing-library/react";
+import {render} from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-
+import AllNews from "../components/news/AllNews";
 
 let getByTestId;
 
@@ -13,10 +12,7 @@ beforeEach(() => {
 
 test("header renders with correct text", () => {
     const headerElement = getByTestId("news-header");
+
     expect(headerElement.textContent).toBe("News");
 })
 
-test('page has news containers', () =>{
-    const newsContainer = getAllByTestId('news-container');
-    expect(newsContainer).toBeTruthy();
-})

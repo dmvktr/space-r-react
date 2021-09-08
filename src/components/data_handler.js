@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export let dataHandler = {
-    _data: {}, // it is a "cache for all data received: boards, cards and statuses. It is not accessed from outside.
+    _data: {},
     _api_get: function (url, callback, errorCallback) {
         axios
             .get(url, {
@@ -18,14 +18,10 @@ export let dataHandler = {
         with a status code that falls out of the range of 2xx ` + error.message
                 );
             });
-
     },
     _api_get_results: function (url, callback, errorCallback) {
         axios
-            .get(url, {
-                method: 'GET',
-                credentials: 'same-origin'
-            })
+            .get(url)
             .then((response) => {
                 callback(response.data.results);
             })
