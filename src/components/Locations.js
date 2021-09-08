@@ -12,13 +12,13 @@ import {PageTitle} from "./layout/PageElements"
 
 
 const Locations = () => {
-  const url = 'https://lldev.thespacedevs.com/2.0.0/location/?format=json&limit=3&';
+  const locationUrl = 'http://localhost:8080/locations';
 
   const [locations, setLocations] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    axios.get(url)
+    axios.get(locationUrl)
       .then(response => {
         setLocations(response.data.results)
       })
@@ -26,20 +26,13 @@ const Locations = () => {
         console.log("REQUEST SENT AND AN ERROR OCCURED: " + err.message);
         setError(err.message)
       });
-  }, [url])
+  }, [locationUrl])
 
   const [pads, setPads] = useState([]);
 
-  const getPads = (url) => {
-    axios.get(url)
-    .then(response => {
-      setPads(response.data.pads)
-    });
+  const getPads = (landingPads) => {
+    setPads(landingPads.pads);
   }
-
-  useEffect((url) => {
-    getPads(url);
-  }, [url])
 
   return (
     <LocationMainContainer>
