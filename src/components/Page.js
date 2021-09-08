@@ -17,29 +17,29 @@ const Page = (props) => {
   const [currentTheme, setCurrentTheme] = useState("light");
 
   return (
-    <ThemeProvider theme={currentTheme === "light" ? lightTheme : currentTheme === "dark"? darkTheme : alien}>
-      <GlobalStyles />
-      <Router>
-        <MainContainer>
-          <NavBar theme={currentTheme} setTheme={setCurrentTheme} />
-          <Switch>
-            <Route
-              path="/"
-              render={(props) => <Home {...props} theme={currentTheme} />}
-              exact
-            />
-            <Route
-              path="/news"
-              render={(props) => <AllNews {...props} theme={currentTheme} />}
-              exact
-            />
-            <Route
-              path="/spacecrafts"
-              render={(props) => (
-                <Spacecrafts {...props} theme={currentTheme} />
-              )}
-              exact
-            />
+      <ThemeProvider theme={currentTheme === "light" ? lightTheme : currentTheme === "dark" ? darkTheme : alien}>
+        <GlobalStyles/>
+        <Router>
+          <MainContainer data-testid="main-container">
+            <NavBar theme={currentTheme} setTheme={setCurrentTheme}/>
+            <Switch>
+              <Route
+                  path="/"
+                  render={(props) => <Home {...props} theme={currentTheme}/>}
+                  exact
+              />
+              <Route
+                  path="/news"
+                  render={(props) => <AllNews {...props} theme={currentTheme}/>}
+                  exact
+              />
+              <Route
+                  path="/spacecrafts"
+                  render={(props) => (
+                      <Spacecrafts {...props} theme={currentTheme}/>
+                  )}
+                  exact
+              />
 
             <Route
               path="/astronauts"
