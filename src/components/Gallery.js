@@ -6,7 +6,8 @@ import {PageTitle} from "./layout/PageElements"
 import { GalleryPageContainer, CardContainer } from "./layout/GalleryElements";
 
 const Gallery = (props) => {
-  const url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&count=25";
+  // const url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&count=25";
+  const url = "http://localhost:8080/gallery";
 
   const [gallery, setGallery] = useState([]);
   const [error, setError] = useState("");

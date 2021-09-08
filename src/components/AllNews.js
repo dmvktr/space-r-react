@@ -5,7 +5,8 @@ import axios from "axios";
 import {Error} from "./layout/ErrorElements"
 
 const AllNews = (props) => {
-  const url = "https://api.spaceflightnewsapi.net/v3/articles?_limit=15";
+  // const url = "https://api.spaceflightnewsapi.net/v3/articles?_limit=15";
+  const url = "http://localhost:8080/news";
 
   const [news, setNews] = useState([]);
   const [error, setError] = useState("");

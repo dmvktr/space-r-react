@@ -9,7 +9,8 @@ import {
 } from "./layout/EventsElements.js";
 
 const Events = (props) => {
-  const url = "https://lldev.thespacedevs.com/2.2.0/event/?limit=20";
+  // const url = "https://lldev.thespacedevs.com/2.2.0/event/?limit=20";
+  const url = "http://localhost:8080/events";
   const [events, setEvents] = useState({
     next: null,
     previous: null,

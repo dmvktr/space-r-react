@@ -13,9 +13,8 @@ import {PageTitle} from "./layout/PageElements";
 
 
 const Spacecrafts = (props) => {
-  const baseEndpoint =
-    "https://lldev.thespacedevs.com/2.2.0/config/spacecraft/";
-  // const baseEndpoint = "https://ll.thespacedevs.com/2.2.0/config/spacecraft/";
+  // const baseEndpoint = "https://lldev.thespacedevs.com/2.2.0/config/spacecraft/";
+  const baseEndpoint = "http://localhost:8080/spacecrafts/";
   const fetchLimit = 10;
   const offset = 0;
 

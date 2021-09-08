@@ -12,7 +12,8 @@ import {PageTitle} from "./layout/PageElements"
 
 
 const Locations = () => {
-  const url = 'https://lldev.thespacedevs.com/2.0.0/location/?format=json&limit=3&';
+  // const url = 'https://lldev.thespacedevs.com/2.0.0/location/?format=json&limit=3&';
+  const url = 'http://localhost:8080/locations/';
 
   const [locations, setLocations] = useState([]);
   const [error, setError] = useState("");
@@ -30,15 +31,12 @@ const Locations = () => {
 
   const [pads, setPads] = useState([]);
 
-  const getPads = (url) => {
-    axios.get(url)
-    .then(response => {
-      setPads(response.data.pads)
-    });
+  const getPads = () => {
+      setPads(locations.landingPads)
   }
 
   useEffect((url) => {
-    getPads(url);
+    getPads();
   }, [url])
 
   return (
@@ -66,8 +64,8 @@ const Locations = () => {
                 <LocationPads>
                   <PadCard>
                     <p style={padTextSmall}>Click on a picture above to see pads location</p>
-                    {pads.map(pad => 
-                      <Pad key={pad.id} pad={pad}/>)}
+                    {/*{pads.map(pad =>*/}
+                    {/*  <Pad key={pad.id} pad={pad}/>)}*/}
                   </PadCard>
                 </LocationPads>
               )}
