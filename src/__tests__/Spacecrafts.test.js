@@ -1,6 +1,6 @@
 import React from "react";
-import Spacecrafts from "../components/Spacecrafts";
-import { render } from "@testing-library/react";
+import Spacecrafts from "../components/spacecrafts/Spacecrafts";
+import {render} from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 let getByTestId;

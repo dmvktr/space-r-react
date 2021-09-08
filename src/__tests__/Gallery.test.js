@@ -1,6 +1,6 @@
 import React from "react";
-import Gallery from "../components/Gallery";
-import { render } from "@testing-library/react";
+import Gallery from "../components/gallery/Gallery";
+import {render} from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 let getByTestId;

@@ -1,6 +1,9 @@
 import React from 'react';
 import {fireEvent, render, screen} from '@testing-library/react';
 import Page from "../components/Page";
+import {ThemeProvider} from "styled-components";
+import {lightTheme} from "../components/context/Theme";
+import {MainContainer} from "../components/layout/PageElements";
 
 
 let getByTestId;
@@ -39,32 +42,44 @@ test('click theme change button then shows dropdown', async () => {
     expect(resultDiv).toBeTruthy();
 })
 
-test('Home Link has title, route',  () => {
+test('Home Link has title, route', () => {
     expect(screen.getByText('Home')).toHaveAttribute('href', '/');
     expect(screen.getByText('Home')).toHaveAttribute('title', 'Home');
 })
 
-test('Astronaut Link has title, route',  () => {
+test('Astronaut Link has title, route', () => {
     expect(screen.getByText('Astronauts')).toHaveAttribute('href', '/astronauts');
     expect(screen.getByText('Astronauts')).toHaveAttribute('title', 'Astronauts');
 })
 
-test('News Link has title, route',  () => {
+test('News Link has title, route', () => {
     expect(screen.getByText('News')).toHaveAttribute('href', '/news');
     expect(screen.getByText('News')).toHaveAttribute('title', 'News');
 })
 
-test('Gallery Link has title, route',  () => {
+test('Gallery Link has title, route', () => {
     expect(screen.getByText('Gallery')).toHaveAttribute('href', '/gallery');
     expect(screen.getByText('Gallery')).toHaveAttribute('title', 'Gallery');
 })
 
-test('Spacecraft Link has title, route',  () => {
+test('Spacecraft Link has title, route', () => {
     expect(screen.getByText('Spacecrafts')).toHaveAttribute('href', '/spacecrafts');
     expect(screen.getByText('Spacecrafts')).toHaveAttribute('title', 'Spacecrafts');
 })
 
-test('Locations Link has title, route',  () => {
+test('locations Link has title, route', () => {
     expect(screen.getByText('Locations')).toHaveAttribute('href', '/locations');
     expect(screen.getByText('Locations')).toHaveAttribute('title', 'Locations');
 })
+
+test('clicking a theme change colors', async () => {
+    const renderComponent = ({theme}) =>
+        render(
+            <ThemeProvider theme={theme}>
+                <MainContainer/>
+            </ThemeProvider>
+        );
+    const {getByTestId} = renderComponent({theme: lightTheme});
+    const resultDiv = await (() => getByTestId('main-container'));
+    expect(resultDiv).toBeTruthy();
+});
