@@ -1,18 +1,18 @@
 import React from "react";
 import {useState, useEffect} from "react";
 import {useMediaQuery} from "@material-ui/core";
-import axios from "axios";
 import Astronaut from "./Astronaut";
-import Pagination from "./Pagination";
-import {PageTitle} from "./layout/PageElements";
+import Pagination from "../Pagination";
+import {PageTitle} from "../layout/PageElements";
 import {
     AstronautMainContainer,
     AstronautCardContainer,
     AstronautCardsMainContainer,
     PaginationContainer,
     Error
-} from "./layout/AstronautElements";
+} from "../layout/AstronautElements";
 import {faAngleDoubleLeft, faAngleDoubleRight} from '@fortawesome/free-solid-svg-icons';
+import {dataHandler} from "../data_handler";
 
 
 const Astronauts = (props) => {
@@ -34,18 +34,7 @@ const Astronauts = (props) => {
     }
 
     useEffect(() => {
-        axios
-            .get(url)
-            .then((res) => {
-                setAstronauts({
-                    next: res.data.next,
-                    previous: res.data.previous,
-                    results: res.data.results
-                });
-            })
-            .catch((err) => {
-                setError(err.message)
-            })
+        dataHandler._api_get(url, setAstronauts, setError)
     }, [url]);
 
     return (
