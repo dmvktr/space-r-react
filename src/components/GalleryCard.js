@@ -13,7 +13,7 @@ import {
 import Modal from "react-modal";
 import LoadingAnim from "../static/img/loading.gif";
 
-Modal.setAppElement("#root");
+// Modal.setAppElement("#root");
 
 const customStyles = {
   content: {

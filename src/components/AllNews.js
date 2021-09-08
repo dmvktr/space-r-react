@@ -28,7 +28,7 @@ const AllNews = (props) => {
 
   return (
     <NewsPageContainer>
-      <PageTitle>News</PageTitle>
+      <PageTitle data-testid="news-header">News</PageTitle>
       {error ? (
         <Error>
           An error occured, while fetching the astronauts information. Please

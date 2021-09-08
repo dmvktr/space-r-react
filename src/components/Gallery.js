@@ -29,7 +29,7 @@ const Gallery = (props) => {
 
   return (
     <GalleryPageContainer>
-      <PageTitle>Gallery</PageTitle>
+      <PageTitle data-testid="gallery-header">Gallery</PageTitle>
       {error ? (
         <Error>
           An error occured, while fetching the astronauts information. Please

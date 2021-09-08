@@ -14,7 +14,7 @@ import {
   Title,
 } from "./layout/EventsElements";
 
-Modal.setAppElement("#root");
+// Modal.setAppElement("#root");
 
 const customStyles = {
   content: {
