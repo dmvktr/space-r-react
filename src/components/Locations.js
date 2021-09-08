@@ -10,15 +10,13 @@ import { LocationMainContainer,
 import axios from "axios";
 
 const Locations = () => {
-  const url = 'https://lldev.thespacedevs.com/2.0.0/location/?format=json&limit=3&';
+  const locationUrl = 'http://localhost:8080/locations';
 
   const [locations, setLocations] = useState([]);
   const [error, setError] = useState("");
 
-  const url = "https://lldev.thespacedevs.com/2.2.0/location/?limit=3";
-
   useEffect(() => {
-    axios.get(url)
+    axios.get(locationUrl)
       .then(response => {
         console.log(response.data.results);
         setLocations(response.data.results)
@@ -27,21 +25,13 @@ const Locations = () => {
         console.log("REQUEST SENT AND AN ERROR OCCURED: " + err.message);
         setError(err.message)
       });
-  }, [url])
+  }, [locationUrl])
 
   const [pads, setPads] = useState([]);
 
-  const getPads = (url) => {
-    axios.get(url)
-    .then(response => {
-      console.log(response.data);
-      setPads(response.data.pads)
-    });
+  const getPads = (landingPads) => {
+    setPads(landingPads.pads);
   }
-
-  useEffect((url) => {
-    getPads(url);
-  }, [url])
 
   return (
     <LocationMainContainer>
