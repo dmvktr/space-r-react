@@ -1,18 +1,18 @@
 import React from "react";
-import AllNews from "./AllNews";
+import Spacecrafts from "../components/Spacecrafts";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 let getByTestId;
 
 beforeEach(() => {
-    const component = render(<AllNews/>);
+    const component = render(<Spacecrafts/>);
     getByTestId = component.getByTestId;
 })
 
 test("header renders with correct text", () => {
-    const headerElement = getByTestId("news-header");
+    const headerElement = getByTestId("spacecraft-header");
 
-    expect(headerElement.textContent).toBe("News");
+    expect(headerElement.textContent).toBe("Spacecrafts");
 })
 
