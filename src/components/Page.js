@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, {useState} from "react";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import NavBar from "./NavBar";
-import { MainContainer } from "./layout/PageElements";
+import {MainContainer} from "./layout/PageElements";
 import About from "./About";
-import AllNews from "./AllNews";
-import Astronauts from "./Astronauts";
-import Locations from "./Locations";
-import Gallery from "./Gallery";
-import Events from "./Events";
+import AllNews from "./news/AllNews";
+import Astronauts from "./astronauts/Astronauts";
+import Locations from "./locations/Locations";
+import Gallery from "./gallery/Gallery";
+import Events from "./events/Events";
 import Home from "./Home";
-import Spacecrafts from "./Spacecrafts";
-import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme, alien, GlobalStyles } from "./context/Theme.js";
+import Spacecrafts from "./spacecrafts/Spacecrafts";
+import {ThemeProvider} from "styled-components";
+import {alien, darkTheme, GlobalStyles, lightTheme} from "./context/Theme.js";
 
 const Page = (props) => {
   const [currentTheme, setCurrentTheme] = useState("light");
