@@ -1,5 +1,5 @@
 import React from 'react';
-import { PadContainer } from './layout/LocationElements';
+import { PadContainer } from '../layout/LocationElements';
 
 export const Pad = (props) => {
 
