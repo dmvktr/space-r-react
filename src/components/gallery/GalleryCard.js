@@ -1,19 +1,10 @@
-import React, { useState } from "react";
-import {
-  Thumbnail,
-  Title,
-  Card,
-  Date,
-  CloseButton,
-  HdImg,
-} from "../layout/GalleryElements";
-import {
-  faTimes
-} from "@fortawesome/free-solid-svg-icons";
+import React, {useState} from "react";
+import {Card, CloseButton, Date, HdImg, Thumbnail, Title,} from "../layout/GalleryElements";
+import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import Modal from "react-modal";
 import LoadingAnim from "../../static/img/loading.gif";
 
-// Modal.setAppElement("#root");
+Modal.setAppElement('#root');
 
 const customStyles = {
   content: {
@@ -30,6 +21,9 @@ const customStyles = {
     backgroundPosition: "center",
     padding: "10px",
   },
+  overlay: {
+    backgroundColor: "rgba(0,0,0,0.8)"
+  }
 };
 const GalleryCard = (props) => {
   const [modalIsOpen, setIsOpen] = useState(false);
