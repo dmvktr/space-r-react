@@ -8,8 +8,7 @@ export const Location = (props) => {
     return (
         <LocationContainer>
             <img style={locationImage} 
-            src={map_image} 
-            onClick={props.getPads.bind(this, landingPads)}
+            src={map_image}
             alt="location-on-google-maps"/>
             <LocationCard>
                 <h3>{name}</h3>
