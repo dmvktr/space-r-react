@@ -5,8 +5,12 @@ export const Location = (props) => {
     
     const { name, country_code, map_image, total_launch_count, total_landing_count } = props.location;
 
+    const handleClick = () => {
+        props.onClick(props.key);
+    }
+
     return (
-        <LocationContainer>
+        <LocationContainer onClick={handleClick}>
             <img style={locationImage} 
             src={map_image}
             alt="location-on-google-maps"/>
