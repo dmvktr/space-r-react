@@ -1,23 +1,22 @@
 import React, {useState} from "react";
 import Modal from "react-modal";
 import Moment from "react-moment";
+import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import {
-    faTimes
-} from "@fortawesome/free-solid-svg-icons";
-import {
-    ModalCustomStyles,
-    ArticleNewsSite,
     ArticleContainer,
-    ModalArticleSummary,
+    ArticleNewsSite,
     ArticleTitle,
     ModalArticleStats,
+    ModalArticleSummary,
     ModalArticleUrl,
-    ModalTitle,
-    ModalContainer,
-    SingleNewsELement,
     ModalCloseButton,
     ModalCloseDiv,
-    ModalHdImg, ModalImageDiv,
+    ModalContainer,
+    ModalCustomStyles,
+    ModalHdImg,
+    ModalImageDiv,
+    ModalTitle,
+    SingleNewsElement,
 } from "../layout/NewsElement";
 
 const Articles = (props) => {
@@ -34,12 +33,12 @@ const Articles = (props) => {
 
     return (
         <React.Fragment>
-            <SingleNewsELement onClick={openModal}>
+            <SingleNewsElement onClick={openModal}>
                 <ArticleTitle>{props.article.title}</ArticleTitle>
                 <ArticleContainer picture={props.article.imageUrl}>
                     <ArticleNewsSite>{props.article.newsSite}</ArticleNewsSite>
                 </ArticleContainer>
-            </SingleNewsELement>
+            </SingleNewsElement>
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
