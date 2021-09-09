@@ -3,13 +3,12 @@ import { LocationContainer, LocationCard } from '../layout/LocationElements';
 
 export const Location = (props) => {
     
-    const { landingPads, name, country_code, map_image, total_launch_count, total_landing_count } = props.location;
+    const { name, country_code, map_image, total_launch_count, total_landing_count } = props.location;
 
     return (
         <LocationContainer>
             <img style={locationImage} 
-            src={map_image} 
-            onClick={props.getPads.bind(this, landingPads)}
+            src={map_image}
             alt="location-on-google-maps"/>
             <LocationCard>
                 <h3>{name}</h3>
