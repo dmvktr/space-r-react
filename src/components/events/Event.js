@@ -43,11 +43,11 @@ const Event = (props) => {
   return (
     <React.Fragment>
       <SingleEventContainer onClick={openModal}>
+        <ThumbnailImg src={props.event.feature_image}/>
         <EventId>#00{props.event.id}</EventId>
         <Title>{props.event.name}</Title>
         <Description>{props.event.description}</Description>
         <Location>{props.event.location}</Location>
-        <ThumbnailImg picture={props.event.feature_image}></ThumbnailImg>
         <DateContainer>
           <Moment>{props.event.date}</Moment>
         </DateContainer>
