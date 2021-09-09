@@ -1,6 +1,6 @@
 import React from "react";
-import Locations from "./Locations";
-import { render } from "@testing-library/react";
+import Locations from "../components/locations/Locations";
+import {render} from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 let getByTestId;

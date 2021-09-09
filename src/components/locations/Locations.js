@@ -5,27 +5,20 @@ import { LocationMainContainer,
   LocationsContainer,
   PadsContainer,
   LocationPads,
-  PadCard } from "./layout/LocationElements";
-import axios from "axios";
-import {Error} from "./layout/ErrorElements"
-import {PageTitle} from "./layout/PageElements"
+  PadCard } from "../layout/LocationElements";
+import {Error} from "../layout/ErrorElements"
+import {PageTitle} from "../layout/PageElements"
+import {dataHandler} from "../data_handler";
 
 
 const Locations = () => {
-  const locationUrl = 'http://localhost:8080/locations';
+  const locationUrl = 'http://localhost:8080/locations/';
 
   const [locations, setLocations] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    axios.get(locationUrl)
-      .then(response => {
-        setLocations(response.data.results)
-      })
-      .catch(err => {
-        console.log("REQUEST SENT AND AN ERROR OCCURED: " + err.message);
-        setError(err.message)
-      });
+    dataHandler._api_get_results(locationUrl, setLocations, setError)
   }, [locationUrl])
 
   const [pads, setPads] = useState([]);
@@ -45,8 +38,8 @@ const Locations = () => {
           <div>
             <LocationsContainer>
               {locations.map(location => (
-                <Location key={location.id} 
-                location={location} 
+                <Location key={location.id}
+                location={location}
                 getPads={getPads}/>
               ))}
             </LocationsContainer>
@@ -59,8 +52,8 @@ const Locations = () => {
                 <LocationPads>
                   <PadCard>
                     <p style={padTextSmall}>Click on a picture above to see pads location</p>
-                    {pads.map(pad => 
-                      <Pad key={pad.id} pad={pad}/>)}
+                    {pads.map(pad =>
+                        <Pad key={pad.id} pad={pad}/>)}
                   </PadCard>
                 </LocationPads>
               )}

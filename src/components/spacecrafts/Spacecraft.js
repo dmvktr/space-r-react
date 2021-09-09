@@ -4,7 +4,7 @@ import { Card,
         CardBody,
         CardPersonalDetail,
         SpacecraftAttributeSpan,
-        SpacecraftImage } from './layout/SpacecraftsElements';
+        SpacecraftImage } from '../layout/SpacecraftsElements';
 
 const Spacecraft = (props) => {
     const attribute = {

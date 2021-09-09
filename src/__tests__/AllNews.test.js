@@ -1,7 +1,7 @@
 import React from "react";
-import AllNews from "./AllNews";
-import { render } from "@testing-library/react";
+import {render} from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
+import AllNews from "../components/news/AllNews";
 
 let getByTestId;
 

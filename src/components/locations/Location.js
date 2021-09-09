@@ -1,5 +1,5 @@
 import React from 'react';
-import { LocationContainer, LocationCard } from './layout/LocationElements';
+import { LocationContainer, LocationCard } from '../layout/LocationElements';
 
 export const Location = (props) => {
     

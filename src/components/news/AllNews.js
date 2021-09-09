@@ -1,28 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { NewsContainer, NewsPageContainer, PageTitle} from "./layout/PageElements";
+import { NewsContainer, NewsPageContainer, PageTitle} from "../layout/PageElements";
 import Articles from "./Articles";
-import axios from "axios";
-import {Error} from "./layout/ErrorElements"
+import {dataHandler} from "../data_handler";
+import {Error} from "../layout/ErrorElements"
 
 const AllNews = (props) => {
-  const url = "https://api.spaceflightnewsapi.net/v3/articles?_limit=15";
+  // const url = "https://api.spaceflightnewsapi.net/v3/articles?_limit=15";
+ const url = "http://localhost:8080/news";
 
   const [news, setNews] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    axios
-      .get(url)
-      .then((res) => {
-        setNews(res.data);
-      })
-      .catch((error) => {
-        setError(error.message);
-        console.error(
-          `The request was made and the server responded
-        with a status code that falls out of the range of 2xx ` + error.message
-        );
-      });
+      dataHandler._api_get(url, setNews, setError);
   }, [url]);
 
   return (
@@ -34,7 +24,7 @@ const AllNews = (props) => {
           try again later!
         </Error>
       ) : (
-        <NewsContainer>
+        < NewsContainer data-testid="news-container">
           {news.map((article) => (
             <Articles
     key={article.id}

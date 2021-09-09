@@ -1,21 +1,20 @@
 import React from "react";
 import Spacecraft from "./Spacecraft";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import {
   SpacecraftsMainContainer,
   SpacecraftsCardsMainContainer,
   SpacecraftsCardContainer,
-} from "./layout/SpacecraftsElements";
-import { Error } from "./layout/ErrorElements";
-import {PageTitle} from "./layout/PageElements";
+} from "../layout/SpacecraftsElements";
+import { Error } from "../layout/ErrorElements";
+import {PageTitle} from "../layout/PageElements";
+import {dataHandler} from "../data_handler";
 
 
 
 const Spacecrafts = (props) => {
-  const baseEndpoint =
-    "https://lldev.thespacedevs.com/2.2.0/config/spacecraft/";
-  // const baseEndpoint = "https://ll.thespacedevs.com/2.2.0/config/spacecraft/";
+  // const baseEndpoint = "https://lldev.thespacedevs.com/2.2.0/config/spacecraft/";
+  const baseEndpoint = "http://localhost:8080/spacecrafts/";
   const fetchLimit = 10;
   const offset = 0;
 
@@ -32,18 +31,7 @@ const Spacecrafts = (props) => {
   };
 
   useEffect(() => {
-    axios
-      .get(assembleTargetURL())
-      .then((res) => {
-        setSpacecrafts({
-          next: res.data.next,
-          previous: res.data.previous,
-          results: res.data.results,
-        });
-      })
-      .catch((err) => {
-        setError(err.message);
-      });
+   dataHandler._api_get(assembleTargetURL(), setSpacecrafts, setError)
   }, []);
 
   return (

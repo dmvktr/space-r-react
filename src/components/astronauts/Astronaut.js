@@ -7,7 +7,7 @@ import {
   CardBio,
   AstronautName,
   AstronautImage,
-} from "./layout/AstronautElements";
+} from "../layout/AstronautElements";
 
 const Astronaut = (props) => {
   return (
