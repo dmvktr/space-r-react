@@ -40,7 +40,7 @@ export const Details = styled.p`
 `;
 
 export const LocationImage = styled.img`
-  max-width: 50vh;
+  max-width: 40vh;
   min-width: 100%;
   height: auto;
 

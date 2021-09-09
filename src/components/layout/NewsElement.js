@@ -40,7 +40,7 @@ export const SingleNewsElement = styled.div`
   padding: 0.3rem;
   width: 100%;
   min-height: 40vh;
-  min-width: 25rem;
+  min-width: 20rem;
   border: 3px solid ${(props) => props.theme.article.borderColor};
   color: white;
   display: flex;

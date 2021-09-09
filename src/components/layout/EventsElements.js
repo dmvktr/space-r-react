@@ -14,8 +14,11 @@ export const EventsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  width: 70vw;
+  width: 80vw;
   gap: 2vw;
+  @media (max-width: 500px) {
+    width: 99vw;
+  }
 `;
 
 const ScaleUp = keyframes`
