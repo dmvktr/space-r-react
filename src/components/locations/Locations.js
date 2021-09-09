@@ -22,11 +22,16 @@ const Locations = () => {
   }, [locationUrl])
 
   const [pads, setPads] = useState([]);
+  const [clicked, isClicked] = useState(false);
 
   const getPads = (landingPads) => {
     setPads(landingPads.pads);
+    isClicked(true);
   }
 
+  console.log(locations);
+  console.log(pads);
+  
   return (
     <LocationMainContainer>
       <PageTitle data-testid="locations-header">Locations</PageTitle>
@@ -51,7 +56,15 @@ const Locations = () => {
                 ) : (
                 <LocationPads>
                   <PadCard>
-                    <p style={padTextSmall}>Click on a picture above to see pads location</p>
+                    { clicked ? 
+                      <p style={padTextSmall}>
+                        Click on the pad title to visit wikipedia site
+                      </p>
+                    :
+                      <p style={padTextSmall}>
+                        Click on a picture above to see pads location
+                      </p>
+                    }
                     {pads.map(pad =>
                         <Pad key={pad.id} pad={pad}/>)}
                   </PadCard>
