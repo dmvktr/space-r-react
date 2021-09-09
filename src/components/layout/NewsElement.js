@@ -1,12 +1,13 @@
-import styled, { keyframes } from "styled-components";
+import styled, {keyframes} from "styled-components";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const ScaleUp = keyframes`
   0%{transform: scale(1)}
   100% {transform: scale(1.02)}
 
 `;
+
 
 export const ModalCustomStyles = {
     content: {
@@ -23,11 +24,14 @@ export const ModalCustomStyles = {
         borderRadius: "15px",
         border: "3px solid white",
         padding: "0.5rem",
-        zIndex:"50"
-
+        zIndex: "50"
     },
+    overlay: {
+        backgroundColor: "rgba(0,0,0,0.8)"
+    }
 };
-export const SingleNewsELement = styled.div`
+
+export const SingleNewsElement = styled.div`
   border-radius: 1vw;
   background-image: url(${(props) => props.picture});
   background-size: cover;
@@ -85,14 +89,12 @@ export const ModalArticleSummary = styled.div`
   display: flex;
   align-items: center;
   grid-area: summary;
-  min-width:  20vw;
-  min-height: 40vh;
   height:100%;
   background: ${(props) => props.theme.modal.modalSummaryBg};
   color: ${(props) => props.theme.modal.modalSummaryFontColor};
   font-weight: 600;
   padding: 1rem;
-  font-size: clamp(0.8rem, 2.0vw, 1.4rem);
+  font-size: clamp(1rem, 2.0vw, 1.4rem);
   overflow-x: auto;
 `;
 
@@ -103,10 +105,10 @@ export const ModalTitle = styled.h2`
   text-align: center;
   font-weight: 600;
   vertical-align: middle;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  font-size: clamp(1rem, 2.0vw, 1.7rem);
+  font-size: clamp(1.2rem, 2.0vw, 1.7rem);
   padding: 0.2rem;
   background: ${(props) => props.theme.modal.modalbackground};
   color: ${(props) => props.theme.modal.modalTitleFontColor};
@@ -136,14 +138,23 @@ export const ModalContainer = styled.div`
     "stats stats stats";
   border-radius: 0.8rem;
   border: 1px solid black;
+  @media (max-width: 800px) {
+    grid-template-areas:
+    "title title close"
+    "picture picture picture"
+    "summary summary summary"
+    "url url url"
+    "stats stats stats";
+    grid-template-rows: auto 40% 20% 15% 10%;
+
+  }
 `;
 
 
 
 export const ModalArticleUrl = styled.a`
-  color: ${(props) => props.theme.modal.modalFontcolor};
+  color: ${(props) => props.theme.modal.modalTitleFontColor} !important;
   font-size: clamp(0.8rem, 2.0vw, 1.2rem);
-  background-color: black;
   grid-area: url;
   padding: 0.5rem;
   width: 100%;
@@ -176,6 +187,8 @@ export const ModalCloseButton = styled(FontAwesomeIcon)`
 export const ModalImageDiv = styled.div`
   display: flex;
   grid-area: picture;
+  justify-content: center;
+  align-content: center;
   width: auto;
   height: auto;
   border: 2px solid rgba(0, 0, 0, 0.3);
