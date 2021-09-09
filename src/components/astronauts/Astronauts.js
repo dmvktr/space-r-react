@@ -38,18 +38,17 @@ const Astronauts = (props) => {
 
     return (
         <AstronautMainContainer>
-            <PageTitle data-testid="gallery-header">Astronauts</PageTitle>
-            {error ? (
-                <Error>
-                    An error occured while fetching the astronauts information. Please try
-                    again later!
-                </Error>
-            ) : (
-                <>
-                    {isMatchingLayoutChangeThreshold ? (
-                            <PaginationContainer>
-                                <PageTitle>Astronauts</PageTitle>
-                                <Pagination icon={faAngleDoubleLeft} url={astronauts.previous} onClick={handleClick}/>
+                {error ? (
+                    <Error>
+                        An error occured while fetching the astronauts information. Please try
+                        again later!
+                    </Error>
+                ) : (
+                    <>
+                        {isMatchingLayoutChangeThreshold ? (
+                                <PaginationContainer>
+                                    <PageTitle>Astronauts</PageTitle>
+                                    <Pagination icon={faAngleDoubleLeft} url={astronauts.previous} onClick={handleClick}/>
                                 <Pagination icon={faAngleDoubleRight} url={astronauts.next} onClick={handleClick}/>
                             </PaginationContainer>
                         ) :
