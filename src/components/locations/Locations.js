@@ -23,8 +23,8 @@ const Locations = () => {
 
   const [pads, setPads] = useState([]);
 
-  const getPads = (landingPads) => {
-    setPads(landingPads.pads);
+  const getPads = (padId) => {
+    dataHandler._api_post("/locations", padId, setPads, setError);
   }
 
   return (
@@ -40,7 +40,8 @@ const Locations = () => {
               {locations.map(location => (
                 <Location key={location.id}
                 location={location}
-                getPads={getPads}/>
+                onClick={()=>getPads(location.id)}
+                />
               ))}
             </LocationsContainer>
             <PadsContainer>
