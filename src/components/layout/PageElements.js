@@ -27,7 +27,7 @@ export const PageTitle = styled.div`
   text-align: center;
   font-size: 30px;
   font-weight: 370;
-  -webkit-text-stroke: ${(props) => props.theme.textStroke};;
+  -webkit-text-stroke: ${(props) => props.theme.textStroke};
   letter-spacing: 1px;
   margin: 0.3rem;
 `;
