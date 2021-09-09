@@ -12,19 +12,16 @@ import {dataHandler} from "../data_handler";
 
 
 const Locations = () => {
-  const locationUrl = 'http://localhost:8080/locations/';
-
   const [locations, setLocations] = useState([]);
   const [error, setError] = useState("");
+  const [locationUrl, setLocationUrl] = useState( 'http://localhost:8080/locations/');
 
   useEffect(() => {
     dataHandler._api_get_results(locationUrl, setLocations, setError)
   }, [locationUrl])
 
-  const [pads, setPads] = useState([]);
-
-  const getPads = (padId) => {
-    dataHandler._api_post("/locations", padId, setPads, setError);
+  const handleClick = (padId) => {
+      setLocationUrl('http://localhost:8080/locations/' + padId);
   }
 
   return (
@@ -40,7 +37,7 @@ const Locations = () => {
                 {locations.map(location => (
                     <Location key={location.id}
                               location={location}
-                              onClick={()=>getPads(location.id)}
+                              onClick={handleClick}
                     />
                 ))}
               </LocationsContainer>
