@@ -1,15 +1,14 @@
-import React from "react";
-import {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useMediaQuery} from "@material-ui/core";
 import Astronaut from "./Astronaut";
 import Pagination from "../Pagination";
 import {PageTitle} from "../layout/PageElements";
 import {
-    AstronautMainContainer,
     AstronautCardContainer,
     AstronautCardsMainContainer,
-    PaginationContainer,
-    Error
+    AstronautMainContainer,
+    Error,
+    PaginationContainer
 } from "../layout/AstronautElements";
 import {faAngleDoubleLeft, faAngleDoubleRight} from '@fortawesome/free-solid-svg-icons';
 import {dataHandler} from "../data_handler";
@@ -39,6 +38,7 @@ const Astronauts = (props) => {
 
     return (
         <AstronautMainContainer>
+            <PageTitle data-testid="gallery-header">Astronauts</PageTitle>
             {error ? (
                 <Error>
                     An error occured while fetching the astronauts information. Please try
