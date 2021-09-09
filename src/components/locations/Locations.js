@@ -12,56 +12,54 @@ import {dataHandler} from "../data_handler";
 
 
 const Locations = () => {
-  const locationUrl = 'http://localhost:8080/locations/';
-
   const [locations, setLocations] = useState([]);
   const [error, setError] = useState("");
+  const [locationUrl, setLocationUrl] = useState( 'http://localhost:8080/locations/');
 
   useEffect(() => {
     dataHandler._api_get_results(locationUrl, setLocations, setError)
   }, [locationUrl])
 
-  const [pads, setPads] = useState([]);
-
-  const getPads = (landingPads) => {
-    setPads(landingPads.pads);
+  const handleClick = (padId) => {
+      setLocationUrl('http://localhost:8080/locations/' + padId);
   }
 
   return (
-    <LocationMainContainer>
-      <PageTitle data-testid="locations-header">Locations</PageTitle>
-      {error ? (
-        <Error>
-          An error occurred while tried to fetch
-        </Error>
+      <LocationMainContainer>
+        <PageTitle data-testid="locations-header">Locations</PageTitle>
+        {error ? (
+            <Error>
+              An error occurred while tried to fetch
+            </Error>
         ) : (
-          <div>
-            <LocationsContainer>
-              {locations.map(location => (
-                <Location key={location.id}
-                location={location}
-                getPads={getPads}/>
-              ))}
-            </LocationsContainer>
-            <PadsContainer>
-              {error ? (
-                <Error>
-                  An error occurred while tried to fetch
-                </Error>
+            <div>
+              <LocationsContainer>
+                {locations.map(location => (
+                    <Location key={location.id}
+                              location={location}
+                              onClick={handleClick}
+                    />
+                ))}
+              </LocationsContainer>
+              <PadsContainer>
+                {error ? (
+                    <Error>
+                      An error occurred while tried to fetch
+                    </Error>
                 ) : (
-                <LocationPads>
-                  <PadCard>
-                    <p style={padTextSmall}>Click on a picture above to see pads location</p>
-                    {pads.map(pad =>
-                        <Pad key={pad.id} pad={pad}/>)}
-                  </PadCard>
-                </LocationPads>
-              )}
-            </PadsContainer>
-          </div>
+                    <LocationPads>
+                      <PadCard>
+                        <p style={padTextSmall}>Click on a picture above to see pads location</p>
+                        {pads.map(pad =>
+                            <Pad key={pad.id} pad={pad}/>)}
+                      </PadCard>
+                    </LocationPads>
+                )}
+              </PadsContainer>
+            </div>
         )
-      }
-    </LocationMainContainer>
+        }
+      </LocationMainContainer>
   );
 };
 
