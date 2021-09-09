@@ -1,28 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { Location } from "./Location";
-import { Pad } from './Pad';
-import { LocationMainContainer,
-  LocationsContainer,
-  PadsContainer,
-  LocationPads,
-  PadCard } from "../layout/LocationElements";
+import React, {useEffect, useState} from "react";
+import {Location} from "./Location";
+
+import {LocationMainContainer, LocationsContainer} from "../layout/LocationElements";
 import {Error} from "../layout/ErrorElements"
 import {PageTitle} from "../layout/PageElements"
 import {dataHandler} from "../data_handler";
 
 
 const Locations = () => {
-  const [locations, setLocations] = useState([]);
-  const [error, setError] = useState("");
-  const [locationUrl, setLocationUrl] = useState( 'http://localhost:8080/locations/');
+    const [locations, setLocations] = useState([]);
+    const [error, setError] = useState("");
+    const [locationUrl] = useState('http://localhost:8080/locations/');
 
   useEffect(() => {
     dataHandler._api_get_results(locationUrl, setLocations, setError)
   }, [locationUrl])
-
-  const handleClick = (padId) => {
-      setLocationUrl('http://localhost:8080/locations/' + padId);
-  }
 
   return (
       <LocationMainContainer>
@@ -37,25 +29,9 @@ const Locations = () => {
                 {locations.map(location => (
                     <Location key={location.id}
                               location={location}
-                              onClick={handleClick}
                     />
                 ))}
               </LocationsContainer>
-              <PadsContainer>
-                {error ? (
-                    <Error>
-                      An error occurred while tried to fetch
-                    </Error>
-                ) : (
-                    <LocationPads>
-                      <PadCard>
-                        <p style={padTextSmall}>Click on a picture above to see pads location</p>
-                        {pads.map(pad =>
-                            <Pad key={pad.id} pad={pad}/>)}
-                      </PadCard>
-                    </LocationPads>
-                )}
-              </PadsContainer>
             </div>
         )
         }
@@ -63,13 +39,5 @@ const Locations = () => {
   );
 };
 
-const padTextSmall = {
-  fontSize: 16,
-  color: 'whitesmoke',
-  position: 'absolute',
-  top: 0,
-  marginTop: '10px',
-  justifyContent: 'center',
-};
 
 export default Locations;

@@ -49,20 +49,6 @@ export const PadContainer = styled.div`
   color: whitesmoke;
 `;
 
-export const PadsContainer = styled.div`
-  min-height: 1rem;
-  text-align: center;
-  font-size: 20px;
-  margin: 1rem;
-`;
-
-export const PadCard = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 32vh;
-`;
-
 export const Error = styled.div`
   display: flex;
   justify-content: center;
@@ -70,10 +56,4 @@ export const Error = styled.div`
   font-size: 30px;
   font-weight: 450;
   color: red;
-`;
-
-export const LocationImage = styled.img`
-  max-width: 30vw;
-  min-width: 30vw;
-
 `;
