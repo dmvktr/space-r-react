@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, {useEffect, useState} from "react";
 import Event from "./Event";
 import {Error} from "../layout/ErrorElements"
 import {PageTitle} from "../layout/PageElements"
-import {
-  EventsPageContainer,
-  EventsContainer,
-} from "../layout/EventsElements.js";
+import {EventsContainer, EventsPageContainer,} from "../layout/EventsElements.js";
 import {dataHandler} from "../data_handler";
 
 const Events = (props) => {
@@ -31,7 +28,6 @@ const Events = (props) => {
         </Error>
       ) : (
         <EventsContainer>
-
           {events.results.map((event) => (
             <Event key={event.id} event={event} theme={props.theme}></Event>
           ))}
