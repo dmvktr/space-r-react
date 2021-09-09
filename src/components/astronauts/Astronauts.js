@@ -1,15 +1,14 @@
-import React from "react";
-import {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useMediaQuery} from "@material-ui/core";
 import Astronaut from "./Astronaut";
 import Pagination from "../Pagination";
 import {PageTitle} from "../layout/PageElements";
 import {
-    AstronautMainContainer,
     AstronautCardContainer,
     AstronautCardsMainContainer,
-    PaginationContainer,
-    Error
+    AstronautMainContainer,
+    Error,
+    PaginationContainer
 } from "../layout/AstronautElements";
 import {faAngleDoubleLeft, faAngleDoubleRight} from '@fortawesome/free-solid-svg-icons';
 import {dataHandler} from "../data_handler";
@@ -39,17 +38,17 @@ const Astronauts = (props) => {
 
     return (
         <AstronautMainContainer>
-            {error ? (
-                <Error>
-                    An error occured while fetching the astronauts information. Please try
-                    again later!
-                </Error>
-            ) : (
-                <>
-                    {isMatchingLayoutChangeThreshold ? (
-                            <PaginationContainer>
-                                <PageTitle>Astronauts</PageTitle>
-                                <Pagination icon={faAngleDoubleLeft} url={astronauts.previous} onClick={handleClick}/>
+                {error ? (
+                    <Error>
+                        An error occured while fetching the astronauts information. Please try
+                        again later!
+                    </Error>
+                ) : (
+                    <>
+                        {isMatchingLayoutChangeThreshold ? (
+                                <PaginationContainer>
+                                    <PageTitle>Astronauts</PageTitle>
+                                    <Pagination icon={faAngleDoubleLeft} url={astronauts.previous} onClick={handleClick}/>
                                 <Pagination icon={faAngleDoubleRight} url={astronauts.next} onClick={handleClick}/>
                             </PaginationContainer>
                         ) :

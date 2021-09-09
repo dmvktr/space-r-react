@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import GalleryCard from "./GalleryCard";
 import {Error} from "../layout/ErrorElements"
 import {PageTitle} from "../layout/PageElements"
-import { GalleryPageContainer, CardContainer } from "../layout/GalleryElements";
+import {CardContainer, GalleryPageContainer} from "../layout/GalleryElements";
 import {dataHandler} from "../data_handler";
 
 const Gallery = (props) => {
@@ -31,7 +31,7 @@ const Gallery = (props) => {
               key={picture.title}
               picture={picture}
               theme={props.theme}
-            ></GalleryCard>
+            />
           ))}
         </CardContainer>
       )}

@@ -1,34 +1,20 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import Moment from "react-moment";
 import Modal from "react-modal";
 import ReactPlayer from "react-player";
 
 import {
   DateContainer,
+  Description,
   EventId,
   EventUrl,
   Location,
-  Description,
   SingleEventContainer,
   ThumbnailImg,
   Title,
 } from "../layout/EventsElements";
+import {ModalStyle} from "../layout/PageElements";
 
-// Modal.setAppElement("#root");
-
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    margin: "0",
-    transform: "translate(-50%, -50%)",
-    backgroundColor: "black",
-    backgroundSize: "50%",
-    backgroundPosition: "center",
-  },
-};
 const Event = (props) => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -56,11 +42,11 @@ const Event = (props) => {
         </EventUrl>
       </SingleEventContainer>
       <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Modal"
-        onClick={closeModal}
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          style={ModalStyle}
+          contentLabel="Modal"
+          onClick={closeModal}
       >
         <ReactPlayer url={props.event.video_url} />
       </Modal>

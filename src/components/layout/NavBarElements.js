@@ -1,5 +1,5 @@
 import styled, {keyframes} from "styled-components";
-import { NavLink as Link } from "react-router-dom";
+import {NavLink as Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export const NavContainer = styled.div`
@@ -80,6 +80,7 @@ export const HamburgerMenu = styled(FontAwesomeIcon)`
   position: absolute;
   top: 1rem;
   right: 1rem;
+  margin-right: 1vw;
   width: 2rem !important;
   height: 2rem;
   color: ${(props) => props.theme.headerFontColor};
@@ -146,7 +147,8 @@ export const ResponsiveLinks = styled.div`
   top: var(--navbar-grid-height);
   right: 0;
   z-index: 100;
-  padding:10px;
+  padding: 10px;
+  margin-right: 4vh;
   background-color: ${(props) => props.theme.headerBgColor};
   border: 2px solid black;
   border-radius: 10px;

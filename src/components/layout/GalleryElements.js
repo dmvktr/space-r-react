@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, {keyframes} from "styled-components";
 import LoadingAnim from "../../static/img/loading.gif";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
@@ -6,15 +6,17 @@ export const CardContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  justify-content: space-between;
-  align-items: center;
-  @media (max-width: 1000px){
+  @media (max-width: 1000px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  @media (max-width: 800px){
+  @media (max-width: 800px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  @media (max-width: 500px ){
+  @media (max-width: 600px ) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 400px ) {
+    margin: 0 3vw;
     grid-template-columns: 1fr;
   }
 `;
@@ -25,7 +27,6 @@ export const GalleryPageContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 100vw;
 `;
 
 const FocusAnim = keyframes`
@@ -69,7 +70,7 @@ export const Title = styled.h4`
   max-height: 2em;
   top: calc(-1 * 15vh / 2);
   z-index: 40;
-  font-size: 20px;
+  font-size: 1rem;
   color: white;
 `;
 
@@ -87,7 +88,7 @@ export const Card = styled.div`
   background-repeat: no-repeat;
 `;
 export const HdImg = styled.img`
-  width: 100vw;
-  height: auto;
+  max-width: 80vw;
+  max-height: 80vh;
 `;
 export const Date = styled.h3``;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export const MainContainer = styled.div`
   display: grid;
@@ -13,8 +13,8 @@ export const MainContainer = styled.div`
     "content content content"
     "footer footer footer";
   background: ${(props) => props.theme.bodyColor};
-  
-  @media (max-width: 1050px){
+
+  @media (max-width: 1050px) {
     height: unset;
     grid-row-gap: 1rem;
   }
@@ -27,8 +27,9 @@ export const PageTitle = styled.div`
   text-align: center;
   font-size: 30px;
   font-weight: 370;
-  -webkit-text-stroke:${(props) => props.theme.textStroke};;
+  -webkit-text-stroke: ${(props) => props.theme.textStroke};
   letter-spacing: 1px;
+  margin: 0.3rem;
 `;
 
 export const MainContentContainer = styled.div`
@@ -62,10 +63,24 @@ export const VideoContainer = styled.div`
   height: 90vh;
 `;
 
-export const SlideContainer = styled.div`
-  width: 100vw;
-  display: flex;
-`;
+export const ModalStyle = {
+    content: {
+        top: "50%",
+        left: "50%",
+        right: "auto",
+        bottom: "auto",
+        margin: "0",
+        transform: "translate(-50%, -50%)",
+        backgroundColor: "black",
+
+        backgroundSize: "50%",
+        backgroundPosition: "center",
+    },
+    overlay: {
+        backgroundColor: "rgba(0,0,0,0.8)"
+    }
+}
+
 
 export const ScrollToTopButton = styled(FontAwesomeIcon)`
   position: relative;

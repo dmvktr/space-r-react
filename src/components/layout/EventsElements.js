@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 export const EventsPageContainer = styled.div`
   display: flex;
@@ -14,8 +14,11 @@ export const EventsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  width: 70vw;
+  width: 80vw;
   gap: 2vw;
+  @media (max-width: 500px) {
+    width: 99vw;
+  }
 `;
 
 const ScaleUp = keyframes`
@@ -32,7 +35,7 @@ const ScaleDown = keyframes`
 
 export const SingleEventContainer = styled.div`
   display: grid;
-  grid-template-columns: 1.4fr 0.6fr 1fr 1fr;
+  grid-template-columns: 1.4fr 0.6fr 0.8fr 0.8fr;
 
   background: ${(props) => props.theme.event.singleEventContainer};
   border: ${(props) => props.theme.event.singleEventContainerBorder};
@@ -47,15 +50,15 @@ export const SingleEventContainer = styled.div`
     "picture description description description"
     "picture location url url";
 
-  @media (max-width:800px){
+  @media (max-width: 900px) {
     display: flex;
     flex-direction: column;
     grid-template-rows: auto auto auto auto;
   }
-  
+
   :hover {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-      rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
     animation: ${ScaleUp} 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   }
   cursor: pointer;
@@ -73,7 +76,7 @@ export const Title = styled.h3`
   grid-area: title;
   color: ${(props) => props.theme.event.titleColor};
   padding: 1rem;
-  font-size: clamp(0.7rem, 2.0vw, 1.4rem);
+  font-size: clamp(1.5rem, 2.0vw, 1.4rem);
 `;
 export const Description = styled.h3`
   grid-area: description;
