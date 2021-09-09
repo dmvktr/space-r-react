@@ -8,6 +8,15 @@ export const CardContainer = styled.div`
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 1000px){
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  @media (max-width: 800px){
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (max-width: 500px ){
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const GalleryPageContainer = styled.div`

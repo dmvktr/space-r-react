@@ -1,16 +1,5 @@
 import styled from "styled-components";
 
-export const SpacecraftsPageText = styled.div`
-    min-width: 90vw;
-    min-height: 5vh;
-    color: white;
-    text-align: center;
-    font-size: 25px;
-    font-weight: 370;
-    -webkit-text-stroke: 0.8px #100D80;
-    letter-spacing: 1px;
-    margin-top: 1em;
-`;
 
 export const SpacecraftsMainContainer = styled.div`
     display: flex;
@@ -27,6 +16,9 @@ export const SpacecraftsCardsMainContainer = styled.div`
     min-width: 65vw;
     max-width: 75vw;
     grid-template-columns: 1fr 1fr;
+    @media(max-width:1000px){
+      grid-template-columns: 1fr;
+    }
     gap: 2rem;
     min-height: 60vh;
     width: 100%;
@@ -58,10 +50,10 @@ export const SpacecraftImageContainer = styled.div`
     max-height: 35%;
     min-height: 30%;
     height: 100%;
-    padding: 20px;
+    padding: 1rem;
 `;
 
-export const SpacecraftImage = styled.div`
+export const SpacecraftImage = styled.img`
     object-fit: cover;
     width: 100%;
     height: 250px;
@@ -74,12 +66,12 @@ export const CardBody = styled.div`
     text-align: center;
     max-height: 70%;
     min-height: 50%;
-    height: 100%;
+    height: 100%;  
 `
 
 export const CardPersonalDetail = styled.div`
     color: whitesmoke;
-    font-size: 15px;
+    font-size: clamp(0.6rem, 2.0vw, 0.9rem);
     font-weight: 450;
     text-align: center;
     letter-spacing: 1px;

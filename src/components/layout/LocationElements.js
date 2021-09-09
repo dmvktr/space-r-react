@@ -1,69 +1,59 @@
 import styled from "styled-components";
 
 export const LocationMainContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: top;
-    align-items: space-around;
-    min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
 `;
 
 export const LocationsContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  gap: 2vw;
+  color: white;
+  flex-direction: row;
+  max-width:  50vw;
+  margin: auto;
+  @media (max-width: 800px) {
     display: flex;
-    justify-content: space-around;
-    alignItems: center;
-    margin-top: 50px;
-    color: white;
+    flex-direction: column;
+  }
 `;
 
 export const LocationContainer = styled.div`
-    border: 5px solid;
-    border-color: #96c6ff;
-    text-align: center;
-    height: 380px;
-    border-radius: 10px;
-    background-color: #d0d5db;
-    color: #000b45;
+  border: 5px solid #96c6ff;
+  text-align: center;
+  height: auto;
+  border-radius: 10px;
+  background-color: #d0d5db;
+  color: #000b45;
 `;
 
 export const LocationCard = styled.div`
-    display: 'flex';
-    flexDirection: 'column';
-    justifyContent: 'space-around';
-    alignItems: 'center';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  min-width: 30vw;
+  margin:auto;
 `;
 
 export const LocationPads = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: space-between;
+  display: flex;
+  flex-direction: column;
+
 `;
 
 export const PadContainer = styled.div`
-    color: whitesmoke;
-`;
-
-export const PadsContainer = styled.div`
-    min-height: 30px;
-    position: relative;
-    text-align: center;
-    font-size: 20px;
-    margin: 20px;
-`;
-
-export const PadCard = styled.div`
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 32vh;
+  color: whitesmoke;
 `;
 
 export const Error = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: space-around;
-    font-size: 30px;
-    font-weight: 450;
-    color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 450;
+  color: red;
 `;

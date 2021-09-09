@@ -20,26 +20,28 @@ export const ModalCustomStyles = {
         backgroundRepeat: "no-repeat",
         backgroundSize: "50%",
         backgroundPosition: "center",
-        borderRadius: "20px",
+        borderRadius: "15px",
         border: "3px solid white",
-        padding: "10px"
+        padding: "0.5rem",
+        zIndex:"50"
+
     },
 };
 export const SingleNewsELement = styled.div`
-  border-radius: 11px;
+  border-radius: 1vw;
   background-image: url(${(props) => props.picture});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 10px;
+  padding: 0.3rem;
   width: 100%;
-  height: 20vw;
-  min-width: 30rem;
+  min-height: 40vh;
+  min-width: 25rem;
   border: 3px solid ${(props) => props.theme.article.borderColor};
   color: white;
-  display: grid;
-  grid-template-rows: 20% 80%;
+  display: flex;
   flex: 1;
+  flex-direction: column;
   box-shadow: rgb(233 219 219 / 0%) -15px 20px 13px,
     rgb(167 68 68 / 0%) -12px 13px 6px 0px;
   transition: box-shadow 0.2s ease-in-out;
@@ -60,11 +62,11 @@ export const ArticleNewsSite = styled.p`
 `;
 
 export const ArticleTitle = styled.h3`
-  height: 80px;
+  min-height: 4rem;
   background: ${(props) => props.theme.article.articleBgColor};
   border-radius: 10px 10px 0 0;
+  vertical-align: middle;
   padding: 0.3rem;
-  overflow: hidden;
   text-align: center;
   color: ${(props) => props.theme.textColor};
 `;
@@ -83,21 +85,29 @@ export const ModalArticleSummary = styled.div`
   display: flex;
   align-items: center;
   grid-area: summary;
+  min-width:  20vw;
+  min-height: 40vh;
+  height:100%;
   background: ${(props) => props.theme.modal.modalSummaryBg};
   color: ${(props) => props.theme.modal.modalSummaryFontColor};
   font-weight: 600;
-  padding: 30px;
-  font-size: 1.5rem;
+  padding: 1rem;
+  font-size: clamp(0.8rem, 2.0vw, 1.4rem);
+  overflow-x: auto;
 `;
 
 
 export const ModalTitle = styled.h2`
-  border-radius: 11px 0 0 0;
+  border-radius: 0.8rem 0 0 0;
   grid-area: title;
   text-align: center;
   font-weight: 600;
-  font-size: 2rem;
-  padding: 0.3em;
+  vertical-align: middle;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 2.0vw, 1.7rem);
+  padding: 0.2rem;
   background: ${(props) => props.theme.modal.modalbackground};
   color: ${(props) => props.theme.modal.modalTitleFontColor};
   border-bottom:${(props) => props.theme.modal.modalBorder};
@@ -115,18 +125,16 @@ export const ModalArticleStats = styled.div`
 
 export const ModalContainer = styled.div`
   display: grid;
-  grid-template-columns: 50% auto 5%;
-  grid-template-rows: 12% 65% 15% 8%;
   width: 80vw;
   height: 80vh;
+  grid-template-rows: auto 60% 15% 10%;
   background: ${(props) => props.theme.modal.modalSummaryBg};
-  justify-content: center;
   grid-template-areas:
     "title title close"
     "summary picture picture"
     "url url url"
     "stats stats stats";
-  border-radius: 30px;
+  border-radius: 0.8rem;
   border: 1px solid black;
 `;
 
@@ -134,10 +142,10 @@ export const ModalContainer = styled.div`
 
 export const ModalArticleUrl = styled.a`
   color: ${(props) => props.theme.modal.modalFontcolor};
-  font-size: 1.2em;
+  font-size: clamp(0.8rem, 2.0vw, 1.2rem);
   background-color: black;
   grid-area: url;
-  padding: 10px;
+  padding: 0.5rem;
   width: 100%;
   height: 100%;
   background: ${(props) => props.theme.modal.modalbackground};
@@ -148,6 +156,7 @@ export const ModalCloseDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 5vw;
   background: ${(props) => props.theme.modal.modalbackground};
   border-radius: 0 11px 0 0;
   border-bottom:${(props) => props.theme.modal.modalBorder};
@@ -156,19 +165,29 @@ export const ModalCloseDiv = styled.div`
 
 export const ModalCloseButton = styled(FontAwesomeIcon)`
   color: ${(props) => props.theme.modal.modalFontcolor};
-  font-size: 3rem;
-  font-weight: 800;
+  font-size: 2rem;
+  font-weight: 500;
   width: 3rem;
   height: 3rem;
   cursor: pointer;
 `;
 
 
-export const ModalHdImg = styled.img`
+export const ModalImageDiv = styled.div`
   display: flex;
   grid-area: picture;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+
+`;
+
+export const ModalHdImg = styled.img`
+  display: flex;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
   border: 2px solid rgba(0, 0, 0, 0.3);
 
 `;
