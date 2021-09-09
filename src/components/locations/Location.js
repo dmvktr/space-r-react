@@ -1,5 +1,5 @@
 import React from 'react';
-import { LocationContainer, LocationCard } from '../layout/LocationElements';
+import {LocationContainer, LocationCard, LocationImage} from '../layout/LocationElements';
 
 export const Location = (props) => {
     
@@ -7,10 +7,10 @@ export const Location = (props) => {
 
     return (
         <LocationContainer>
-            <img style={locationImage} 
-            src={map_image} 
-            onClick={props.getPads.bind(this, landingPads)}
-            alt="location-on-google-maps"/>
+            <LocationImage
+                src={map_image}
+                onClick={props.getPads.bind(this, landingPads)}
+                alt="location-on-google-maps"/>
             <LocationCard>
                 <h3>{name}</h3>
                 <h4>{country_code}</h4>
@@ -19,10 +19,3 @@ export const Location = (props) => {
         </LocationContainer>
     )
 }
-
-const locationImage = {
-  margin: "5px",
-  maxWidth: "420px",
-  boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
-  borderRadius: "4%",
-};
