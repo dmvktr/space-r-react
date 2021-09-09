@@ -1,5 +1,5 @@
 import React from 'react';
-import {LocationCard, LocationContainer} from '../layout/LocationElements';
+import {Country, Details, LocationCard, LocationContainer, LocationImage, Name} from '../layout/LocationElements';
 
 export const Location = (props) => {
     
@@ -8,13 +8,13 @@ export const Location = (props) => {
 
     return (
         <LocationContainer>
-            <img
+            <LocationImage
                 src={map_image}
                 alt="location-on-google-maps"/>
             <LocationCard>
-                <h3>{name}</h3>
-                <h4>{country_code}</h4>
-                <p>Launches: {total_launch_count} Landings: {total_landing_count}</p>
+                <Name>{name}</Name>
+                <Country>{country_code}</Country>
+                <Details>Launches: {total_launch_count} Landings: {total_landing_count}</Details>
             </LocationCard>
         </LocationContainer>
     )

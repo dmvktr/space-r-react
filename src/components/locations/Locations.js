@@ -24,7 +24,6 @@ const Locations = () => {
               An error occurred while tried to fetch
             </Error>
         ) : (
-            <div>
               <LocationsContainer>
                 {locations.map(location => (
                     <Location key={location.id}
@@ -32,7 +31,7 @@ const Locations = () => {
                     />
                 ))}
               </LocationsContainer>
-            </div>
+
         )
         }
       </LocationMainContainer>
