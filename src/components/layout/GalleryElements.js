@@ -70,7 +70,7 @@ export const Title = styled.h4`
   max-height: 2em;
   top: calc(-1 * 15vh / 2);
   z-index: 40;
-  font-size: 20px;
+  font-size: 1rem;
   color: white;
 `;
 
@@ -88,7 +88,7 @@ export const Card = styled.div`
   background-repeat: no-repeat;
 `;
 export const HdImg = styled.img`
-  width: 100vw;
-  height: auto;
+  max-width: 80vw;
+  max-height: 80vh;
 `;
 export const Date = styled.h3``;

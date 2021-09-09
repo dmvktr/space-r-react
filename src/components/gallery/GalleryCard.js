@@ -17,7 +17,7 @@ const customStyles = {
     backgroundColor: "black",
     backgroundImage: `url(${LoadingAnim})`,
     backgroundRepeat: "no-repeat",
-    backgroundSize: "50%",
+    backgroundSize: "100%",
     backgroundPosition: "center",
     padding: "10px",
   },
