@@ -4,7 +4,6 @@ import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import Modal from "react-modal";
 import LoadingAnim from "../../static/img/loading.gif";
 
-Modal.setAppElement('#root');
 
 const customStyles = {
   content: {
