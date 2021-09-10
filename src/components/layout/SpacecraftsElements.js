@@ -28,10 +28,8 @@ export const SpacecraftsCardContainer = styled.div`
   :hover {
     box-shadow: rgb(233 219 219 / 31%) -18px 20px 13px, rgb(167 68 68 / 11%) -14px 13px 6px 0px;
   }
-
-  max-width: 40vw;
-  min-width: 40vh;
-  height: auto;
+  max-width: 35vw;
+  min-width: 50vh;
 `;
 
 export const Card = styled.div`
@@ -39,8 +37,7 @@ export const Card = styled.div`
   border-radius: 11px;
   flex-direction: column;
   background: linear-gradient(152deg, #6b7b83bf, #101115e0 30%, #1d1f307a);
-  min-height: 70vh;
-  max-height: 70vh;
+  min-height: 80vh;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 `;
 
@@ -63,8 +60,7 @@ export const CardBody = styled.div`
   color: whitesmoke;
   text-align: center;
   max-height: 70%;
-  min-height: 50%;
-  height: 100%;
+
 `
 
 export const CardPersonalDetail = styled.div`
